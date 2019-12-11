@@ -30,7 +30,15 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-    'gatsby-plugin-netlify-cache'
+    'gatsby-plugin-netlify-cache',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `i66t8ty4fjxp`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_API_KEY,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
