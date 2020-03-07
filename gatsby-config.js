@@ -36,10 +36,28 @@ module.exports = {
       options: {
         spaceId: `i66t8ty4fjxp`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_API_KEY,
+        accessToken: process.env.REEVES_CONTENTFUL_API_KEY,
         downloadLocal: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Euphoria Script`,
+          },
+          {
+            family: `Open Sans`,
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Open Sans Condensed`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
