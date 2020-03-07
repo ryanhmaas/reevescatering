@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql, StaticQuery  } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { styles } from '../../constants/styles';
 
 const INDEX_PAGE_QUERY = graphql`
   query IndexPageDataQuery {
@@ -25,6 +26,9 @@ const INDEX_PAGE_QUERY = graphql`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <p style={{fontFamily: styles.fonts.euphoriaScript}}>
+      TestScript
+    </p>
     <StaticQuery
         query={INDEX_PAGE_QUERY}
         render={({ hours }) => {
