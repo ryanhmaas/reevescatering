@@ -1,0 +1,18 @@
+.footer{
+  background-color: #36383D;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+
+  &-text{
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Open Sans';
+    line-height: 1.58;
+  }
+
+  &-header{
+    font-size: 28px;
+    font-family: 'Euphoria Script';
+  }
+}
