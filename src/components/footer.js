@@ -1,10 +1,14 @@
 import React from "react";
 
-function Footer(){
+const Footer = (props) => {
   return (
     <div className="footer">
       <div className="footer-section">
-        Reeves Catering
+        <img 
+            alt="Reeves Catering White Logo"
+            title="Reeves Catering White Logo"
+            src={props.reevesLogo.publicURL}
+          />
       </div>
       <div className="footer-section">
         <div className="footer-header">
@@ -26,8 +30,13 @@ function Footer(){
         <div className="footer-header">
           Navigation
         </div>
-        <div className="footer-text">
-          blah blah blah
+        <div className="footer-text--container">
+          <div>
+            LEFT COL
+          </div>
+          <div>
+            RIGHT COL
+          </div>
         </div>
       </div>
       <div className="footer-section">

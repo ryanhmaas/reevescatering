@@ -54,7 +54,7 @@ module.exports = {
           },
           {
             family: `Open Sans Condensed`,
-            variants: [`400`, `700`]
+            variants: [`300`, `400`, `700`]
           },
           {
             family: `Euphoria Script`,
