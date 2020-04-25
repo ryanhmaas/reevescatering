@@ -28,9 +28,6 @@ const INDEX_PAGE_QUERY = graphql`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <p style={{fontFamily: styles.fonts.euphoriaScript}}>
-      TestScript
-    </p>
     <StaticQuery
         query={INDEX_PAGE_QUERY}
         render={({ hours }) => {

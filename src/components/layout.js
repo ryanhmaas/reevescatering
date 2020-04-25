@@ -18,14 +18,16 @@ const Layout = ({ children }) => {
       hyperionLogo: file(relativePath: {eq: "hyperion-logo-white.svg"}) {
         publicURL
       }
-      reevesWhiteLogo: file(relativePath: {eq: "reeves-catering-white.svg"}) {
-        publicURL
-      } 
+      reevesWhiteLogo: contentfulAsset(title: {eq: "Reeves Catering White Logo"}){
+        file{
+          url
+        }
+      }
     }
   `)
   console.log(data);
   return (
-    <React.Fragment style={{backgroundColor: '#F1F2F4'}}>
+    <React.Fragment>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
       >
