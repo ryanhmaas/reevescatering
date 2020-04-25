@@ -1,0 +1,30 @@
+.hyperion--footer{
+  background-color: #1d1e20;
+  color: #8d8e8f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 7vh;
+  font-family: 'Open Sans Condensed';
+  font-weight: 400;
+
+  &-reeves{
+    margin-left: 1rem;
+  }
+}
+
+.hyperion--detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 1rem;
+  
+  &-logo{
+    margin-right: 1rem;
+  }
+
+  &-sitelink{
+    color: #8d8e8f !important; //oh noes
+    text-decoration: none;
+  }
+}
