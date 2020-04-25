@@ -6,9 +6,21 @@
   min-height: 20vh;
   padding: 1rem;
 
+  &--logo{
+    align-self: center;
+    flex: 1;
+  }
+
+  &--nav{
+    margin-top: 1rem;
+    display: flex;
+    flex: 3;
+    justify-content:  space-around;
+  }
+
   &-text{
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 300;
     font-family: 'Open Sans';
     line-height: 1.58;
   }
@@ -16,5 +28,29 @@
   &-header{
     font-size: 28px;
     font-family: 'Euphoria Script';
+    margin-bottom: 1.5rem;
+  }
+
+  &-section{
+    &--navigation{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+    &--logo{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .navigation--left{
+    margin: 0 .75rem .75rem 0;
+  }
+
+  .social-item--container{
+    display: flex;
+    align-items: center;
   }
 }
+

@@ -47,10 +47,11 @@ module.exports = {
         fonts: [
           {
             family: `Euphoria Script`,
+            variants: [`300`, `400`, `700`]
           },
           {
             family: `Open Sans`,
-            variants: [`400`, `700`]
+            variants: [`300`, `400`, `700`]
           },
           {
             family: `Open Sans Condensed`,
