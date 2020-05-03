@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 import { styles } from '../../constants/styles';
 import '../../assets/styles/main.scss';
 
-
 const INDEX_PAGE_QUERY = graphql`
   query IndexPageDataQuery {
   sections: allContentfulHomePageSection {

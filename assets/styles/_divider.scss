@@ -1,0 +1,11 @@
+.components--divider{
+  &::after{
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid #bbb;
+    position: absolute;
+    left: 0;
+    height: 1px;
+    top: 50%;
+  }
+}
