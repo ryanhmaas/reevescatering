@@ -15,8 +15,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    `gatsby-plugin-postcss`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-background-image-es5',
+      options: {
+        specialChars: '/:',
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

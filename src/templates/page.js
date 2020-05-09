@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import ContentSection from "../components/ContentSection"
+import SectionContent from "../components/SectionContent"
 import { CONTENTFUL_SECTION_TYPES } from "../constants/enums"
 
 export const query = graphql`
@@ -133,7 +133,7 @@ function SinglePage({ data }) {
   console.log(data)
 
   const ContentfulSectionContent = props => {
-    return <ContentSection props={props} />
+    return <SectionContent props={props} />
   }
 
   return (
