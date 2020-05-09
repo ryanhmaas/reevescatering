@@ -1,10 +1,10 @@
 import React from 'react';
-import Divider from '../components/Divider';
+import SectionDivider from '../components/SectionDivider';
 
 function ComponentTestPage(){
   return (
     <div>
-      <Divider dividerType="horizontal"/>
+      <SectionDivider dividerType="horizontal"/>
     </div>
   )
 }

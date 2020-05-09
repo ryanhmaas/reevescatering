@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Footer = (props) => {
   return (
     <div className="footer">
-      <div className="footer--logo">
-        <div className="footer-section--logo">
+      <div className="footer__logo">
+        <div className="footer-section__logo">
           <img 
               alt="Reeves Catering White Logo"
               title="Reeves Catering White Logo"
@@ -16,7 +16,7 @@ const Footer = (props) => {
             />
         </div>
       </div>
-      <div className="footer--nav">
+      <div className="footer__nav">
         <div className="footer-section">
           <div className="footer-header">
             Address
@@ -41,8 +41,8 @@ const Footer = (props) => {
           <div className="footer-header">
             Navigation
           </div>
-          <div className="footer-section--navigation">
-            <div className="footer-text navigation--left">
+          <div className="footer-section__navigation">
+            <div className="footer-text navigation__left">
               <p>Home</p>
               <p>Portfolio</p>
               <p>Reviews</p>
@@ -61,13 +61,13 @@ const Footer = (props) => {
             Social
           </div>
           <div className="footer-text">
-            <p className="social-item--container">
+            <p className="social-item__container">
               <FontAwesomeIcon className="mr-half" icon={faInstagram}></FontAwesomeIcon>Instagram
             </p>
-            <p className="social-item--container">
+            <p className="social-item__container">
               <FontAwesomeIcon className="mr-half" icon={faFacebook}></FontAwesomeIcon>Facebook
             </p>
-            <p className="social-item--container">
+            <p className="social-item__container">
               <FontAwesomeIcon className="mr-half" icon={faTwitter}></FontAwesomeIcon>Twitter
             </p>
           </div>
