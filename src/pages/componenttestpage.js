@@ -1,12 +1,13 @@
-import React from 'react';
-import Divider from '../components/Divider';
+import React from "react"
+import SectionInstagram from "../components/SectionInstagram"
 
-function ComponentTestPage(){
+function ComponentTestPage() {
   return (
     <div>
-      <Divider dividerType="horizontal"/>
+      <div>ha</div>
+      <SectionInstagram />
     </div>
   )
 }
 
-export default ComponentTestPage;
+export default ComponentTestPage

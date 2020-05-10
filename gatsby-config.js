@@ -29,9 +29,9 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-robots-txt',
-    'gatsby-plugin-netlify-cache',
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
+    "gatsby-plugin-netlify-cache",
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -47,25 +47,28 @@ module.exports = {
         fonts: [
           {
             family: `Euphoria Script`,
-            variants: [`300`, `400`, `700`]
+            variants: [`300`, `400`, `700`],
           },
           {
             family: `Open Sans`,
-            variants: [`300`, `400`, `700`]
+            variants: [`300`, `400`, `700`],
           },
           {
             family: `Open Sans Condensed`,
-            variants: [`300`, `400`, `700`]
+            variants: [`300`, `400`, `700`],
           },
           {
             family: `Euphoria Script`,
-            variants: [`400`, `700`]
+            variants: [`400`, `700`],
           },
         ],
       },
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `reevescatering`,
+      },
+    },
   ],
 }

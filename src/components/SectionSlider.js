@@ -1,16 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SectionSlider ({name, displayName, qty}) {
-  return (
-    <div></div>
-  )
+function SectionSlider({ data }) {
+	const { displaySliderName, sliderItems, slideName } = data;
+	return <div />;
 }
 
-SectionSlider.propTypes = {
-  name: PropTypes.string,
-  displayName: PropTypes.bool,
-  qty: PropTypes.number
-};
-
-export default SectionSlider
+export default SectionSlider;
