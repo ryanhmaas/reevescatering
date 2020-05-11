@@ -111,10 +111,8 @@ export const query = graphql`
         ... on ContentfulSectionSlider {
           id
           displaySliderName
+          sectionType
           sliderItems {
-            ... on ContentfulApiReviews {
-              id
-            }
             ... on ContentfulItemAward {
               id
               awardDescription
@@ -153,7 +151,7 @@ function SinglePage({ data }) {
           case CONTENTFUL_SECTION_TYPES.SLIDER:
             return <SectionSlider data={section} />
           default:
-            return <div>aaaabbbcc</div>
+            return <div />
         }
       })}
     </Layout>

@@ -1,9 +1,32 @@
 import React from "react"
-import PropTypes from "prop-types"
+import ItemAward from "../components/ItemAward"
+import ItemRichText from "../components/ItemRichText"
 
 function SectionSlider({ data }) {
-  const { displaySliderName, sliderItems, sliderName } = data
-  return <div>{"slider name" + sliderName} </div>
+  //sectionType is the slider type - contentful will not rename it once pub'd :/
+  const { displaySliderName, sliderItems, sliderName, sectionType } = data
+
+  const sliderItem = props => {
+    if (sectionType === "Award") {
+      return <ItemAward {...props} />
+    } else {
+      return <ItemRichText {...props} />
+    }
+  }
+
+  return (
+    <div>
+      <div>{"slider name" + sliderName}</div>
+      <div>{"displaySliderName" + displaySliderName}</div>
+      {sliderItems.length > 0 && (
+        <div>
+          {sliderItems.map(item => {
+            return <div>{sliderItem(item)}</div>
+          })}
+        </div>
+      )}
+    </div>
+  )
 }
 
 export default SectionSlider

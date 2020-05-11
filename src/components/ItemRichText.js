@@ -1,16 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react"
 
-function ItemRichText ({markdown, justification, buttons}) {
-  return (
-    <div></div>
-  )
+function ItemRichText(props) {
+  const { richText } = props
+  console.log(props)
+  return <div>{"RICHTEXT: " + richText.richText}</div>
 }
-
-ItemRichText.propTypes = {
-  markdown: PropTypes.string,
-  justification: PropTypes.string,
-  buttons: PropTypes.object
-};
 
 export default ItemRichText

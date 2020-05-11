@@ -107,9 +107,6 @@ function ComponentTestPage() {
             id
             displaySliderName
             sliderItems {
-              ... on ContentfulApiReviews {
-                id
-              }
               ... on ContentfulItemAward {
                 id
                 awardDescription
