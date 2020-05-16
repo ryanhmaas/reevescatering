@@ -1,15 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPaperPlane } from "@fortawesome/pro-solid-svg-icons"
 function SectionCTA(props) {
-	const { callToActionBorder, callToActionTitle, callToActionButton } = props;
-	return <div />;
+  const { data } = props
+  console.log(data)
+  const { callToActionBorder, callToActionTitle, callToActionButton } = data
+
+  const { linkName, linkIcon, linkIconPlacement } = callToActionButton
+  return (
+    <div className="section--cta">
+      <div className="section--cta__title">{callToActionTitle}</div>
+      <button className="section--cta__btn">
+        {linkName}
+        <FontAwesomeIcon icon={faPaperPlane} style={{ color: "#fff" }} />
+      </button>
+    </div>
+  )
 }
 
-SectionCTA.propTypes = {
-	title: PropTypes.string,
-	button: PropTypes.object,
-	border: PropTypes.string
-};
-
-export default SectionCTA;
+export default SectionCTA

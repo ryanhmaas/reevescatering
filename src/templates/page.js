@@ -7,6 +7,7 @@ import SectionGrid from "../components/SectionGrid"
 import SectionInstagram from "../components/SectionInstagram"
 import SectionSlider from "../components/SectionSlider"
 import { CONTENTFUL_SECTION_TYPES } from "../constants/enums"
+import SectionCTA from "../components/SectionCTA"
 
 export const query = graphql`
   query($slug: String!) {
@@ -141,7 +142,7 @@ function SinglePage({ data }) {
           case CONTENTFUL_SECTION_TYPES.CONTENT:
             return <SectionContent data={section} />
           case CONTENTFUL_SECTION_TYPES.CTA:
-            return <div>CTA component here</div>
+            return <SectionCTA data={section} />
           case CONTENTFUL_SECTION_TYPES.DIVIDER:
             return <div>Divider component here</div>
           case CONTENTFUL_SECTION_TYPES.GRID:

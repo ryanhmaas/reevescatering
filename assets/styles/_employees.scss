@@ -1,0 +1,10 @@
+.employee--grid {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Open Sans";
+
+  &__item {
+    flex: 0 0 33.333333%;
+    text-align: center;
+  }
+}
