@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function ItemEmployee(props) {
 	const { employeeName, employeePicture, employeeRole, employeeBio } = props;
 	return (
-		<div className="employeez-grid__item">
+		<div className="employee-grid__item">
 			<div style={{ backgroundColor: 'rgba(223, 223, 223, 0.8)' }}>
 				<div>
 					<b>{employeeName}</b>
