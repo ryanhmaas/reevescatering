@@ -2,6 +2,20 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	padding: 1rem;
+
+	&.-border-top {
+		border-top: 5px solid #7ac142;
+	}
+
+	&.-border-bottom {
+		border-bottom: 5px solid #7ac142;
+	}
+
+	&.-border-none {
+		border: none;
+	}
+
 	&__title {
 		font-family: "Euphoria Script";
 		color: #60973a;
@@ -14,7 +28,15 @@
 		font-size: 14px;
 		background-color: #7ac142;
 		color: #fff;
-		padding: 1rem;
+		padding: .5rem;
 		border-radius: 7px;
+		min-width: 8rem;
+
+		&:hover {
+			cursor: pointer;
+			transition: all .3s ease-in-out;
+			transform: translateY(-1px);
+			background-color: lighten(#7ac142, 5);
+		}
 	}
 }
