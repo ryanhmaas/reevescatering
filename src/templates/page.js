@@ -69,10 +69,9 @@ export const query = graphql`
 							id
 							employeeName
 							employeePicture {
-								file {
-									url
+								fluid {
+									...GatsbyContentfulFluid
 								}
-								title
 							}
 							employeeRole
 							employeeBio {
