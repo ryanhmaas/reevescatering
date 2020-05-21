@@ -46,7 +46,9 @@ const INDEX_PAGE_QUERY = graphql`
 					}
 					contentRichText {
 						richText {
-							richText
+							childMarkdownRemark {
+								html
+							}
 						}
 						richTextButtons {
 							linkName
@@ -54,7 +56,7 @@ const INDEX_PAGE_QUERY = graphql`
 							linkIconPlacement
 							linkIcon
 							linkSourceInternal {
-								pageName
+								slug
 							}
 							linkType
 						}
@@ -79,7 +81,9 @@ const INDEX_PAGE_QUERY = graphql`
 							employeeRole
 							employeeBio {
 								richText {
-									richText
+									childMarkdownRemark {
+										html
+									}
 								}
 								richTextButtons {
 									linkIcon
@@ -124,8 +128,20 @@ const INDEX_PAGE_QUERY = graphql`
 						... on ContentfulItemRichText {
 							id
 							richText {
-								richText
+								childMarkdownRemark {
+									html
+								}
 							}
+							richTextButtons {
+								linkIcon
+								linkIconPlacement
+								linkName
+								linkSourceExternal
+								linkSourceInternal {
+									slug
+								}
+							}
+							richTextJustification
 						}
 					}
 					sliderName

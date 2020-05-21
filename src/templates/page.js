@@ -44,7 +44,9 @@ export const query = graphql`
 					}
 					contentRichText {
 						richText {
-							richText
+							childMarkdownRemark {
+								html
+							}
 						}
 						richTextButtons {
 							linkName
