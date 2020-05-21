@@ -7,7 +7,7 @@ function SectionContent({ data }) {
   console.log(data)
   const { contentLayout, contentRichText, contentImage } = data
   let layout = contentLayout.toLowerCase()
-  let richTextData = contentRichText
+  let richText = contentRichText
   let imageData = contentImage
 
 
@@ -15,7 +15,7 @@ function SectionContent({ data }) {
 
     <section class="c-content">
       {layout === 'rich text only' &&
-        <ItemRichText {...richTextData} />
+        <ItemRichText {...richText} />
       }
       {layout === 'image on left' &&
         <p>image on left</p>

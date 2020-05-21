@@ -10,6 +10,7 @@ import SectionSlider from '../components/SectionSlider';
 import { CONTENTFUL_SECTION_TYPES } from '../constants/enums';
 import SectionCTA from '../components/SectionCTA';
 import SectionContent from '../components/SectionContent';
+import SectionDivider from '../components/SectionDivider';
 
 const INDEX_PAGE_QUERY = graphql`
 	query IndexPageDataQuery {
@@ -167,7 +168,7 @@ const IndexPage = () => (
 								case CONTENTFUL_SECTION_TYPES.CTA:
 									return <SectionCTA data={section} />;
 								case CONTENTFUL_SECTION_TYPES.DIVIDER:
-									return <div>Divider component here</div>;
+									return <SectionDivider data={section} />;
 								case CONTENTFUL_SECTION_TYPES.GRID:
 									return <SectionGrid data={section} />;
 								case CONTENTFUL_SECTION_TYPES.INSTAGRAM:
