@@ -6,6 +6,8 @@ import {
 	faHandshake,
 	faBirthdayCake,
 	faCalendarStar,
+	faPaperPlane,
+	faUtensilsAlt,
 	faWineGlassAlt
 } from '@fortawesome/pro-solid-svg-icons';
 
@@ -39,18 +41,24 @@ function ItemIcon(props) {
 			case 'faCalendarStar': {
 				return faCalendarStar;
 			}
+			case 'faPaperPlane': {
+				return faPaperPlane;
+			}
+			case 'faUtensilsAlt': {
+				return faUtensilsAlt;
+			}
 			case 'faWineGlassAlt': {
 				return faWineGlassAlt;
 			}
 		}
 	};
 
+	let newIcon = faIcon ? faIcon : iconName;
+
 	return (
-		<div>
-			<div>{faIcon}</div>
-			<FontAwesomeIcon icon={getFaIcon(faIcon)} style={{ color: '#7AC142' }} />
-			<p>{formatFontAwesomeIconName(faIcon)}</p>
-		</div>
+		<>
+			<FontAwesomeIcon icon={getFaIcon(newIcon)} />
+		</>
 	);
 }
 

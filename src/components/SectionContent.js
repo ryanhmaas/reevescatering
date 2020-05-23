@@ -32,8 +32,16 @@ function SectionContent({ data }) {
       }
       {layout === 'image as background (banner)' &&
         <>
-          <p>image as background (banner)</p>
-          <ItemRichText {...richText} />
+           {/* Should change this to BackgroundImage component once fluid is working */}
+           <div
+            className="c-background-img -banner"
+            ariaName="background image"
+          >
+            <figure className="c-background-img__banner-img" style={{backgroundImage: 'url('+imageData.file.url+')'}}></figure>
+            <div className="c-background-img__content">
+              <ItemRichText {...richText} />
+            </div>
+          </div>
         </>
       }
       {layout === 'image as background (full screen)' &&

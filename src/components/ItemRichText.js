@@ -1,13 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
+import ItemIcon from "../components/ItemIcon"
 
 function ItemRichText(props) {
   const richText = props 
   const html = richText.richText.childMarkdownRemark.html
   const button = richText.richTextButtons
   let buttonClass;
-
-
 
 
   console.log(richText);
@@ -25,10 +24,10 @@ function ItemRichText(props) {
         return (
           <>
             {btn.linkType.toLowerCase() === 'internal page' &&
-              <Link className={buttonClass} to={btn.linkSourceInternal ? btn.linkSourceInternal.slug : ''}>{btn.linkName} {btn.linkIcon}</Link>
+              <Link className={buttonClass} to={btn.linkSourceInternal ? btn.linkSourceInternal.slug : ''}>{btn.linkName} <ItemIcon iconName={btn.linkIcon} /></Link>
             }
             {btn.linkType.toLowerCase() === 'external page' &&
-              <a className={buttonClass} href={btn.linkSourceExternal ? btn.linkSourceExternal : ''} target="_blank" name={btn.linkName}>{btn.linkName} {btn.linkIcon}</a>
+              <a className={buttonClass} href={btn.linkSourceExternal ? btn.linkSourceExternal : ''} target="_blank" name={btn.linkName}>{btn.linkName} <ItemIcon iconName={btn.linkIcon} /></a>
             }
           </>
             )
