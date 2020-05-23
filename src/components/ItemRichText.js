@@ -3,17 +3,17 @@ import { Link } from "gatsby"
 import ItemIcon from "../components/ItemIcon"
 
 function ItemRichText(props) {
-  const richText = props 
+  const richText = props
   const html = richText.richText.childMarkdownRemark.html
   const button = richText.richTextButtons
-  let buttonClass;
-
-
-  console.log(richText);
+  let buttonClass
 
   return (
     <>
-      <div className="c-rich-text" dangerouslySetInnerHTML={{__html: html}}></div>
+      <div
+        className="c-rich-text"
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></div>
       <div className="c-rich-text__c-btn-wrapper">
       {button ? button.map((btn) => {
         if (btn.linkStyle) {

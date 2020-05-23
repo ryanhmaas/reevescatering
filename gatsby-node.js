@@ -6,26 +6,25 @@
 const path = require(`path`)
 const slash = require(`slash`)
 
-/* 
 // You can delete this file if you're not using it
 exports.onCreateWebpackConfig = ({ stage, rules, loaders, actions }) => {
   switch (stage) {
-    case 'build-html':
+    case "build-html":
       actions.setWebpackConfig({
         module: {
           rules: [
             {
               test: /react-leaflet/,
-              use: [loaders.null()]
-            }
-          ]
-        }
-      });
-      break;
+              use: [loaders.null()],
+            },
+          ],
+        },
+      })
+      break
   }
-}; 
+}
 
-
+/*
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
