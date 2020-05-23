@@ -1,0 +1,29 @@
+.contact-section {
+  z-index: 10;
+  position: absolute;
+  top: 25%;
+  right: 0;
+  background-color: #fff;
+  border-left: 3px solid #7ac142;
+  height: 35vh;
+  padding: 2rem;
+  border-radius: 2px;
+  max-width: 300px;
+
+  h2 {
+    color: #60973a;
+    font-family: "Euphoria Script";
+  }
+
+  p {
+    font-family: "Open Sans";
+    color: #555555;
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  &__phone {
+    text-decoration: underline;
+    color: #7ac142;
+  }
+}

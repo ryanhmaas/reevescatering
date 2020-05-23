@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import BackgroundImage from "gatsby-background-image-es5"
-import ItemRichText from '../components/ItemRichText'
+import ItemRichText from "../components/ItemRichText"
 
 function SectionContent({ data }) {
   const { contentLayout, contentRichText, contentImage } = data
@@ -9,39 +9,34 @@ function SectionContent({ data }) {
   let richText = contentRichText
   let imageData = contentImage
 
-  console.log('****imageData');
-  console.log(imageData);
-
   return (
-
     <section class="c-content">
-      {layout === 'rich text only' &&
-        <ItemRichText {...richText} />
-      }
-      {layout === 'image on left' &&
+      {layout === "rich text only" && <ItemRichText {...richText} />}
+      {layout === "image on left" && (
         <>
           <p>image on left</p>
           <ItemRichText {...richText} />
         </>
-      }
-      {layout === 'image on right' &&
+      )}
+      {layout === "image on right" && (
         <>
           <p>image on right</p>
           <ItemRichText {...richText} />
         </>
-      }
-      {layout === 'image as background (banner)' &&
+      )}
+      {layout === "image as background (banner)" && (
         <>
           <p>image as background (banner)</p>
           <ItemRichText {...richText} />
         </>
-      }
-      {layout === 'image as background (full screen)' &&
+      )}
+      {layout === "image as background (full screen)" && (
         <>
           {/* Should change this to BackgroundImage component once fluid is working */}
           <figure
-            style={{ 
-            backgroundImage: 'url('+imageData.file.url+')' }}
+            style={{
+              backgroundImage: "url(" + imageData.file.url + ")",
+            }}
             className="c-background-img -full"
             ariaName="background image"
           >
@@ -49,15 +44,10 @@ function SectionContent({ data }) {
               <ItemRichText {...richText} />
             </figcaption>
           </figure>
-          
         </>
-      }
-      
-      
-      
+      )}
     </section>
   )
-
 }
 
 export default SectionContent

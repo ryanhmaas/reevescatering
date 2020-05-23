@@ -10,7 +10,7 @@ function SectionSlider({ data }) {
     if (sectionType === "Award") {
       return <ItemAward {...props} />
     } else {
-      return <ItemRichText {...props} />
+      return <ItemRichText data={props} />
     }
   }
 

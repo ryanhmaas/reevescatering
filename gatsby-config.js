@@ -20,9 +20,15 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-background-image-es5',
+      resolve: "gatsby-background-image-es5",
       options: {
-        specialChars: '/:',
+        specialChars: "/:",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-leaflet",
+      options: {
+        linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
     {

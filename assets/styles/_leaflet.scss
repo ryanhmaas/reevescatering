@@ -1,0 +1,24 @@
+.leaflet-container {
+  width: 100%;
+  z-index: 1;
+  height: 700px;
+
+  @media (max-width: 639px) {
+    height: calc(100% - 4rem);
+  }
+}
+
+.leaflet .leaflet-container a.leaflet-popup-close-button {
+  width: 24px;
+  height: 24px;
+  padding: 9px 9px 0 0;
+}
+
+.leaflet-container .leaflet-popup-content-wrapper {
+  border-radius: 0.3rem;
+}
+
+.leaflet .leaflet-container a {
+  text-transform: capitalize;
+  font-weight: 700;
+}
