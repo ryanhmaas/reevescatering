@@ -27,6 +27,7 @@ const INDEX_PAGE_QUERY = graphql`
 						linkIconPlacement
 						linkSourceExternal
 						linkName
+						linkStyle
 						linkSourceInternal {
 							slug
 						}
@@ -53,6 +54,7 @@ const INDEX_PAGE_QUERY = graphql`
 						}
 						richTextButtons {
 							linkName
+							linkStyle
 							linkSourceExternal
 							linkIconPlacement
 							linkIcon
@@ -90,6 +92,7 @@ const INDEX_PAGE_QUERY = graphql`
 									linkIcon
 									linkIconPlacement
 									linkName
+									linkStyle
 									linkSourceExternal
 									linkSourceInternal {
 										slug
@@ -137,6 +140,7 @@ const INDEX_PAGE_QUERY = graphql`
 								linkIcon
 								linkIconPlacement
 								linkName
+								linkStyle
 								linkSourceExternal
 								linkSourceInternal {
 									slug

@@ -25,16 +25,13 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  console.log(data);
   return (
     <React.Fragment>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-      >
-        <main>{children}</main>
-        <Footer reevesLogo={data.reevesWhiteLogo} />
-        <HyperionFooter logo={data.hyperionLogo} />
-      </div>
+        <>
+          <main>{children}</main>
+          <Footer reevesLogo={data.reevesWhiteLogo} />
+          <HyperionFooter logo={data.hyperionLogo} />
+        </>
     </React.Fragment>
   )
 }

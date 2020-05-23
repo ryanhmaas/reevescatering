@@ -4,12 +4,13 @@ import BackgroundImage from "gatsby-background-image-es5"
 import ItemRichText from '../components/ItemRichText'
 
 function SectionContent({ data }) {
-  console.log(data)
   const { contentLayout, contentRichText, contentImage } = data
   let layout = contentLayout.toLowerCase()
   let richText = contentRichText
   let imageData = contentImage
 
+  console.log('****imageData');
+  console.log(imageData);
 
   return (
 
@@ -18,24 +19,41 @@ function SectionContent({ data }) {
         <ItemRichText {...richText} />
       }
       {layout === 'image on left' &&
-        <p>image on left</p>
+        <>
+          <p>image on left</p>
+          <ItemRichText {...richText} />
+        </>
       }
       {layout === 'image on right' &&
-        <p>image on right</p>
+        <>
+          <p>image on right</p>
+          <ItemRichText {...richText} />
+        </>
       }
       {layout === 'image as background (banner)' &&
-        <p>image as background (banner)</p>
+        <>
+          <p>image as background (banner)</p>
+          <ItemRichText {...richText} />
+        </>
       }
       {layout === 'image as background (full screen)' &&
-        <p>image as background (full screen)</p>
+        <>
+          {/* Should change this to BackgroundImage component once fluid is working */}
+          <figure
+            style={{ 
+            backgroundImage: 'url('+imageData.file.url+')' }}
+            className="c-background-img -full"
+            ariaName="background image"
+          >
+            <figcaption className="c-background-img__content u-container">
+              <ItemRichText {...richText} />
+            </figcaption>
+          </figure>
+          
+        </>
       }
       
-      {/* <BackgroundImage
-        style={{ display: "block", height: "100px", width: "100px" }}
-        Tag="figure"
-        className="hero__bg-img flex flex-col items-center justify-center h-full w-full bg-fixed bg-no-repeat"
-        fluid={imageData}
-      ></BackgroundImage> */}
+      
       
     </section>
   )

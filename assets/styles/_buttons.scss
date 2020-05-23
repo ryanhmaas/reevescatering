@@ -1,0 +1,52 @@
+
+.c-btn {
+	display: inline-block;
+	font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	flex-grow: 0;
+	flex-shrink: 1;
+	padding: 1rem 1.4rem;
+	color: #fff;
+	text-decoration: none;
+	border: 2px solid $reeves-green;
+	background-color: $reeves-green;
+	border-radius: $border-radius;
+	box-sizing: border-box;
+
+	&:hover,
+	&:focus {
+		background-color: darken($reeves-green, 6);
+		border-color: darken($reeves-green, 6);
+	}
+
+	&:active {
+		background-color: darken($reeves-green, 10);
+		border-color: darken($reeves-green, 10);
+	}
+}
+
+.c-btn:not(.-outline) {
+	box-shadow: 0px 4px 20px rgba(122, 193, 66, 0.4);
+}
+
+.c-btn.-outline {
+	background-color: transparent;
+	border: 2px solid $reeves-green;
+	color: $reeves-green;
+
+	&:hover,
+	&:focus {
+		background-color: $reeves-green;
+		border-color: $reeves-green;
+		color: #fff;
+	}
+
+	&:active {
+		background-color: darken($reeves-green, 10);
+		border-color: darken($reeves-green, 10);
+	}
+}
+
+.c-btn + * {
+	margin-left: 1rem;
+}

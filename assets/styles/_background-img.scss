@@ -1,0 +1,65 @@
+
+.c-background-img {
+	display: block;
+	margin: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #000;
+}
+
+.c-background-img.-full {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	background-attachment: fixed;
+}
+
+.c-background-img.-full .c-rich-text {
+	margin-bottom: 3rem;
+	
+}
+
+.c-background-img.-full .c-rich-text__c-btn-wrapper .c-btn.-outline {
+	color: #fff;
+	border-color: #fff;
+
+	&:hover,
+	&:focus {
+		background-color: #fff;
+		border-color: #fff;
+		color: $reeves-green;
+	}
+
+	&:active {
+		background-color: darken(#fff, 10);
+		border-color: darken(#fff, 10);
+	}
+	
+}
+
+.c-background-img.-full .c-rich-text > * {
+	color: #fff;
+	margin: 0;
+	line-height: 3rem;
+
+	em {
+		font-family: "Tangerine", cursive;
+		font-size: 5rem;
+		margin-right: 0.5rem;
+		color: $reeves-green;
+	}
+
+}
+
+.c-background-img__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	align-self: center;
+	width: 100%;
+	margin-bottom: 6rem;
+
+}
+
