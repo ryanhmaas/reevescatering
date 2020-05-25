@@ -14,7 +14,12 @@ function SectionGrid({ data }) {
 		} else if (gridType === 'EmployeeGrid') {
 			return <ItemEmployee {...props} />;
 		} else {
-			return <ItemIcon {...props} />;
+			return (
+				<div className="grid__icon-wrapper">
+					<ItemIcon className="grid__icon" {...props} />
+					<ItemIcon className="grid__icon -shadow" {...props} />
+				</div>
+			) 
 		}
 	};
 
@@ -24,12 +29,11 @@ function SectionGrid({ data }) {
 			{'grid name: ' + gridName}
 			{'display grid:' + displayGridName}
 			{'item length' + gridItems.length}
+			{displayGridName &&
+				<h3 className="grid__title">{gridName}</h3>
+			}
 			{showGridItems && (
-				<div
-					className={classNames('grid', {
-						'employee-grid': gridType === 'EmployeeGrid'
-					})}
-				>
+				<div className={classNames('grid', { 'employee-grid': gridType === 'EmployeeGrid' })}>
 					{gridItems.map((item, index) => {
 						return gridItem(item);
 					})}

@@ -12,23 +12,30 @@ function SectionContent({ data }) {
   return (
     <section class="c-content">
       {layout === "rich text only" && <ItemRichText {...richText} />}
+
       {layout === "image on left" && (
-        <>
-          <p>image on left</p>
-          <ItemRichText {...richText} />
-        </>
+        <figure className="c-content__c-img-text c-img-text u-container -lg">
+          <div className="c-img-text__img-wrapper">
+            <img className="c-img-text__img" src={imageData.file.url} />
+          </div>
+          <figcaption className="c-img-text__content">
+            <ItemRichText {...richText} />
+          </figcaption>
+        </figure>
       )}
+
       {layout === "image on right" && (
         <>
           <p>image on right</p>
           <ItemRichText {...richText} />
         </>
       )}
+
       {layout === "image as background (banner)" && (
         <>
            {/* Should change this to BackgroundImage component once fluid is working */}
            <div
-            className="c-background-img -banner"
+            className="c-content__c-background-img c-background-img -banner"
             ariaName="background image"
           >
             <figure className="c-background-img__banner-img" style={{backgroundImage: 'url('+imageData.file.url+')'}}></figure>
@@ -38,6 +45,7 @@ function SectionContent({ data }) {
           </div>
         </>
       )}
+
       {layout === "image as background (full screen)" && (
         <>
           {/* Should change this to BackgroundImage component once fluid is working */}
@@ -45,7 +53,7 @@ function SectionContent({ data }) {
             style={{
               backgroundImage: "url(" + imageData.file.url + ")",
             }}
-            className="c-background-img -full"
+            className="c-content__c-background-img c-background-img -full"
             ariaName="background image"
           >
             <figcaption className="c-background-img__content u-container">
@@ -54,6 +62,7 @@ function SectionContent({ data }) {
           </figure>
         </>
       )}
+
     </section>
   )
 }
