@@ -17,12 +17,23 @@
 	object-fit: cover;
 }
 
+.c-img-text.-right .c-img-text__img-wrapper {
+	margin-left: auto;
+}
+
 .c-img-text__content {
 	position: absolute;
 	right: 0;
 	max-width: 740px;
 	padding: 4rem;
-	border-left: 5px solid $reeves-green;
+	border-left: 4px solid $reeves-green;
 	background: rgba(#fff, 0.8);
 	backdrop-filter: $backdrop-blur;
+}
+
+.c-img-text.-right .c-img-text__content {
+	left: 0;
+	right: auto;
+	border-left: 0;
+	border-right: 4px solid $reeves-green;
 }

@@ -4,14 +4,18 @@ import ItemIcon from "../components/ItemIcon"
 
 function ItemRichText(props) {
   const richText = props
-  const html = richText.richText.childMarkdownRemark.html
+  const html = richText.richText?.childMarkdownRemark?.html
   const button = richText.richTextButtons
+  const justify = richText.richTextJustification.toLowerCase()
   let buttonClass = ""
+
+  console.log(justify);
 
   return (
     <>
       <div
         className="c-rich-text"
+        style={{textAlign: justify}}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
       <div className="c-rich-text__c-btn-wrapper">
