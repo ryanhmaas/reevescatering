@@ -16,7 +16,7 @@ function SectionContent({ data }) {
       {layout === "image on left" && (
         <figure className="c-content__c-img-text c-img-text u-container -lg">
           <div className="c-img-text__img-wrapper">
-            <img className="c-img-text__img" src={imageData.file.url} />
+            <img className="c-img-text__img" src={imageData?.file?.url} />
           </div>
           <figcaption className="c-img-text__content">
             <ItemRichText {...richText} />
@@ -33,12 +33,15 @@ function SectionContent({ data }) {
 
       {layout === "image as background (banner)" && (
         <>
-           {/* Should change this to BackgroundImage component once fluid is working */}
-           <div
+          {/* Should change this to BackgroundImage component once fluid is working */}
+          <div
             className="c-content__c-background-img c-background-img -banner"
             ariaName="background image"
           >
-            <figure className="c-background-img__banner-img" style={{backgroundImage: 'url('+imageData.file.url+')'}}></figure>
+            <figure
+              className="c-background-img__banner-img"
+              style={{ backgroundImage: "url(" + imageData.file.url + ")" }}
+            ></figure>
             <div className="c-background-img__content">
               <ItemRichText {...richText} />
             </div>
@@ -62,7 +65,6 @@ function SectionContent({ data }) {
           </figure>
         </>
       )}
-
     </section>
   )
 }
