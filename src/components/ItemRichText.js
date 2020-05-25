@@ -4,7 +4,7 @@ import ItemIcon from "../components/ItemIcon"
 
 function ItemRichText(props) {
   const richText = props
-  const html = richText.richText.childMarkdownRemark.html
+  const html = richText.richText?.childMarkdownRemark?.html
   const button = richText.richTextButtons
   const justify = richText.richTextJustification.toLowerCase()
   let buttonClass = ""
