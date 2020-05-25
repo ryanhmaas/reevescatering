@@ -1,0 +1,26 @@
+.section-divider {
+  position: relative;
+  margin: 5rem 0;
+
+  &:before {
+    content: '';
+    width: calc(50% - 60px);
+    background:#E5E5E5;
+    position: absolute;
+    right: 0;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    content: '';
+    width: calc(50% - 60px);
+    background:#E5E5E5;
+    position: absolute;
+    left: 0;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,18 +1,44 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-function SectionInstagram ({name, displayName, token, layout, qty}) {
+function SectionInstagram() {
+  const instagramData = useStaticQuery(graphql`
+    query InstaQuery {
+      allInstaNode(limit: 4, sort: { fields: timestamp, order: DESC }) {
+        edges {
+          node {
+            caption
+            thumbnails {
+              src
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  let instaEdges = instagramData.allInstaNode.edges
+
   return (
-    <div></div>
+    <div>
+      {instaEdges.map(edge => {
+        let node = edge.node
+        let hasImg = node.thumbnails.length > 0
+        let imgSrc = ""
+
+        //to-do: switch to Gatsby-image
+        if (hasImg) {
+          imgSrc = node.thumbnails[0].src
+        }
+        return (
+          <div>
+            <span>{node.caption}</span>
+            <img src={imgSrc} />
+          </div>
+        )
+      })}
+    </div>
   )
 }
-
-SectionInstagram.propTypes = {
-  name: PropTypes.string,
-  displayName: PropTypes.bool,
-  token: PropTypes.string,
-  layout: PropTypes.string,
-  qty: PropTypes.number
-};
 
 export default SectionInstagram
