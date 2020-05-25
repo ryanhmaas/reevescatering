@@ -1,0 +1,63 @@
+.contact-section {
+  z-index: 10;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  background-color: #fff;
+  border-left: 3px solid #7ac142;
+  max-height: 50vh;
+  padding: 2rem;
+  border-radius: 2px;
+  max-width: 35%;
+
+  h2 {
+    color: #60973a;
+    font-family: "Euphoria Script";
+    font-size: 32px;
+  }
+
+  p {
+    font-family: "Open Sans";
+    color: #555555;
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  input {
+    font-family: "Open Sans";
+    color: #555555;
+  }
+
+  &__phone {
+    text-decoration: underline;
+    color: #7ac142;
+  }
+
+  .contact-form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 25vh;
+
+    &__btn {
+      width: 10rem;
+      cursor: pointer;
+    }
+
+    .btn-message {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-group__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

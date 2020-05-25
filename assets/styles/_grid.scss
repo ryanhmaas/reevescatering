@@ -1,0 +1,33 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.grid__icon-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.grid__icon-wrapper > [data-icon] {
+	color: $reeves-green;
+	text-shadow: $green-box-shadow;
+	font-size: 4rem;
+}
+
+.grid__icon-wrapper > [data-icon]:last-child {
+	position: absolute;
+	top: 1rem;
+	filter: blur(20px);
+	opacity: 0.5;
+}
+
+.grid__icon-wrapper {
+	position: relative;
+}
+
+.grid__title {
+	text-align: center;
+	margin-bottom: 5rem;
+}

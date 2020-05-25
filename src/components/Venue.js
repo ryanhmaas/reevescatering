@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Divider = () => {
+export const Venue = () => {
   return(
     <div>
-      Divider
+      Venue
     </div>
   );
 }
