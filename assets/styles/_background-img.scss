@@ -42,7 +42,7 @@
 .c-background-img.-full .c-rich-text > * {
 	color: #fff;
 	margin: 0;
-	line-height: 3rem;
+	line-height: 1;
 
 	em {
 		font-family: "Tangerine", cursive;
@@ -109,5 +109,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: transparent;
+	background-attachment: fixed;
 	opacity: 0.2;
 }

@@ -11,7 +11,13 @@ function SectionContent({ data }) {
 
   return (
     <section class="c-content">
-      {layout === "rich text only" && <ItemRichText {...richText} />}
+      {layout === "rich text only" && (
+        <article className="c-content__c-rich-text-only c-rich-text-only">
+          <div className="u-container">
+            <ItemRichText {...richText} />
+          </div>
+        </article>
+      )}
 
       {layout === "image on left" && (
         <figure className="c-content__c-img-text c-img-text u-container -lg">
@@ -25,10 +31,14 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image on right" && (
-        <>
-          <p>image on right</p>
+        <figure className="c-content__c-img-text c-img-text -right u-container -lg">
+        <figcaption className="c-img-text__content">
           <ItemRichText {...richText} />
-        </>
+        </figcaption>
+        <div className="c-img-text__img-wrapper">
+          <img className="c-img-text__img" src={imageData.file.url} />
+        </div>
+      </figure>
       )}
 
       {layout === "image as background (banner)" && (
