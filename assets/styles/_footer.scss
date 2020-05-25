@@ -40,6 +40,10 @@
 			a {
 				text-decoration: none;
 				color: #fff;
+
+				&:hover {
+					color: #f1f1f1;
+				}
 			}
 		}
 		&__logo {

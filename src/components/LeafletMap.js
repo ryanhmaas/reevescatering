@@ -35,8 +35,9 @@ const LeafletMap = props => {
         />
         <Marker position={position}>
           <Popup>
-            <p>a</p>
-            <p>b</p>
+            <p>Reeves Catering</p>
+            <p>40 Rushmore Drive</p>
+            <p>Greenville SC 29615</p>
           </Popup>
         </Marker>
       </Map>
