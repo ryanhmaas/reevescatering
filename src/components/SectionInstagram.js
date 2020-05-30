@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { Carousel } from 'react-responsive-carousel';
 
 function SectionInstagram() {
   const instagramData = useStaticQuery(graphql`
@@ -20,7 +21,12 @@ function SectionInstagram() {
   let instaEdges = instagramData.allInstaNode.edges
 
   return (
-    <div>
+    <Carousel
+          className="c-slider -instagram"
+          infiniteLoop
+          centerMode
+          centerSlidePercentage={30}
+        >
       {instaEdges.map(edge => {
         let node = edge.node
         let hasImg = node.thumbnails.length > 0
@@ -31,13 +37,13 @@ function SectionInstagram() {
           imgSrc = node.thumbnails[0].src
         }
         return (
-          <div>
-            <span>{node.caption}</span>
-            <img src={imgSrc} />
-          </div>
+          <figure className="c-slider__insta-item">
+            <img className="c-slider__insta-img" src={imgSrc} />
+            <figcaption className="c-slider__insta-caption">{node.caption}</figcaption>
+          </figure>
         )
       })}
-    </div>
+    </Carousel>
   )
 }
 

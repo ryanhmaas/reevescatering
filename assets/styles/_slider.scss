@@ -1,0 +1,80 @@
+.c-slider .carousel .slide {
+	background: none;
+}
+
+.c-slider__content {
+	display: flex;
+	align-items: center;
+	background: #fff;
+	box-shadow: 0px 34px 84px rgba(54, 56, 61, 0.09), 0px 11px 24px rgba(54, 56, 61, 0.15);
+	margin: 2rem;
+	padding: 2rem 3rem;
+	border-left: 4px solid $reeves-green;
+}
+
+.carousel .slider-wrapper,
+.carousel.carousel-slider {
+	overflow: visible !important;
+}
+
+.c-slider .carousel .control-dots {
+	bottom: -3rem;
+	padding: 0;
+}
+
+.c-slider .carousel .control-dots .dot {
+	background-color: $body-color;
+}
+
+.c-slider .carousel .carousel-status {
+	display: none;
+}
+
+.c-slider .carousel.carousel-slider .control-arrow {
+	display: none;
+}
+
+.c-slider:not(.-mobile) {
+	@media screen and (max-width: 780px) {
+		display: none !important;
+	}
+}
+
+.c-slider.-mobile {
+	@media screen and (min-width: 781px) {
+		display: none !important;
+	}
+
+}
+
+.c-slider.-instagram {
+	overflow: hidden;
+}
+
+.c-slider__insta-item {
+	position: relative;
+	margin: 2rem;
+
+	&:hover {
+		.c-slider__insta-caption {
+			opacity: 1;
+		}
+	}
+}
+
+.c-slider__insta-caption {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 2rem;
+	overflow: hidden;
+	background: rgba(#000, 0.5);
+	color: #fff;
+	line-height: 2;
+	text-align: left;
+	transition: opacity 200ms;
+	pointer-events: none;
+}
