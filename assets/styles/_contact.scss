@@ -60,4 +60,9 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  @media screen and (max-height: 639px) {
+    position: relative;
+    max-width: inherit;
+  }
 }

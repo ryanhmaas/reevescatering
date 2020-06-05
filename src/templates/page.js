@@ -8,6 +8,7 @@ import SectionInstagram from "../components/SectionInstagram"
 import SectionSlider from "../components/SectionSlider"
 import { CONTENTFUL_SECTION_TYPES } from "../constants/enums"
 import SectionCTA from "../components/SectionCTA"
+import SectionDivider from "../components/SectionDivider"
 
 export const query = graphql`
   query($slug: String!) {
@@ -41,6 +42,12 @@ export const query = graphql`
             file {
               url
             }
+            localFile {
+              publicURL
+            }
+            fluid {
+              ...GatsbyContentfulFluid
+            }
           }
           contentRichText {
             richText {
@@ -71,6 +78,9 @@ export const query = graphql`
               id
               employeeName
               employeePicture {
+                file {
+                  url
+                }
                 fluid {
                   ...GatsbyContentfulFluid
                 }
@@ -79,6 +89,9 @@ export const query = graphql`
               employeeBio {
                 richText {
                   richText
+                  childMarkdownRemark {
+                    html
+                  }
                 }
                 richTextButtons {
                   linkIcon
@@ -151,7 +164,7 @@ function SinglePage({ data }) {
           case CONTENTFUL_SECTION_TYPES.CTA:
             return <SectionCTA data={section} />
           case CONTENTFUL_SECTION_TYPES.DIVIDER:
-            return <div>Divider component here</div>
+            return <SectionDivider data={section} />
           case CONTENTFUL_SECTION_TYPES.GRID:
             return <SectionGrid data={section} />
           case CONTENTFUL_SECTION_TYPES.INSTAGRAM:

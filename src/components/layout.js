@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import Footer from './footer';
-import '../../assets/styles/main.scss';
-import HyperionFooter from "./HyperionFooter";
+import Footer from "./footer"
+import "../../assets/styles/main.scss"
+import HyperionFooter from "./HyperionFooter"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -15,23 +15,33 @@ const Layout = ({ children }) => {
           title
         }
       }
-      hyperionLogo: file(relativePath: {eq: "hyperion-logo-white.svg"}) {
+      hyperionLogo: file(relativePath: { eq: "hyperion-logo-white.svg" }) {
         publicURL
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
       }
-      reevesWhiteLogo: contentfulAsset(title: {eq: "Reeves Catering White Logo"}){
-        file{
+      reevesWhiteLogo: contentfulAsset(
+        title: { eq: "Reeves Catering White Logo" }
+      ) {
+        file {
           url
+        }
+        fluid {
+          ...GatsbyContentfulFluid
         }
       }
     }
   `)
   return (
     <React.Fragment>
-        <>
-          <main>{children}</main>
-          <Footer reevesLogo={data.reevesWhiteLogo} />
-          <HyperionFooter logo={data.hyperionLogo} />
-        </>
+      <>
+        <main>{children}</main>
+        <Footer reevesLogo={data.reevesWhiteLogo} />
+        <HyperionFooter logo={data.hyperionLogo} />
+      </>
     </React.Fragment>
   )
 }

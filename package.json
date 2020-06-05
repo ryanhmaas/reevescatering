@@ -40,7 +40,8 @@
     "react-helmet": "^5.2.1",
     "react-hook-form": "^5.7.2",
     "react-leaflet": "^2.7.0",
-    "react-responsive-carousel": "^3.2.7"
+    "react-responsive-carousel": "^3.2.7",
+    "react-responsive-modal": "^5.0.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
