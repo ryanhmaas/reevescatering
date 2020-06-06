@@ -24,6 +24,7 @@
 
 .c-slider .carousel .control-dots .dot {
 	background-color: $body-color;
+	box-shadow: none;
 }
 
 .c-slider .carousel .carousel-status {
@@ -31,21 +32,48 @@
 }
 
 .c-slider .carousel.carousel-slider .control-arrow {
-	display: none;
-}
-
-.c-slider:not(.-mobile) {
-	@media screen and (max-width: 780px) {
-		display: none !important;
+	@media screen and (max-width: $break3) {
+		display: none;
 	}
 }
 
-.c-slider.-mobile {
-	@media screen and (min-width: 781px) {
-		display: none !important;
-	}
-
+.c-slider .carousel.carousel-slider .control-arrow {
+	padding-left: 20px;
+	padding-right: 20px;
 }
+
+.c-slider .carousel .control-next.control-arrow:before {
+    border-left: 8px solid $body-color;
+}
+
+.c-slider .carousel .control-prev.control-arrow:before {
+    border-right: 8px solid $body-color;
+}
+
+.c-slider.-hide-tablet {
+	@media screen and (max-width: $break1) {
+		display: none;
+	}
+}
+
+.c-slider.-show-tablet {
+	@media screen and (min-width: $break1 + 1px) {
+		display: none;
+	}
+}
+
+.c-slider.-hide-mobile {
+	@media screen and (max-width: $break3) {
+		display: none;
+	}
+}
+
+.c-slider.-show-mobile {
+	@media screen and (min-width: $break3 + 1px) {
+		display: none;
+	}
+}
+
 
 .c-slider.-instagram {
 	overflow: hidden;
@@ -77,4 +105,12 @@
 	text-align: left;
 	transition: opacity 200ms;
 	pointer-events: none;
+}
+
+.c-slider .slide {
+	transition: opacity 200ms;
+}
+
+.c-slider .slide:not(.selected) {
+	opacity: 0.5;
 }

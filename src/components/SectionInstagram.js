@@ -12,7 +12,7 @@ function SectionInstagram() {
             caption
             localFile {
               childImageSharp {
-                fixed(width: 200, height: 200) {
+                fixed(height: 200, width: 200) {
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -26,28 +26,76 @@ function SectionInstagram() {
   let instaEdges = instagramData.allInstaNode.edges
 
   return (
-    <Carousel
-      className="c-slider -instagram"
-      infiniteLoop
-      centerMode
-      centerSlidePercentage={30}
-    >
-      {instaEdges.map(edge => {
-        let node = edge.node
+    <>
+      <Carousel
+        className="c-slider -instagram -hide-tablet"
+        infiniteLoop
+        centerMode
+        centerSlidePercentage={100 / 5}
+      >
+        {instaEdges.map(edge => {
+          let node = edge.node
 
-        return (
-          <figure className="c-slider__insta-item">
-            <Img
-              className="c-slider__insta-img"
-              fixed={node.localFile?.childImageSharp?.fixed}
-            />
-            <figcaption className="c-slider__insta-caption">
-              {node.caption}
-            </figcaption>
-          </figure>
-        )
-      })}
-    </Carousel>
+          return (
+            <figure className="c-slider__insta-item">
+              <Img
+                className="c-slider__insta-img"
+                fixed={node.localFile?.childImageSharp?.fixed}
+              />
+              <figcaption className="c-slider__insta-caption">
+                {node.caption}
+              </figcaption>
+            </figure>
+          )
+        })}
+      </Carousel>
+
+      <Carousel
+        className="c-slider -instagram -show-tablet -hide-mobile"
+        infiniteLoop
+        centerMode
+        centerSlidePercentage={100 / 3}
+      >
+        {instaEdges.map(edge => {
+          let node = edge.node
+
+          return (
+            <figure className="c-slider__insta-item">
+              <Img
+                className="c-slider__insta-img"
+                fixed={node.localFile?.childImageSharp?.fixed}
+              />
+              <figcaption className="c-slider__insta-caption">
+                {node.caption}
+              </figcaption>
+            </figure>
+          )
+        })}
+      </Carousel>
+      
+      <Carousel
+        className="c-slider -instagram -show-mobile"
+        infiniteLoop
+        centerMode
+        centerSlidePercentage={100}
+      >
+        {instaEdges.map(edge => {
+          let node = edge.node
+
+          return (
+            <figure className="c-slider__insta-item">
+              <Img
+                className="c-slider__insta-img"
+                fixed={node.localFile?.childImageSharp?.fixed}
+              />
+              <figcaption className="c-slider__insta-caption">
+                {node.caption}
+              </figcaption>
+            </figure>
+          )
+        })}
+      </Carousel>
+    </>
   )
 }
 

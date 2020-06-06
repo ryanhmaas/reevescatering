@@ -23,7 +23,7 @@ function SectionSlider({ data }) {
       <h3 className="c-slider__title" style={{textAlign: 'center'}}>{sliderName}</h3>
         {sliderItems.length > 0 && (
           <Carousel
-            className="c-slider"
+            className="c-slider -hide-mobile"
             infiniteLoop
             centerMode
             centerSlidePercentage={slideSize}
@@ -37,7 +37,7 @@ function SectionSlider({ data }) {
         {/* Dupe for mobile */}
         {sliderItems.length > 0 && (
           <Carousel
-            className="c-slider -mobile"
+            className="c-slider -show-mobile"
             infiniteLoop
             centerMode
             centerSlidePercentage={100}
