@@ -85,8 +85,8 @@ module.exports = {
 				access_token:
 					'EAAE5dILH2oQBALjToy0zrL0zuzByEcTpKLE1c9hshnbpfzZAG272dAahHbNFBBiqSPQkycnTom2uwnUUZCKZCkTMz6z1WwUnwk05o51fcNtZBi2ggpTdGlfpPk0vsk5odYH608AxLRzmlXlUYZCRBAHvC9OAjKPZAnIh9I1VIfrB17C8S18xGO',
 				instagram_id: '17841400241165626',
-				paginate: 4,
-				maxPosts: 4
+				paginate: 5,
+				maxPosts: 5
 			}
 		}
 	]

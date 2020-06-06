@@ -26,16 +26,15 @@ function SectionGrid({ data }) {
 	const showGridItems = gridItems.length > 0;
 	return (
 		<section className="grid-section">
-			{'grid name: ' + gridName}
-			{'display grid:' + displayGridName}
-			{'item length' + gridItems.length}
 			{displayGridName &&
 				<h3 className="grid__title">{gridName}</h3>
 			}
 			{showGridItems && (
 				<div className={classNames('grid', { 'employee-grid': gridType === 'EmployeeGrid' })}>
 					{gridItems.map((item, index) => {
-						return gridItem(item);
+						return (
+							gridItem(item)
+						)
 					})}
 				</div>
 			)}

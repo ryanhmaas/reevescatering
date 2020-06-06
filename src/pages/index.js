@@ -154,6 +154,10 @@ const INDEX_PAGE_QUERY = graphql`
           }
           sliderName
         }
+        ... on ContentfulSectionInstagram {
+          instagramName
+          displayInstagramName
+        }
       }
     }
   }
@@ -179,7 +183,7 @@ const IndexPage = () => (
                 case CONTENTFUL_SECTION_TYPES.GRID:
                   return <SectionGrid data={section} />
                 case CONTENTFUL_SECTION_TYPES.INSTAGRAM:
-                  return <SectionInstagram />
+                  return <SectionInstagram data={section} />
                 case CONTENTFUL_SECTION_TYPES.SLIDER:
                   return <SectionSlider data={section} />
                 default:
@@ -190,7 +194,6 @@ const IndexPage = () => (
         )
       }}
     />
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 

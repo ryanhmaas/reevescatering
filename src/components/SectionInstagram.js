@@ -3,7 +3,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Carousel } from "react-responsive-carousel"
 import Img from "gatsby-image"
 
-function SectionInstagram() {
+function SectionInstagram({ data }) {
+
+  const {instagramName, displayInstagramName} = data
+
   const instagramData = useStaticQuery(graphql`
     query InstaQuery {
       allInstaNode(limit: 4, sort: { fields: timestamp, order: DESC }) {
@@ -27,6 +30,9 @@ function SectionInstagram() {
 
   return (
     <>
+    {displayInstagramName && 
+      <h3 className="c-slider__title" style={{textAlign: 'center'}}>{instagramName}</h3>
+    }
       <Carousel
         className="c-slider -instagram -hide-tablet"
         infiniteLoop
