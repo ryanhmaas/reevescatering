@@ -37,7 +37,6 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    height: 25vh;
 
     &__btn {
       width: 10rem;
@@ -53,6 +52,12 @@
   .form-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.5rem;
+
+    input:focus,
+    textarea:focus {
+      outline: $reeves-green auto 1px;
+    }
   }
 
   .contact-group__name {
@@ -61,7 +66,7 @@
     justify-content: space-between;
   }
 
-  @media screen and (max-height: 639px) {
+  @media screen and (max-width: 639px) {
     position: relative;
     max-width: inherit;
   }

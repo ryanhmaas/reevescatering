@@ -10,7 +10,8 @@ function SectionContent({ data }) {
   let richText = contentRichText
   let imageData = contentImage
 
-  console.log(imageData)
+  console.log("layout", layout)
+  console.log("imageData", imageData)
   return (
     <section class="c-content">
       {layout === "rich text only" && (

@@ -115,9 +115,13 @@ export const query = graphql`
               id
               venueDescription
               venueName
+              websiteLink
               venueImage {
                 file {
                   url
+                }
+                fluid {
+                  ...GatsbyContentfulFluid
                 }
               }
             }
