@@ -5,3 +5,34 @@
 .c-rich-text__c-btn-wrapper {
 	margin-top: 2rem;
 }
+
+.c-rich-text blockquote {
+	position: relative;
+	font-style: italic;
+	
+	&::before {
+		content: '\275D';
+		position: absolute;
+		top: -20px;
+		left: -20px;
+		font-size: 5em;
+		margin: 0;
+		line-height: 1;
+		opacity: 0.1;
+	}
+
+	&::after {
+		content: '\275E';
+		position: absolute;
+		bottom: -30px;
+		right: -10px;
+		font-size: 5em;
+		margin: 0;
+		line-height: 1;
+		opacity: 0.1;
+	}
+}
+
+.c-rich-text blockquote + * {
+	text-align: right;
+}

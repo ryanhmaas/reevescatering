@@ -1,15 +1,24 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { Carousel } from "react-responsive-carousel"
+import Img from "gatsby-image"
 
-function SectionInstagram() {
+function SectionInstagram({ data }) {
+
+  const {instagramName, displayInstagramName} = data
+
   const instagramData = useStaticQuery(graphql`
     query InstaQuery {
       allInstaNode(limit: 4, sort: { fields: timestamp, order: DESC }) {
         edges {
           node {
             caption
-            thumbnails {
-              src
+            localFile {
+              childImageSharp {
+                fixed(height: 200, width: 200) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
             }
           }
         }
@@ -20,24 +29,79 @@ function SectionInstagram() {
   let instaEdges = instagramData.allInstaNode.edges
 
   return (
-    <div>
-      {instaEdges.map(edge => {
-        let node = edge.node
-        let hasImg = node.thumbnails.length > 0
-        let imgSrc = ""
+    <>
+    {displayInstagramName && 
+      <h3 className="c-slider__title" style={{textAlign: 'center'}}>{instagramName}</h3>
+    }
+      <Carousel
+        className="c-slider -instagram -hide-tablet"
+        infiniteLoop
+        centerMode
+        centerSlidePercentage={100 / 5}
+      >
+        {instaEdges.map(edge => {
+          let node = edge.node
 
-        //to-do: switch to Gatsby-image
-        if (hasImg) {
-          imgSrc = node.thumbnails[0].src
-        }
-        return (
-          <div>
-            <span>{node.caption}</span>
-            <img src={imgSrc} />
-          </div>
-        )
-      })}
-    </div>
+          return (
+            <figure className="c-slider__insta-item">
+              <Img
+                className="c-slider__insta-img"
+                fixed={node.localFile?.childImageSharp?.fixed}
+              />
+              <figcaption className="c-slider__insta-caption">
+                {node.caption}
+              </figcaption>
+            </figure>
+          )
+        })}
+      </Carousel>
+
+      <Carousel
+        className="c-slider -instagram -show-tablet -hide-mobile"
+        infiniteLoop
+        centerMode
+        centerSlidePercentage={100 / 3}
+      >
+        {instaEdges.map(edge => {
+          let node = edge.node
+
+          return (
+            <figure className="c-slider__insta-item">
+              <Img
+                className="c-slider__insta-img"
+                fixed={node.localFile?.childImageSharp?.fixed}
+              />
+              <figcaption className="c-slider__insta-caption">
+                {node.caption}
+              </figcaption>
+            </figure>
+          )
+        })}
+      </Carousel>
+      
+      <Carousel
+        className="c-slider -instagram -show-mobile"
+        infiniteLoop
+        centerMode
+        centerSlidePercentage={100}
+      >
+        {instaEdges.map(edge => {
+          let node = edge.node
+
+          return (
+            <figure className="c-slider__insta-item">
+              <Img
+                className="c-slider__insta-img"
+                fixed={node.localFile?.childImageSharp?.fixed}
+              />
+              <figcaption className="c-slider__insta-caption">
+                {node.caption}
+              </figcaption>
+            </figure>
+          )
+        })}
+      </Carousel>
+    </>
   )
 }
 

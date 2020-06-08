@@ -1,11 +1,11 @@
 .section-divider {
   position: relative;
-  margin: 5rem 0;
+  margin: 6rem 0;
 
   &:before {
     content: '';
     width: calc(50% - 60px);
-    background:#E5E5E5;
+    background:#C4C4C4;
     position: absolute;
     right: 0;
     height: 1px;
@@ -16,11 +16,15 @@
   &:after {
     content: '';
     width: calc(50% - 60px);
-    background:#E5E5E5;
+    background:#C4C4C4;
     position: absolute;
     left: 0;
     height: 1px;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  @media screen and (max-width: $break2) {
+    margin: 3rem 0;
   }
 }
