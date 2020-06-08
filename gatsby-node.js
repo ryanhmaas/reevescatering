@@ -66,14 +66,17 @@ exports.createPages = ({ graphql, actions }) => {
       // Resolve the paths to our template
       const pageTemplate = path.resolve("./src/templates/page.js")
       // Then for each result we create a page.
+
       result.data.allContentfulPageSingle.edges.forEach(edge => {
-        createPage({
-          path: `/${edge.node.slug}/`,
-          component: slash(pageTemplate),
-          context: {
-            slug: edge.node.slug,
-          },
-        })
+        if (edge.node.slug !== "home") {
+          createPage({
+            path: `/${edge.node.slug}/`,
+            component: slash(pageTemplate),
+            context: {
+              slug: edge.node.slug,
+            },
+          })
+        }
       })
     })
     .catch(error => {

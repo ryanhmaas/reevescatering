@@ -13,11 +13,14 @@
 	height: 100vh;
 	width: 100%;
 	background-attachment: fixed;
+
+	@media screen and (max-width: $break3) {
+		height: calc(100vh - 20rem);
+	}
 }
 
 .c-background-img.-full .c-rich-text {
 	margin-bottom: 1rem;
-	
 }
 
 .c-background-img .c-rich-text__c-btn-wrapper .c-btn.-outline {
@@ -61,6 +64,17 @@
 	align-self: center;
 	width: 100%;
 	margin-bottom: 6rem;
+
+
+	@media screen and (max-width: $break3) {
+		align-items: center;
+
+		.c-rich-text h1 {
+			font-size: 1.8rem;
+			text-align: center;
+		}
+	}
+
 
 }
 

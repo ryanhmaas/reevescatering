@@ -3,6 +3,7 @@
 	display: flex;
 	align-items: center;
 	position: relative;
+	z-index: 0;
 }
 
 .c-img-text__img-wrapper {
@@ -19,6 +20,7 @@
 
 .c-img-text.-right .c-img-text__img-wrapper {
 	margin-left: auto;
+	z-index: 1;
 }
 
 .c-img-text__content {
@@ -36,4 +38,5 @@
 	right: auto;
 	border-left: 0;
 	border-right: 4px solid $reeves-green;
+	z-index: 2;
 }

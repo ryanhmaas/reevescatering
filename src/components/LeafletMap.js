@@ -5,7 +5,6 @@ import "leaflet/dist/leaflet.css"
 
 const LeafletMap = props => {
   const mapRef = useRef("mapref")
-  const { lat, long } = props
   const position = [34.8828485, -82.3527332]
 
   useEffect(() => {

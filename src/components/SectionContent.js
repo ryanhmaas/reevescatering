@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import BackgroundImage from "gatsby-background-image-es5"
 import ItemRichText from "../components/ItemRichText"
+import Img from "gatsby-image"
 
 function SectionContent({ data }) {
   const { contentLayout, contentRichText, contentImage } = data
@@ -9,6 +10,8 @@ function SectionContent({ data }) {
   let richText = contentRichText
   let imageData = contentImage
 
+  console.log("layout", layout)
+  console.log("imageData", imageData)
   return (
     <section class="c-content">
       {layout === "rich text only" && (
@@ -22,7 +25,7 @@ function SectionContent({ data }) {
       {layout === "image on left" && (
         <figure className="c-content__c-img-text c-img-text u-container -lg">
           <div className="c-img-text__img-wrapper">
-            <img className="c-img-text__img" src={imageData?.file?.url} />
+            <Img className="c-img-text__img" fluid={imageData?.fluid} />{" "}
           </div>
           <figcaption className="c-img-text__content">
             <ItemRichText {...richText} />
@@ -32,13 +35,13 @@ function SectionContent({ data }) {
 
       {layout === "image on right" && (
         <figure className="c-content__c-img-text c-img-text -right u-container -lg">
-        <figcaption className="c-img-text__content">
-          <ItemRichText {...richText} />
-        </figcaption>
-        <div className="c-img-text__img-wrapper">
-          <img className="c-img-text__img" src={imageData.file.url} />
-        </div>
-      </figure>
+          <figcaption className="c-img-text__content">
+            <ItemRichText {...richText} />
+          </figcaption>
+          <div className="c-img-text__img-wrapper">
+            <Img className="c-img-text__img" fluid={imageData?.fluid} />
+          </div>
+        </figure>
       )}
 
       {layout === "image as background (banner)" && (
