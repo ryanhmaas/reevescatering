@@ -11,145 +11,145 @@ import SectionCTA from "../components/SectionCTA"
 import SectionDivider from "../components/SectionDivider"
 
 export const query = graphql`
-  query($slug: String!) {
-    contentfulPageSingle(slug: { eq: $slug }) {
-      pageName
-      slug
-      pageSections {
-        ... on ContentfulSectionCallToAction {
-          id
-          callToActionBorder
-          callToActionTitle
-          callToActionButton {
-            linkIcon
-            linkIconPlacement
-            linkSourceExternal
-            linkName
-            linkSourceInternal {
-              slug
-            }
-          }
-        }
-        ... on ContentfulSectionDivider {
-          id
-          dividerType
-        }
-        ... on ContentfulSectionContent {
-          id
-          contentName
-          contentLayout
-          contentImage {
-            file {
-              url
-            }
-            localFile {
-              publicURL
-            }
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
-          contentRichText {
-            richText {
-              childMarkdownRemark {
-                html
-              }
-            }
-            richTextButtons {
-              linkName
-              linkSourceExternal
-              linkIconPlacement
-              linkIcon
-              linkSourceInternal {
-                pageName
-              }
-              linkType
-            }
-            richTextJustification
-          }
-        }
-        ... on ContentfulSectionGrid {
-          id
-          displayGridName
-          gridName
-          gridType
-          gridItems {
-            ... on ContentfulItemEmployee {
-              id
-              employeeName
-              employeePicture {
-                file {
-                  url
-                }
-                fluid {
-                  ...GatsbyContentfulFluid
-                }
-              }
-              employeeRole
-              employeeBio {
-                richText {
-                  richText
-                  childMarkdownRemark {
-                    html
-                  }
-                }
-                richTextButtons {
-                  linkIcon
-                  linkIconPlacement
-                  linkName
-                  linkSourceExternal
-                  linkSourceInternal {
-                    slug
-                  }
-                }
-                richTextJustification
-              }
-            }
-            ... on ContentfulItemIcon {
-              id
-              displayIconName
-              faIcon
-              iconName
-            }
-            ... on ContentfulItemVenue {
-              id
-              venueDescription
-              venueName
-              websiteLink
-              venueImage {
-                file {
-                  url
-                }
-                fluid {
-                  ...GatsbyContentfulFluid
-                }
-              }
-            }
-          }
-        }
-        ... on ContentfulSectionSlider {
-          id
-          displaySliderName
-          sectionType
-          sliderItems {
-            ... on ContentfulItemAward {
-              id
-              awardDescription
-              awardTitle
-            }
-            ... on ContentfulItemRichText {
-              id
-              richText {
-                richText
-              }
-            }
-          }
-          sliderName
-        }
-      }
-    }
-  }
-`
+         query($slug: String!) {
+           contentfulPageSingle(slug: { eq: $slug }) {
+             pageName
+             slug
+             pageSections {
+               ... on ContentfulSectionCallToAction {
+                 id
+                 callToActionBorder
+                 callToActionTitle
+                 callToActionButton {
+                   linkIcon
+                   linkIconPlacement
+                   linkSourceExternal
+                   linkName
+                   linkSourceInternal {
+                     slug
+                   }
+                 }
+               }
+               ... on ContentfulSectionDivider {
+                 id
+                 dividerType
+               }
+               ... on ContentfulSectionContent {
+                 id
+                 contentName
+                 contentLayout
+                 contentImage {
+                   file {
+                     url
+                   }
+                   localFile {
+                     publicURL
+                   }
+                   fluid {
+                     ...GatsbyContentfulFluid
+                   }
+                 }
+                 contentRichText {
+                   richText {
+                     childMarkdownRemark {
+                       html
+                     }
+                   }
+                   richTextButtons {
+                     linkName
+                     linkSourceExternal
+                     linkIconPlacement
+                     linkIcon
+                     linkSourceInternal {
+                       pageName
+                     }
+                     linkType
+                   }
+                   richTextJustification
+                 }
+               }
+               ... on ContentfulSectionGrid {
+                 id
+                 displayGridName
+                 gridName
+                 gridType
+                 gridItems {
+                   ... on ContentfulItemEmployee {
+                     id
+                     employeeName
+                     employeePicture {
+                       file {
+                         url
+                       }
+                       fluid {
+                         ...GatsbyContentfulFluid
+                       }
+                     }
+                     employeeRole
+                     employeeBio {
+                       richText {
+                         richText
+                         childMarkdownRemark {
+                           html
+                         }
+                       }
+                       richTextButtons {
+                         linkIcon
+                         linkIconPlacement
+                         linkName
+                         linkSourceExternal
+                         linkSourceInternal {
+                           slug
+                         }
+                       }
+                       richTextJustification
+                     }
+                   }
+                   ... on ContentfulItemIcon {
+                     id
+                     displayIconName
+                     faIcon
+                     iconName
+                   }
+                   ... on ContentfulItemVendor {
+                     id
+                     venueDescription
+                     venueName
+                     websiteLink
+                     venueImage {
+                       file {
+                         url
+                       }
+                       fluid {
+                         ...GatsbyContentfulFluid
+                       }
+                     }
+                   }
+                 }
+               }
+               ... on ContentfulSectionSlider {
+                 id
+                 displaySliderName
+                 sectionType
+                 sliderItems {
+                   ... on ContentfulItemAward {
+                     id
+                     awardDescription
+                     awardTitle
+                   }
+                   ... on ContentfulItemRichText {
+                     id
+                     richText {
+                       richText
+                     }
+                   }
+                 }
+                 sliderName
+               }
+             }
+           }
+         }
+       `
 
 function SinglePage({ data }) {
   let hasSections =

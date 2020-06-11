@@ -20,13 +20,13 @@ function ItemEmployee(props) {
     <div className="employee-grid__item">
       <div className="employee-container">
         {employeePicture && employeePicture.fluid != null && (
-          <div className="image-container">
+          <div className="image-container" onClick={() => onOpenModal()}>
             <Img
               fluid={employeePicture.fluid}
               className="employee-pic"
               alt="test"
             />
-            <div className="employee-ds" onClick={() => onOpenModal()}>
+            <div className="employee-ds">
               <p className="employee-ds__name">{employeeName}</p>
               <p>Role</p>
             </div>
