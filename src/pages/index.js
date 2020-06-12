@@ -18,6 +18,16 @@ const INDEX_PAGE_QUERY = graphql`
 			pageName
 			slug
 			pageSections {
+				... on ContentfulSectionList {
+					displayTitle
+					title
+					listItems {
+						vendorType
+						venueDescription
+						venueName
+						websiteLink
+					}
+				}
 				... on ContentfulSectionCallToAction {
 					id
 					callToActionBorder
