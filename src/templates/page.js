@@ -10,6 +10,7 @@ import { CONTENTFUL_SECTION_TYPES } from '../constants/enums';
 import SectionCTA from '../components/SectionCTA';
 import SectionDivider from '../components/SectionDivider';
 import SectionList from '../components/SectionList';
+import SEO from '../components/seo';
 
 export const query = graphql`
 	query($slug: String!) {
@@ -163,12 +164,15 @@ export const query = graphql`
 `;
 
 function SinglePage({ data }) {
+	console.log(data);
 	let hasSections = data.contentfulPageSingle.pageSections && data.contentfulPageSingle.pageSections.length > 0;
 	if (!hasSections) {
 		return <Layout>No sections configured yet.</Layout>;
 	}
 	return (
 		<Layout>
+			<SEO title="Home" />
+
 			{data.contentfulPageSingle.pageSections.map((section) => {
 				let typeName = section['__typename'];
 				switch (typeName) {

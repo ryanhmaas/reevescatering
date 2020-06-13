@@ -48,6 +48,7 @@ function ItemRichText(props) {
                       }
                       target="_blank"
                       name={btn.linkName}
+                      rel="noopener noreferrer"
                     >
                       {btn.linkName} <ItemIcon iconName={btn.linkIcon} />
                     </a>
