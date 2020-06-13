@@ -6,7 +6,6 @@ import { Modal } from "react-responsive-modal"
 function ItemEmployee(props) {
   const [modalOpen, setModalOpen] = useState(false)
   const { employeeName, employeePicture, employeeRole, employeeBio } = props
-  let employeeData = employeeBio?.richText?.richText
   const html = employeeBio?.richText?.childMarkdownRemark?.html
 
   const onOpenModal = () => {
@@ -16,11 +15,18 @@ function ItemEmployee(props) {
     setModalOpen(false)
   }
 
+  const handleKeyDown = (ev) => {
+    // check keys if you want
+    if (ev.keyCode === 13) {
+      setModalOpen(true);
+    }
+  }
+
   return (
     <div className="employee-grid__item">
       <div className="employee-container">
         {employeePicture && employeePicture.fluid != null && (
-          <div className="image-container" onClick={() => onOpenModal()}>
+          <div role="presentation" className="image-container" onClick={() => onOpenModal()} onKeyDown={handleKeyDown}>
             <Img
               fluid={employeePicture.fluid}
               className="employee-pic"

@@ -9,13 +9,15 @@ function SectionList(props) {
 			<div class="c-list__container">
 				{listItems.map((item) => {
 					return (
-						<div class="c-list__title">
-							{item.websiteLink && (
-								<a href={item.websiteLink} target="_blank">
-									{item.venueName}
-								</a>
-							)}
-							{!item.websiteLink && <span>{item.venueName}</span>}
+						<div class="c-list__item">
+							<div class="c-list__title">
+								{item.websiteLink && (
+									<a href={item.websiteLink} target="_blank" rel="noopener noreferrer">
+										{item.venueName}
+									</a>
+								)}
+								{!item.websiteLink && <span>{item.venueName}</span>}
+							</div>
 						</div>
 					);
 				})}

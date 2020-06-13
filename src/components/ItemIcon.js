@@ -12,7 +12,8 @@ import {
 } from '@fortawesome/pro-solid-svg-icons';
 
 function ItemIcon(props) {
-	const { displayIconName, faIcon, iconName } = props;
+	const { faIcon, iconName } = props;
+ // displayIconName also exists
 
 	const capitalize = (s) => {
 		return s.toLowerCase().replace(/\b./g, function(a) {
@@ -50,6 +51,8 @@ function ItemIcon(props) {
 			case 'faWineGlassAlt': {
 				return faWineGlassAlt;
 			}
+			default: 
+				return faRingsWedding;
 		}
 	};
 

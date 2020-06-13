@@ -9,8 +9,11 @@
 			color: $reeves-gray;
 			font-size: 1.25rem;
 			line-height: 1rem;
+			position: relative;
+			display: inline-block;
 
 			&::after {
+				margin-top: .25rem;
 				display: block;
 				content: '';
 				border-bottom: solid 3px $reeves-green;
@@ -28,11 +31,27 @@
 
 	&__container {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-around;
 	}
 
 	&__item {
 		flex: 0 0 33.333333%;
 		text-align: center;
+	}
+
+	@media screen and (max-width: $break4) {
+		&__title a:hover::after {
+			display: none;
+			transform: none;
+		}
+
+		&__container {
+			flex-direction: column;
+		}
+
+		&__item {
+			flex: 0 0 100%;
+		}
 	}
 }

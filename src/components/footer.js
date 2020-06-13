@@ -74,7 +74,7 @@ const Footer = props => {
                 <Link to="/">Press</Link>
               </p>
               <p>
-                <Link to="/">Vendors</Link>
+                <Link to="/vendors">Vendors</Link>
               </p>
             </div>
           </div>
