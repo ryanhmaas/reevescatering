@@ -15,11 +15,13 @@
 	transition-property: background, border, color, box-shadow;
 	transition-duration: 100ms;
 	line-height: 1;
+	white-space: nowrap;
 
 	&:hover,
 	&:focus {
 		background-color: darken($reeves-green, 6);
 		border-color: darken($reeves-green, 6);
+		outline: none;
 
 		[data-icon] {
 			transform: translateX(0.3rem);
