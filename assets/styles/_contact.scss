@@ -1,14 +1,19 @@
+.leaflet {
+  position: relative;
+}
+
 .contact-section {
   z-index: 10;
   position: absolute;
-  top: 20%;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
-  background-color: #fff;
+  background: rgba(#fff, 0.8);
+	backdrop-filter: $backdrop-blur;
   border-left: 3px solid #7ac142;
-  max-height: 50vh;
   padding: 2rem;
   border-radius: 2px;
-  max-width: 35%;
+  max-width: 45%;
 
   h2 {
     color: #60973a;
@@ -21,6 +26,7 @@
     color: #555555;
     font-size: 14px;
     line-height: 2;
+    margin-bottom: 3rem;
   }
 
   input {
@@ -33,41 +39,29 @@
     color: #7ac142;
   }
 
-  .contact-form {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-
-    &__btn {
-      width: 10rem;
-      cursor: pointer;
-    }
-
-    .btn-message {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5rem;
-
-    input:focus,
-    textarea:focus {
-      outline: $reeves-green auto 1px;
-    }
-  }
-
-  .contact-group__name {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  @media screen and (max-width: 639px) {
+  @media screen and (max-width: $break3) {
     position: relative;
     max-width: inherit;
+    transform: none;
+    order: 1;
+  }
+
+  .contact-form__btn {
+    margin-top: 2rem;
+  }
+
+}
+
+
+.leaflet__wrapper {
+  @media screen and (max-width: $break3) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.leaflet-container {
+  @media screen and (max-width: $break3) {
+    order: 2;
   }
 }

@@ -1,0 +1,57 @@
+.c-list {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	&__title {
+		text-align: center;
+
+		a {
+			text-decoration: none;
+			color: $reeves-gray;
+			font-size: 1.25rem;
+			line-height: 1rem;
+			position: relative;
+			display: inline-block;
+
+			&::after {
+				margin-top: .25rem;
+				display: block;
+				content: '';
+				border-bottom: solid 3px $reeves-green;
+				transform: scaleX(0);
+				transition: transform .3s ease-in-out;
+			}
+
+			&:hover {
+				&::after {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	&__item {
+		flex: 0 0 33.333333%;
+		text-align: center;
+	}
+
+	@media screen and (max-width: $break4) {
+		&__title a:hover::after {
+			display: none;
+			transform: none;
+		}
+
+		&__container {
+			flex-direction: column;
+		}
+
+		&__item {
+			flex: 0 0 100%;
+		}
+	}
+}

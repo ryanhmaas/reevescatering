@@ -8,9 +8,6 @@ function ItemRichText(props) {
   const button = richText.richTextButtons
   const justify = richText.richTextJustification?.toLowerCase()
   let buttonClass = ""
-
-  console.log(justify)
-
   return (
     <>
       <div
@@ -40,7 +37,7 @@ function ItemRichText(props) {
                       {btn.linkName} <ItemIcon iconName={btn.linkIcon} />
                     </Link>
                   )}
-                  {btn.linkType.toLowerCase() === "external page" && (
+                  {btn.linkType.toLowerCase() === "external website" && (
                     <a
                       className={buttonClass}
                       href={
@@ -48,6 +45,7 @@ function ItemRichText(props) {
                       }
                       target="_blank"
                       name={btn.linkName}
+                      rel="noopener noreferrer"
                     >
                       {btn.linkName} <ItemIcon iconName={btn.linkIcon} />
                     </a>

@@ -1,6 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
-import BackgroundImage from "gatsby-background-image-es5"
 import ItemRichText from "../components/ItemRichText"
 import Img from "gatsby-image"
 
