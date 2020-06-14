@@ -1,45 +1,58 @@
 .venue-grid {
-  display: flex;
-  flex-wrap: wrap;
-  font-family: "Open Sans";
+	display: flex;
+	flex-wrap: wrap;
+	font-family: "Open Sans";
 
-  &__item {
-    flex: 0 0 33.333333%;
-    text-align: center;
-  }
+	&__item {
+		flex: 0 0 33.333333%;
+		text-align: center;
+	}
 
-  .venue-container {
-    padding: 1rem;
-    position: relative;
-  }
+	.venue-container {
+		padding: 1rem;
+		position: relative;
+	}
 
-  .image-container {
-    box-shadow: 0px 34px 84px rgba(54, 56, 61, 0.09),
-      0px 11px 24px rgba(54, 56, 61, 0.15);
-  }
+	.image-container {
+		box-shadow: 0px 34px 84px rgba(54, 56, 61, 0.09), 0px 11px 24px rgba(54, 56, 61, 0.15);
+	}
 
-  .venue-details {
-    background-color: rgba(223, 223, 223, 0.8);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	.venue-details {
+		background-color: rgba(223, 223, 223, 0.8);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
-    &__name {
-      font-weight: 700;
-    }
+		&__name {
+			font-weight: 700;
+		}
 
-    &__ds {
-      font-style: italic;
-    }
+		&__ds {
+			font-style: italic;
+		}
 
-    &__link {
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.3s ease;
+		&__link {
+			text-decoration: none;
+			color: inherit;
+			transition: all 0.3s ease;
 
-      &:hover {
-        color: $reeves-dark-green;
-      }
-    }
-  }
+			&:hover {
+				color: $reeves-dark-green;
+			}
+		}
+	}
+
+	@media screen and (max-width: $break3) {
+		&__item {
+			flex: 0 0 50%;
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width: $break4) {
+		&__item {
+			flex: 0 0 100%;
+			text-align: center;
+		}
+	}
 }
