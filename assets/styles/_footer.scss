@@ -60,6 +60,11 @@
   .social-item__container {
     display: flex;
     align-items: center;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
   }
 
   @media screen and (max-width: 768px) {
