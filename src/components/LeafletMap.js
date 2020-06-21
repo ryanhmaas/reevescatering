@@ -26,7 +26,7 @@ const LeafletMap = props => {
         zoom={13}
         maxZoom={16}
         ref={mapRef}
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

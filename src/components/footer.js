@@ -1,10 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons"
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { faPhone, faEnvelope } from "@fortawesome/pro-solid-svg-icons"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -38,7 +34,7 @@ const Footer = props => {
           <div className="footer-text">
             <p>
               <FontAwesomeIcon className="mr-1/2" icon={faPhone} />
-              +0800-123-4567
+              864-275-0021
             </p>
             <p>
               <FontAwesomeIcon className="mr-1/2" icon={faEnvelope} />
@@ -54,13 +50,10 @@ const Footer = props => {
                 <Link to="/">Home</Link>
               </p>
               <p>
-                <Link to="/">Portfolio</Link>
+                <Link to="/reviews">Reviews</Link>
               </p>
               <p>
-                <Link to="/">Reviews</Link>
-              </p>
-              <p>
-                <Link to="/">Contact</Link>
+                <Link to="/contact-us">Contact</Link>
               </p>
             </div>
             <div className="footer-text">
@@ -69,9 +62,6 @@ const Footer = props => {
               </p>
               <p>
                 <Link to="/meet-the-team">Staff</Link>
-              </p>
-              <p>
-                <Link to="/">Press</Link>
               </p>
               <p>
                 <Link to="/vendors">Vendors</Link>
@@ -83,16 +73,24 @@ const Footer = props => {
           <div className="footer-header">Social</div>
           <div className="footer-text social-links">
             <p className="social-item__container">
-              <FontAwesomeIcon className="mr-1/2" icon={faInstagram} />
-              Instagram
+              <a
+                href="https://www.instagram.com/reevescatering/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FontAwesomeIcon className="mr-1/2" icon={faInstagram} />
+                Instagram
+              </a>
             </p>
             <p className="social-item__container">
-              <FontAwesomeIcon className="mr-1/2" icon={faFacebook} />
-              Facebook
-            </p>
-            <p className="social-item__container">
-              <FontAwesomeIcon className="mr-1/2" icon={faTwitter} />
-              Twitter
+              <a
+                href="https://www.facebook.com/JustinReevesCatering/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FontAwesomeIcon className="mr-1/2" icon={faFacebook} />
+                Facebook
+              </a>
             </p>
           </div>
         </div>
