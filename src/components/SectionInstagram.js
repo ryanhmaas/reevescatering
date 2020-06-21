@@ -29,7 +29,7 @@ function SectionInstagram({ data }) {
   let instaEdges = instagramData.allInstaNode.edges
 
   return (
-    <>
+    <div >
     {displayInstagramName && 
       <h3 className="c-slider__title" style={{textAlign: 'center'}}>{instagramName}</h3>
     }
@@ -101,7 +101,7 @@ function SectionInstagram({ data }) {
           )
         })}
       </Carousel>
-    </>
+    </div>
   )
 }
 
