@@ -87,14 +87,12 @@
   right: 0;
   bottom: 20%;
   left: 0;
-  transform: translateZ(-0.5px) scale(1.5);
 
   @media screen and (max-width: $break3) {
     align-items: center;
     height: 100%;
     margin: 0;
     padding: 0;
-    transform: translateZ(0) scale(1);
     background: rgba(0,0,0,0.5);
     position: absolute;
     top: 0;
@@ -138,14 +136,6 @@
     rgba(54, 56, 61, 0) 100%
   );
   z-index: 2;
-
-  > * {
-    transform: translateZ(-0.1px) scale(1.1);
-
-    @media screen and (max-width: $break3) {
-      transform: translateZ(0px) scale(1);
-    }
-  }
 
   .c-rich-text {
     color: #fff;
