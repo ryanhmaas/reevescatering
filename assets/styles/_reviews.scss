@@ -1,0 +1,21 @@
+.review-container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 5rem;
+  box-shadow: $box-shadow;
+
+  & > div {
+    border-radius: 10px !important;
+  }
+}
+
+.weddingwireWidget.weddingwireWidget--red {
+  border: none !important;
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

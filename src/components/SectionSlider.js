@@ -20,7 +20,7 @@ function SectionSlider({ data }) {
 	let slideSize = 60;
 
 	return (
-		<div className="c-slider__wrapper" style={{ overflow: 'hidden' }}>
+		<div className="c-slider__wrapper" >
 			<h3 className="c-slider__title" style={{ textAlign: 'center' }}>
 				{sliderName}
 			</h3>

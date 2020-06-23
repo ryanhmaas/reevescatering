@@ -11,72 +11,75 @@ function SectionContent({ data }) {
   console.log("layout", layout)
   console.log("imageData", imageData)
   return (
-    <section class="c-content">
+    <>
       {layout === "rich text only" && (
-        <article className="c-content__c-rich-text-only c-rich-text-only">
-          <div className="u-container">
-            <ItemRichText {...richText} />
-          </div>
-        </article>
+        <section class="c-content" style={{zIndex: 2}}>
+          <article className="c-content__c-rich-text-only c-rich-text-only">
+            <div className="u-container">
+              <ItemRichText {...richText} />
+            </div>
+          </article>
+        </section>
       )}
 
       {layout === "image on left" && (
-        <figure className="c-content__c-img-text c-img-text u-container -lg">
-          <div className="c-img-text__img-wrapper">
-            <Img className="c-img-text__img" fluid={imageData?.fluid} />{" "}
-          </div>
-          <figcaption className="c-img-text__content">
-            <ItemRichText {...richText} />
-          </figcaption>
-        </figure>
-      )}
-
-      {layout === "image on right" && (
-        <figure className="c-content__c-img-text c-img-text -right u-container -lg">
-          <figcaption className="c-img-text__content">
-            <ItemRichText {...richText} />
-          </figcaption>
-          <div className="c-img-text__img-wrapper">
-            <Img className="c-img-text__img" fluid={imageData?.fluid} />
-          </div>
-        </figure>
-      )}
-
-      {layout === "image as background (banner)" && (
-        <>
-          {/* Should change this to BackgroundImage component once fluid is working */}
-          <div
-            className="c-content__c-background-img c-background-img -banner"
-            ariaName="background image"
-          >
-            <figure
-              className="c-background-img__banner-img"
-              style={{ backgroundImage: "url(" + imageData.file.url + ")" }}
-            ></figure>
-            <div className="c-background-img__content">
-              <ItemRichText {...richText} />
+        <section class="c-content" style={{zIndex: 1}}>
+          <figure className="c-content__c-img-text c-img-text u-container -lg">
+            <div className="c-img-text__img-wrapper">
+              <Img className="c-img-text__img" fluid={imageData?.fluid} />
             </div>
-          </div>
-        </>
-      )}
-
-      {layout === "image as background (full screen)" && (
-        <>
-          {/* Should change this to BackgroundImage component once fluid is working */}
-          <figure
-            style={{
-              backgroundImage: "url(" + imageData.file.url + ")",
-            }}
-            className="c-content__c-background-img c-background-img -full"
-            ariaName="background image"
-          >
-            <figcaption className="c-background-img__content u-container">
+            <figcaption className="c-img-text__content">
               <ItemRichText {...richText} />
             </figcaption>
           </figure>
-        </>
+        </section>
       )}
-    </section>
+
+      {layout === "image on right" && (
+        <section class="c-content" style={{zIndex: 1}}>
+          <figure className="c-content__c-img-text c-img-text -right u-container -lg">
+            <figcaption className="c-img-text__content">
+              <ItemRichText {...richText} />
+            </figcaption>
+            <div className="c-img-text__img-wrapper" >
+              <Img className="c-img-text__img" fluid={imageData?.fluid} />
+            </div>
+          </figure>
+        </section>
+      )}
+
+      {layout === "image as background (banner)" && (
+          <section class="c-content">
+            <div
+              className="c-content__c-background-img c-background-img -banner"
+              ariaName="background image"
+            >
+              <figure
+                className="c-background-img__banner-img"
+                style={{"--bg-image": "url(" + imageData.file.url + ")"}}
+              ></figure>
+              <div className="c-background-img__content" >
+                <ItemRichText {...richText} />
+              </div>
+            </div>
+          </section>
+      )}
+
+      {layout === "image as background (full screen)" && (
+        <section class="c-content">
+          <div className="c-background-img__wrapper -full">
+            <figure
+              style={{"--bg-image": "url(" + imageData.file.url + ")"}}
+              className="c-content__c-background-img c-background-img -full"
+              ariaName="background image"
+            ></figure>
+            <div className="c-background-img__content u-container">
+              <ItemRichText {...richText} />
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   )
 }
 

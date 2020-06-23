@@ -13,7 +13,6 @@ import {
 
 function ItemIcon(props) {
 	const { faIcon, iconName } = props;
- // displayIconName also exists
 
 	const capitalize = (s) => {
 		return s.toLowerCase().replace(/\b./g, function(a) {
@@ -59,9 +58,9 @@ function ItemIcon(props) {
 	let newIcon = faIcon ? faIcon : iconName;
 
 	return (
-		<>
-			<FontAwesomeIcon icon={getFaIcon(newIcon)} />
-		</>
+		<span className="icon" data-icon-name={iconName}>
+			<FontAwesomeIcon className="icon__svg" icon={getFaIcon(newIcon)} />
+		</span>
 	);
 }
 

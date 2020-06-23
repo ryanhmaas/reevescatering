@@ -15,7 +15,7 @@ function SectionInstagram({ data }) {
             caption
             localFile {
               childImageSharp {
-                fixed(height: 200, width: 200) {
+                fixed {
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -29,7 +29,7 @@ function SectionInstagram({ data }) {
   let instaEdges = instagramData.allInstaNode.edges
 
   return (
-    <>
+    <div >
     {displayInstagramName && 
       <h3 className="c-slider__title" style={{textAlign: 'center'}}>{instagramName}</h3>
     }
@@ -41,7 +41,7 @@ function SectionInstagram({ data }) {
       >
         {instaEdges.map(edge => {
           let node = edge.node
-
+          let cap = node.caption.substring(0, 150) + '...';
           return (
             <figure className="c-slider__insta-item">
               <Img
@@ -49,7 +49,7 @@ function SectionInstagram({ data }) {
                 fixed={node.localFile?.childImageSharp?.fixed}
               />
               <figcaption className="c-slider__insta-caption">
-                {node.caption}
+                {cap}
               </figcaption>
             </figure>
           )
@@ -101,7 +101,7 @@ function SectionInstagram({ data }) {
           )
         })}
       </Carousel>
-    </>
+    </div>
   )
 }
 

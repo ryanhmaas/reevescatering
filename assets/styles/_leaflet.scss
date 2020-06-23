@@ -2,6 +2,8 @@
   width: 100%;
   z-index: 1;
   height: 700px;
+  position: relative;
+  outline: none;
 
   @media (max-width: 639px) {
     height: 400px;
