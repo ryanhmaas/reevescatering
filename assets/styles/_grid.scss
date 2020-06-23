@@ -1,6 +1,22 @@
 .grid {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+
+	@media screen and (max-width: $break3) {
+		display: flex;
+		flex-wrap: wrap;
+
+		> * {
+			flex: 1 1 calc(100% / 3);
+			margin-top: 2rem;
+		}
+	}
+
+	@media screen and (max-width: $break4) {
+		> * {
+			flex: 1 1 100%;
+		}
+	}
 }
 
 .grid__icon-wrapper {
@@ -8,15 +24,24 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+
 }
 
-.grid__icon-wrapper > [data-icon] {
+.grid__icon-wrapper > .icon > [data-icon] {
 	color: $reeves-green;
 	text-shadow: $green-box-shadow;
 	font-size: 4rem;
 }
 
-.grid__icon-wrapper > [data-icon]:last-child {
+.grid__icon-wrapper > .icon:first-child {
+	&:after {
+		content: attr(data-icon-name);
+		display: block;
+		margin-top: 1rem;
+	}
+}
+
+.grid__icon-wrapper > .icon:last-child {
 	position: absolute;
 	top: 1rem;
 	filter: blur(20px);

@@ -74,7 +74,6 @@
 	}
 }
 
-
 .c-slider.-instagram {
 	overflow: hidden;
 }
@@ -82,12 +81,22 @@
 .c-slider__insta-item {
 	position: relative;
 	margin: 2rem;
+	height: 200px;
+	width: 200px;
+	cursor: pointer;
 
 	&:hover {
 		.c-slider__insta-caption {
 			opacity: 1;
 		}
 	}
+}
+
+.c-slider__insta-img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	
 }
 
 .c-slider__insta-caption {
@@ -97,14 +106,15 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	padding: 2rem;
+	padding: 1rem;
 	overflow: hidden;
 	background: rgba(#000, 0.5);
 	color: #fff;
-	line-height: 2;
+	line-height: 1.5;
 	text-align: left;
 	transition: opacity 200ms;
 	pointer-events: none;
+	overflow: hidden;
 }
 
 .c-slider .slide {
