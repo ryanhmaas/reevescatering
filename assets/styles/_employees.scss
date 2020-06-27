@@ -140,3 +140,17 @@
 		transform: translateY(100%);
 	} 
 }
+
+.react-responsive-modal-closeButton {
+	transition: opacity 150ms;
+
+	&:hover,
+	&:focus {
+		outline: none;
+		opacity: 0.6;
+	}
+
+	&:active {
+		opacity: 0.5;
+	}
+}

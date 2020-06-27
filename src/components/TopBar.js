@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 function TopBar () {
   return (
     <nav className="nav">
-		
-	</nav>
+      <figure className="nav__brand">
+        <img src="/reeves-catering-white.png" alt="" className="nav__logo"/>
+      </figure>
+	  </nav>
   )
 }
 

@@ -8,7 +8,10 @@
 
 .c-rich-text blockquote {
 	position: relative;
-	font-style: italic;
+
+	p {
+		font-style: italic;
+	}
 	
 	&::before {
 		content: '\275D';
