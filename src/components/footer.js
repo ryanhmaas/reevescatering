@@ -6,7 +6,10 @@ import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Footer = props => {
-  console.log(props)
+  const { data }  = props;
+  const nav = data[0];
+    console.log(nav)
+
   return (
     <div className="footer">
       <div className="footer__logo">
@@ -43,30 +46,43 @@ const Footer = props => {
           </div>
         </div>
         <div className="footer-section">
-          <div className="footer-header">Navigation</div>
+          <div className="footer-header">{nav.groupName}</div>
           <div className="footer-section__navigation">
-            <div className="footer-text navigation__left">
-              <p>
-                <Link to="/">Home</Link>
-              </p>
-              <p>
-                <Link to="/reviews">Reviews</Link>
-              </p>
-              <p>
-                <Link to="/contact-us">Contact</Link>
-              </p>
-            </div>
-            <div className="footer-text">
-              <p>
-                <Link to="/our-story">Our Story</Link>
-              </p>
-              <p>
-                <Link to="/meet-the-team">Staff</Link>
-              </p>
-              <p>
-                <Link to="/vendors">Vendors</Link>
-              </p>
-            </div>
+              {nav.navLinkRef.map((item) => {
+                const isInternal = item.linkSourceInternal != null;
+                const isExternal = item.linkSourceExternal != null;
+                const isDownload = !isInternal && !isExternal;
+                return (
+                  <>
+                    {isInternal && (
+                      <Link
+                        to={`/${item.linkSourceInternal?.slug}`}
+                      >
+                        {item.linkName}
+                      </Link>
+                    )}
+                    {!isInternal && !isDownload && (
+                      <a
+                        href={item.linkSourceExternal}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.linkName}
+                      </a>
+                    )}
+                    {isDownload && (
+                      <a
+                        target="_blank"
+                        href={item.downloadFile?.file.url}
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        {item.linkName}
+                      </a>
+                    )}
+                  </>
+                )
+              })}
           </div>
         </div>
         <div className="footer-section">

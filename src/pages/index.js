@@ -39,7 +39,14 @@ const INDEX_PAGE_QUERY = graphql`
 						linkName
 						linkStyle
 						linkSourceInternal {
-							slug
+							... on ContentfulContactUsPage {
+								id
+								slug
+							}
+							... on ContentfulPageSingle {
+								id
+								slug
+							}
 						}
 					}
 				}
@@ -72,7 +79,14 @@ const INDEX_PAGE_QUERY = graphql`
 							linkIconPlacement
 							linkIcon
 							linkSourceInternal {
-								slug
+								... on ContentfulContactUsPage {
+									id
+									slug
+								}
+								... on ContentfulPageSingle {
+									id
+									slug
+								}
 							}
 							linkType
 						}
@@ -108,7 +122,14 @@ const INDEX_PAGE_QUERY = graphql`
 									linkStyle
 									linkSourceExternal
 									linkSourceInternal {
-										slug
+										... on ContentfulContactUsPage {
+											id
+											slug
+										}
+										... on ContentfulPageSingle {
+											id
+											slug
+										}
 									}
 								}
 								richTextJustification
@@ -156,7 +177,14 @@ const INDEX_PAGE_QUERY = graphql`
 								linkStyle
 								linkSourceExternal
 								linkSourceInternal {
-									slug
+									... on ContentfulContactUsPage {
+										id
+										slug
+									}
+									... on ContentfulPageSingle {
+										id
+										slug
+									}
 								}
 							}
 							richTextJustification
