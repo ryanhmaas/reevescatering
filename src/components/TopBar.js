@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/pro-light-svg-icons';
 
 function closeDropdown(evt) {
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.document) {
+      console.log(
+        `Bailing out of the useeffect. Going to continue to render??`
+      )
+      return
+    }
+  }, []);
+
 	let openDropdown = document.querySelectorAll('.nav__drop-group.-open');
 
 	if (evt.target.closest('.nav__drop-group.-open')) {
