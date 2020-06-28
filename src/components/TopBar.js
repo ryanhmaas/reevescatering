@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/pro-light-svg-icons';
 
-function closeDropdown(evt) {
+function TopBar({ data }) {
   useEffect(() => {
     if (typeof window === "undefined" || !window.document) {
       console.log(
@@ -13,28 +13,28 @@ function closeDropdown(evt) {
     }
   }, []);
 
-	let openDropdown = document.querySelectorAll('.nav__drop-group.-open');
+  function closeDropdown(evt) {
+    let openDropdown = document.querySelectorAll(".nav__drop-group.-open")
 
-	if (evt.target.closest('.nav__drop-group.-open')) {
-		return;
-	}
-	removeOpen();
+    if (evt.target.closest(".nav__drop-group.-open")) {
+      return
+    }
+    removeOpen()
 
-	function removeOpen() {
-		openDropdown.forEach((item) => {
-			console.log('fired');
+    function removeOpen() {
+      openDropdown.forEach(item => {
+        console.log("fired")
 
-			item.classList.toggle('-open');
-		});
-	}
-}
+        item.classList.toggle("-open")
+      })
+    }
+  }
 
-if (document){
-  document.addEventListener("click", closeDropdown, false)
-}
 
-function TopBar({ data }) {
-	console.log(data);
+  if (document) {
+    document.addEventListener("click", closeDropdown, false)
+  }
+
 	return (
 		<nav className="nav">
 			<section className="nav__container u-container">
