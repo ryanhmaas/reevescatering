@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const Footer = props => {
   const { data }  = props;
   const nav = data[0];
-    console.log(nav)
 
   return (
     <div className="footer">

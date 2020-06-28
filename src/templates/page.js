@@ -199,7 +199,6 @@ const formatSlug = (slug) => {
 };
 
 function SinglePage({ data }) {
-	console.log(data);
 	let hasSections = data.contentfulPageSingle.pageSections && data.contentfulPageSingle.pageSections.length > 0;
 	if (!hasSections) {
 		return <Layout>No sections configured yet.</Layout>;
@@ -210,7 +209,6 @@ function SinglePage({ data }) {
 
 			{data.contentfulPageSingle.pageSections.map((section) => {
 				let typeName = section['__typename'];
-				console.log(typeName);
 				switch (typeName) {
 					case CONTENTFUL_SECTION_TYPES.CONTENT:
 						return <SectionContent data={section} />;

@@ -95,7 +95,6 @@ const Layout = ({ children }) => {
   const nav = data.header?.navigationSections;
   const footer = data.footer?.navigationSections;
   // console.log(nav);
-  console.log(footer);
   
   return (
     <React.Fragment>

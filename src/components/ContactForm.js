@@ -18,8 +18,6 @@ function ContactForm() {
 			message: data.messageRequired
 		};
 
-		console.log(formattedData);
-
 		// submit form and then change state so icon change
 		setFormSubmitted(true);
 	};
@@ -38,7 +36,7 @@ function ContactForm() {
 			<h2>Want to Learn More?</h2>
 			<p>
 				We would love the opportunity to sit down and discuss your important event! Contact us today using the
-				form, or call Larry at <span className="contact-section__phone">864-275-0021</span>
+				form, or call Larry at <a href="tel:864-275-0021" className="contact-section__phone">864-275-0021</a>
 			</p>
 			<form onSubmit={handleSubmit(onSubmit)} className="contact-form">
 				<div className="u-contact-group contact-group__name">

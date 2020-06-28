@@ -4,6 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/pro-light-svg-icons';
 
 function TopBar({ data }) {
+
+  // Drop Menu Toggle
+  let dropGroups = document.querySelectorAll('.nav__drop-group');
+  dropGroups.forEach(group => {
+    let subMenu = group.querySelector('.nav__drop-menu');
+    let menuToggle = group.querySelector('.nav__drop-toggle');
+    let menuToggleHeight = menuToggle.offsetHeight;
+    let subMenuHeight = subMenu.offsetHeight;
+
+    group.style.setProperty('--drop-closed-height', menuToggleHeight+'px');
+    group.style.setProperty('--drop-open-height', (menuToggleHeight+subMenuHeight)+'px');
+
+  });
+  
+
 	return (
 		<nav className="nav">
 			<section className="nav__container u-container">
@@ -94,5 +109,6 @@ function TopBar({ data }) {
 		</nav>
 	);
 }
+
 
 export default TopBar;
