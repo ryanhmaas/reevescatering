@@ -1,29 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/pro-light-svg-icons';
 
-function closeDropdown(evt) {
-	let openDropdown = document.querySelectorAll('.nav__drop-group.-open');
-
-	if (evt.target.closest('.nav__drop-group.-open')) {
-		return;
-	}
-	removeOpen();
-
-	function removeOpen() {
-		openDropdown.forEach((item) => {
-			console.log('fired');
-
-			item.classList.toggle('-open');
-		});
-	}
-}
-
-document.addEventListener('click', closeDropdown, false);
-
 function TopBar({ data }) {
-	console.log(data);
 	return (
 		<nav className="nav">
 			<section className="nav__container u-container">
