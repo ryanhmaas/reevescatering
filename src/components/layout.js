@@ -33,14 +33,76 @@ const Layout = ({ children }) => {
           ...GatsbyContentfulFluid
         }
       }
+      header: contentfulNavigationComponent(title: { eq: "Header" }) {
+        id
+        title
+        navigationSections {
+          groupName
+          ... on ContentfulNavigationGroup {
+            id
+            groupType
+            navLinkRef {
+              linkName
+              downloadFile{
+                file{
+                  url
+                }
+              }
+              linkSourceExternal
+              linkSourceInternal {
+                ... on ContentfulPageSingle {
+                  slug
+                }
+                ... on ContentfulContactUsPage {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      }
+      footer: contentfulNavigationComponent(title: { eq: "Footer" }) {
+        id
+        title
+        navigationSections {
+          groupName
+          groupType
+          ... on ContentfulNavigationGroup {
+            id
+            navLinkRef {
+              linkName
+              linkSourceExternal
+              downloadFile{
+                file{
+                  url
+                }
+              }
+              linkSourceInternal {
+                ... on ContentfulPageSingle {
+                  slug
+                }
+                ... on ContentfulContactUsPage {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      }
     }
   `)
+
+  const nav = data.header?.navigationSections;
+  const footer = data.footer?.navigationSections;
+  // console.log(nav);
+  console.log(footer);
+  
   return (
     <React.Fragment>
       <>
-        <TopBar />
+        <TopBar data={nav} />
         <main>{children}</main>
-        <Footer reevesLogo={data.reevesWhiteLogo} />
+        <Footer data={footer} reevesLogo={data.reevesWhiteLogo} />
         <HyperionFooter logo={data.hyperionLogo} />
       </>
     </React.Fragment>
