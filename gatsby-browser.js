@@ -4,4 +4,23 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+const removeOpen = () => {
+	if (typeof document !== 'undefined') {
+		let openDropdown = document.querySelectorAll('.nav__drop-group.-open');
+		openDropdown.forEach((item) => {
+			item.classList.toggle('-open');
+		});
+	}
+};
+const closeDropdown = (evt) => {
+	if (evt.target.closest('.nav__drop-group.-open')) {
+		return;
+	}
+	removeOpen();
+};
+
+exports.onClientEntry = () => {
+	window.onload = () => {
+		document.addEventListener('click', closeDropdown, false);
+	};
+};

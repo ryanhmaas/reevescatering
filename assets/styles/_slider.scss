@@ -121,6 +121,11 @@
 	transition: opacity 200ms;
 }
 
-.c-slider .slide:not(.selected) {
+.c-slider:not(.-instagram) .slide:not(.selected) {
 	opacity: 0.5;
+}
+
+.c-slider__wrapper {
+	padding: 2rem 0;
+	overflow-x: hidden;
 }

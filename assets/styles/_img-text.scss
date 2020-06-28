@@ -12,14 +12,6 @@
 	max-width: 900px;
 	width: 100%;
 	overflow: hidden;
-	transform-origin: right;
-	transform: translate3d(0, 0, -0.1px) scale3d(1.1, 1.1, 1);
-	z-index: -1;
-
-	@media screen and (max-width: $break3) {
-		transform: translateZ(0) scale(1);
-		margin: 0;
-	}
 }
 
 .c-img-text__img {
@@ -48,7 +40,7 @@
 	max-width: 740px;
 	padding: 4rem;
 	border-left: 4px solid $reeves-green;
-	background: rgba(#fff, 0.8);
+	background: rgba(#fff, 0.5);
 	backdrop-filter: $backdrop-blur;
 	box-sizing: border-box;
 

@@ -56,8 +56,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: -1;
-    transform: translate3d(0, 0, -0.3px) scale(1.3);
   }
 }
 
@@ -111,7 +109,6 @@
   position: relative;
   height: 430px;
   z-index: 0;
-  margin-top: 5rem;
   margin-bottom: 5rem;
   background-color: transparent;
   overflow: hidden;
@@ -132,12 +129,13 @@
   box-sizing: border-box;
   background: linear-gradient(
     302.26deg,
-    rgba(54, 56, 61, 0.76) 44.11%,
-    rgba(54, 56, 61, 0) 100%
+    rgba(54, 56, 61, 0.76) 22.11%,
+    rgba(54, 56, 61, 0) 80%
   );
   z-index: 2;
 
   .c-rich-text {
+    max-width: $break1;
     color: #fff;
 
     h1 {
@@ -171,7 +169,6 @@
   display: block;
   height: 100vh;
   width: 100%;
-  transform-style: preserve-3d;
   background-color: transparent;
   opacity: 0.2;
 
@@ -188,8 +185,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: -1;
-    transform: translate3d(0, 0, -0.5px) scale(1.5);
   }
 
 }
