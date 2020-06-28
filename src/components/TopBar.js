@@ -20,7 +20,9 @@ function closeDropdown(evt) {
 	}
 }
 
-document.addEventListener('click', closeDropdown, false);
+if (document){
+  document.addEventListener("click", closeDropdown, false)
+}
 
 function TopBar({ data }) {
 	console.log(data);
