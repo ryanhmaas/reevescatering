@@ -20,6 +20,31 @@
 	}
 }
 
+.nav__mobile-menu {
+	display: none;
+	@media screen and (max-width: $break3) {
+		display: block;
+		margin-left: auto;
+		max-width: 5rem;
+		width: 100%;
+		background: none;
+		color: #fff;
+		border: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	[data-icon] {
+		transition: transform 150ms;
+	}
+}
+
+.nav__mobile-menu.-open [data-icon] {
+	transform: rotateZ(-180deg);
+}
+
 ul {
 	padding: 0;
 }
@@ -27,6 +52,13 @@ ul {
 .nav__container {
 	position: relative;
 	display: flex;
+	z-index: 2;
+}
+
+.nav__container.u-container {
+	@media screen and (max-width: $break3) {
+		padding-right: 0;
+	}
 }
 
 .nav__brand {
@@ -38,6 +70,7 @@ ul {
 	display: flex;
 	margin-left: auto;
 	color: #fff;
+	transition: transform 150ms, opacity 150ms;
 
 	@media (max-width: $break3) {
 		position: absolute;
@@ -48,6 +81,23 @@ ul {
 		flex-direction: column;
 		margin: 0;
 		padding: 2rem 0;
+		box-sizing: border-box;
+		max-height: calc(100vh - 70px);
+		overflow-y: auto;
+		transform: translateY(10px);
+		transform-origin: top;
+		z-index: -1;
+		opacity: 0;
+		pointer-events: none;
+		box-shadow: $box-shadow;
+
+
+		&.-open {
+			transform: translateY(0px);
+			opacity: 1;
+			pointer-events: unset;
+		}
+
 	}
 }
 
@@ -74,7 +124,8 @@ ul {
 
 .nav__drop-group {
 	position: relative;
-	transition: height 200ms;
+	transition-property: height, opacity;
+	transition-duration: 150ms;
 
 	.nav__link {
 		color: $body-color;

@@ -1,23 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, createRef } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/pro-light-svg-icons';
+import { faAngleDown, faBars } from '@fortawesome/pro-light-svg-icons';
+
+
+const navLinkParent = React.createRef();
 
 function TopBar({ data }) {
-
-  // Drop Menu Toggle
-  let dropGroups = document.querySelectorAll('.nav__drop-group');
-  dropGroups.forEach(group => {
-    let subMenu = group.querySelector('.nav__drop-menu');
-    let menuToggle = group.querySelector('.nav__drop-toggle');
-    let menuToggleHeight = menuToggle.offsetHeight;
-    let subMenuHeight = subMenu.offsetHeight;
-
-    group.style.setProperty('--drop-closed-height', menuToggleHeight+'px');
-    group.style.setProperty('--drop-open-height', (menuToggleHeight+subMenuHeight)+'px');
-
-  });
-  
 
 	return (
 		<nav className="nav">
@@ -27,8 +16,14 @@ function TopBar({ data }) {
 					<h4 style={{ margin: 0, color: '#fff', boxSizing: 'border-box' }}>REEVES</h4>
 				</Link>
 
+        <button className="nav__mobile-menu" onClick={function(evt) {
+          navLinkParent.current.classList.toggle('-open');
+          evt.target.classList.toggle('-open');
+        }}>
+          <FontAwesomeIcon className="icon__svg" icon={faBars} />
+        </button>
 				{/* Main nav wrapper */}
-				<ul className="nav__link-parent">
+				<ul className="nav__link-parent" ref={navLinkParent}>
           {data.map((group) => {
             if (group.groupType.toLowerCase() === "dropdown"){
               return (
