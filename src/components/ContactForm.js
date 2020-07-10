@@ -7,6 +7,11 @@ import { fal } from '@fortawesome/pro-light-svg-icons';
 
 function ContactForm() {
 	const [ formSubmitted, setFormSubmitted ] = useState(false);
+	const [name, setName] = useState('');
+	const [phone, setPhone] = useState('');
+	const [email, setEmail] = useState('');
+	const [message, setMessage] = useState('');
+
 	const { register, handleSubmit, errors } = useForm();
 	library.add(fal);
 
@@ -18,10 +23,10 @@ function ContactForm() {
 
 	const onSubmit = async (data) => {
 		var formattedData = {
-			name: data.nameRequired,
-			email: data.emailRequired,
-			phone: data.phoneNumber,
-			message: data.messageRequired
+			name: data.name,
+			email: data.email,
+			phone: data.phone,
+			message: data.message
 		};
 
 		console.log(formattedData);
@@ -45,6 +50,24 @@ function ContactForm() {
 		else {
 			event.target.classList.remove('-active');
 		}
+		switch(event.target.name){
+			case "name":
+				setName(event.target.value);
+				break;
+			case "phone":
+				setPhone(event.target.value);
+				break;
+			case "email":
+				setEmail(event.target.value);
+				break;
+			case "message":
+				setMessage(event.target.value);
+				break;
+			default:
+				console.log(event.target.value);
+				break;
+
+		}
 	};
 
 	return (
@@ -57,27 +80,27 @@ function ContactForm() {
 			<form name="contact-form" method="post" onSubmit={handleSubmit(onSubmit)} className="contact-form" data-netlify="true" data-netlify-honeypot="bot-field">
 				<div className="u-contact-group contact-group__name">
 					<div className="u-form-group">
-						<input className="u-form-group__input" name="nameRequired" type="text" onChange={onChange} placeholder="Name" ref={register({ required: true })} />
-						<label htmlFor="nameRequired">Name</label>
-						{errors.nameRequired && <span className="field-required">This field is required</span>}
+						<input className="u-form-group__input" value={name} name="name" type="text" onChange={onChange} placeholder="Name" ref={register({ required: true })} />
+						<label htmlFor="name">Name</label>
+						{errors.name && <span className="field-required">This field is required</span>}
 					</div>
 					<div className="u-form-group">
-						<input className="u-form-group__input" name="phoneNumber" type="tel" onChange={onChange} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number" ref={register} />
-						<label htmlFor="phoneNumber">Phone Number <span>(555-555-5555)</span></label>
-					</div>
-				</div>
-				<div className="u-contact-group">
-					<div className="u-form-group">
-						<input className="u-form-group__input" name="emailRequired" type="email" onChange={onChange}  ref={register({ required: true })} />
-						<label htmlFor="emailRequired">Email <span>(name@email.com)</span></label>
-						{errors.emailRequired && <span className="field-required">This field is required</span>}
+						<input className="u-form-group__input" value={phone} name="phone" type="tel" onChange={onChange} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number" ref={register} />
+						<label htmlFor="phone">Phone Number <span>(555-555-5555)</span></label>
 					</div>
 				</div>
 				<div className="u-contact-group">
 					<div className="u-form-group">
-						<textarea className="u-form-group__input" name="messageRequired" onChange={onChange}  ref={register({ required: true })} />
-						<label htmlFor="messageRequired">Message</label>
-						{errors.messageRequired && <span className="field-required">This field is required</span>}
+						<input className="u-form-group__input" value={email} name="email" type="email" onChange={onChange}  ref={register({ required: true })} />
+						<label htmlFor="email">Email <span>(name@email.com)</span></label>
+						{errors.email && <span className="field-required">This field is required</span>}
+					</div>
+				</div>
+				<div className="u-contact-group">
+					<div className="u-form-group">
+						<textarea className="u-form-group__input" value={message} name="message" onChange={onChange}  ref={register({ required: true })} />
+						<label htmlFor="message">Message</label>
+						{errors.message && <span className="field-required">This field is required</span>}
 					</div>
 				</div>
 				{/* The `form-name` hidden field is required to support form submissions without JavaScript */}
