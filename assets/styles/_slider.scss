@@ -129,3 +129,7 @@
 	padding: 2rem 0;
 	overflow-x: hidden;
 }
+
+.c-content + .c-slider__wrapper {
+	margin-top: 6rem;
+}
