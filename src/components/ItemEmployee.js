@@ -23,22 +23,22 @@ function ItemEmployee(props) {
   }
 
   return (
-    <div className="employee-grid__item">
-      <div className="employee-container">
+    <div className="tiles-grid__item">
+      <div className="tiles-container">
         {employeePicture && employeePicture.fluid != null && (
           <div role="presentation" className="image-container" onClick={() => onOpenModal()} onKeyDown={handleKeyDown}>
             <Img
               fluid={employeePicture.fluid}
-              className="employee-pic"
-              alt="test"
+              className="tiles-pic"
+              alt={employeeName + '-pic'}
             />
-            <div className="employee-ds">
-              <p className="employee-ds__name">{employeeName}</p>
+            <div className="tiles-ds">
+              <p className="tiles-ds__name">{employeeName}</p>
               <p>Role</p>
             </div>
           </div>
         )}
-        <div className="employee-details">
+        <div className="tiles-details">
           <div>
             <b>{employeeName}</b>
           </div>
@@ -46,7 +46,7 @@ function ItemEmployee(props) {
         </div>
       </div>
       <Modal open={modalOpen} onClose={() => onCloseModal()} center>
-        <div className="employee-modal">
+        <div className="tiles-modal">
           <img
             src={employeePicture.file?.url}
             alt="test"

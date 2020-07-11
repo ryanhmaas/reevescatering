@@ -74,7 +74,7 @@ module.exports = {
             variants: [`300`, `400`, `700`],
           },
           {
-            family: `Euphoria Script`,
+            family: `Tangerine`,
             variants: [`400`, `700`],
           },
         ],

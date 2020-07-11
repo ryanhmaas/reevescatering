@@ -40,4 +40,8 @@
 			background-color: lighten(#7ac142, 5);
 		}
 	}
+
+	@media screen and (max-width: $break3) {
+		flex-direction: column;
+	}
 }

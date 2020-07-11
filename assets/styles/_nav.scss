@@ -41,10 +41,6 @@
 	}
 }
 
-.nav__mobile-menu.-open [data-icon] {
-	transform: rotateZ(-180deg);
-}
-
 ul {
 	padding: 0;
 }
@@ -64,6 +60,16 @@ ul {
 .nav__brand {
 	display: flex;
 	align-items: center;
+	position: relative;
+    height: 100%;
+    width: 100%;
+	max-width: 100px;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	
+	img {
+		object-fit: contain !important;
+	}
 }
 
 .nav__link-parent {
