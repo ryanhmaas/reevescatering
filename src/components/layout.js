@@ -99,7 +99,7 @@ const Layout = ({ children }) => {
   return (
     <React.Fragment>
       <>
-        <TopBar data={nav} />
+        <TopBar data={nav} reevesLogo={data.reevesWhiteLogo} />
         <main>{children}</main>
         <Footer data={footer} reevesLogo={data.reevesWhiteLogo} />
         <HyperionFooter logo={data.hyperionLogo} />

@@ -25,23 +25,25 @@ const Footer = props => {
         <div className="footer-section">
           <div className="footer-header">Address</div>
           <div className="footer-text">
-            <p>Reeves Catering</p>
-            <p>40 Rushmore Drive</p>
-            <p>Greenville, SC 29615</p>
-            <p>Mon - Sun 9AM - 5PM</p>
+            <p>
+              Reeves Catering <br/>
+              40 Rushmore Drive <br/>
+              Greenville, SC 29615 <br/>
+              Mon - Sun 9AM - 5PM
+            </p>
           </div>
         </div>
         <div className="footer-section">
           <div className="footer-header">Contact</div>
           <div className="footer-text">
-            <p>
+            <a href="tel:864-275-0021" rel="noopener noreferrer">
               <FontAwesomeIcon className="mr-1/2" icon={faPhone} />
               864-275-0021
-            </p>
-            <p>
+            </a>
+            <a href="email:info@domain.com" rel="noopener noreferrer">
               <FontAwesomeIcon className="mr-1/2" icon={faEnvelope} />
               info@domain.com
-            </p>
+            </a>
           </div>
         </div>
         <div className="footer-section">
@@ -87,26 +89,22 @@ const Footer = props => {
         <div className="footer-section">
           <div className="footer-header">Social</div>
           <div className="footer-text social-links">
-            <p className="social-item__container">
-              <a
-                href="https://www.instagram.com/reevescatering/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <FontAwesomeIcon className="mr-1/2" icon={faInstagram} />
-                Instagram
-              </a>
-            </p>
-            <p className="social-item__container">
-              <a
-                href="https://www.facebook.com/JustinReevesCatering/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <FontAwesomeIcon className="mr-1/2" icon={faFacebook} />
-                Facebook
-              </a>
-            </p>
+            <a
+              href="https://www.instagram.com/reevescatering/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <FontAwesomeIcon className="mr-1/2" icon={faInstagram} />
+              Instagram
+            </a>
+            <a
+              href="https://www.facebook.com/JustinReevesCatering/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <FontAwesomeIcon className="mr-1/2" icon={faFacebook} />
+              Facebook
+            </a>
           </div>
         </div>
       </div>

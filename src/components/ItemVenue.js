@@ -4,32 +4,35 @@ import Img from 'gatsby-image';
 function ItemVenue(props) {
 	const { venueDescription, venueName, venueImage, websiteLink } = props;
 	return (
-		<div className="venue-grid__item">
-			<div className="venue-container">
+		<a className="tiles-grid__item"
+			href={websiteLink}
+			target="_blank"
+			rel="noopener noreferrer"
+	>
+			<div className="tiles-container">
 				{venueImage &&
 				venueImage.fluid != null && (
 					<div className="image-container">
-						<Img fluid={venueImage.fluid} className="venue-pic" alt={venueName + '-pic'} />
-						<div className="venue-details">
-							<p className="venue-details__name">
-								{websiteLink && (
-									<a
-										href={websiteLink}
-										target="_blank"
-										className="venue-details__link"
-										rel="noopener noreferrer"
-									>
-										{venueName}
-									</a>
-								)}
-								{!websiteLink && <span> {venueName}</span>}
-							</p>
-							<p className="venue-details__ds">{venueDescription}</p>
+						<Img 
+							fluid={venueImage.fluid} 
+							className="tiles-pic" 
+							alt={venueName + '-pic'} 
+						/>
+						<div className="tiles-ds">
+							<div>
+								<b>{venueName}</b>
+							</div>
+							<div>{venueDescription}</div>
 						</div>
 					</div>
 				)}
+				<div className="tiles-details">
+					<div>
+						<b>{venueName}</b>
+					</div>
+				</div>
 			</div>
-		</div>
+		</a>
 	);
 }
 

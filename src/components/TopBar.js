@@ -2,18 +2,23 @@ import React, { useEffect, createRef } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faBars } from '@fortawesome/pro-light-svg-icons';
+import Img from "gatsby-image";
 
 
 const navLinkParent = React.createRef();
 
-function TopBar({ data }) {
+function TopBar({ data, reevesLogo }) {
 
 	return (
 		<nav className="nav">
 			<section className="nav__container u-container">
 				<Link to="/" className="nav__brand" style={{ textDecoration: 'none' }}>
-					{/* TODO: Logo image to replace this */}
-					<h4 style={{ margin: 0, color: '#fff', boxSizing: 'border-box' }}>REEVES</h4>
+          <Img
+              alt="Reeves Catering White Logo"
+              title="Reeves Catering White Logo"
+              fluid={reevesLogo.fluid}
+              style={{ width: "100%", height: "100%" }}
+            />
 				</Link>
 
         <button className="nav__mobile-menu" onClick={function(evt) {
