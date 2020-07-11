@@ -8,12 +8,10 @@ function SectionContent({ data }) {
   let richText = contentRichText
   let imageData = contentImage
 
-  console.log("layout", layout)
-  console.log("imageData", imageData)
   return (
     <>
       {layout === "rich text only" && (
-        <section class="c-content" style={{zIndex: 2}}>
+        <section className="c-content" style={{zIndex: 2}}>
           <article className="c-content__c-rich-text-only c-rich-text-only">
             <div className="u-container">
               <ItemRichText {...richText} />
@@ -23,7 +21,7 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image on left" && (
-        <section class="c-content" style={{zIndex: 1}}>
+        <section className="c-content" style={{zIndex: 1}}>
           <figure className="c-content__c-img-text c-img-text u-container -lg">
             <div className="c-img-text__img-wrapper">
               <Img className="c-img-text__img" fluid={imageData?.fluid} />
@@ -36,7 +34,7 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image on right" && (
-        <section class="c-content" style={{zIndex: 1}}>
+        <section className="c-content" style={{zIndex: 1}}>
           <figure className="c-content__c-img-text c-img-text -right u-container -lg">
             <figcaption className="c-img-text__content">
               <ItemRichText {...richText} />
@@ -49,10 +47,10 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image as background (banner)" && (
-          <section class="c-content">
+          <section className="c-content">
             <div
               className="c-content__c-background-img c-background-img -banner"
-              ariaName="background image"
+              arianame="background image"
             >
               <figure
                 className="c-background-img__banner-img"
@@ -66,12 +64,12 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image as background (full screen)" && (
-        <section class="c-content">
+        <section className="c-content">
           <div className="c-background-img__wrapper -full">
             <figure
               style={{"--bg-image": "url(" + imageData.file.url + ")"}}
               className="c-content__c-background-img c-background-img -full"
-              ariaName="background image"
+              arianame="background image"
             ></figure>
             <div className="c-background-img__content u-container">
               <ItemRichText {...richText} />
