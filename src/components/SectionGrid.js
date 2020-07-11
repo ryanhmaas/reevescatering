@@ -29,10 +29,7 @@ function SectionGrid({ data }) {
       {displayGridName && <h3 className="grid__title">{gridName}</h3>}
       {showGridItems && (
         <div
-          className={classNames("grid", {
-            "employee-grid": gridType === "EmployeeGrid",
-            "venue-grid": gridType === "VenueGrid",
-          })}
+          className="grid tiles-grid"
         >
           {gridItems.map((item, index) => {
             return gridItem(item)

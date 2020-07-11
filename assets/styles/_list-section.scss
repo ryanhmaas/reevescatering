@@ -1,29 +1,35 @@
 .c-list {
-	margin-top: 3rem;
+	display: inline-flex;
+    flex-direction: column;
+    margin-top: 3rem;
 	margin-bottom: 3rem;
+	width: 100%;
+	max-width: calc(100% / 3);
 	&__title {
 		text-align: center;
 
 		a {
-			text-decoration: none;
-			color: $reeves-gray;
-			font-size: 1.25rem;
-			line-height: 1rem;
-			position: relative;
 			display: inline-block;
+			color: $body-color;
+			text-decoration: none;
+			position: relative;
+			padding: 0.2rem 0;
+			transition: color 150ms;
 
 			&::after {
-				margin-top: .25rem;
-				display: block;
 				content: '';
-				border-bottom: solid 3px $reeves-green;
-				transform: scaleX(0);
-				transition: transform .3s ease-in-out;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 100%;
+				height: 1px;
+				background: $reeves-dark-green;
+				transition: right 150ms, background 150ms;
 			}
 
 			&:hover {
 				&::after {
-					transform: scaleX(1);
+					right: 0;
 				}
 			}
 		}
@@ -32,7 +38,7 @@
 	&__container {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		flex-direction: column;
 	}
 
 	&__item {

@@ -43,11 +43,11 @@
 }
 
 .c-slider .carousel .control-next.control-arrow:before {
-    border-left: 8px solid $body-color;
+	border-left: 8px solid $body-color;
 }
 
 .c-slider .carousel .control-prev.control-arrow:before {
-    border-right: 8px solid $body-color;
+	border-right: 8px solid $body-color;
 }
 
 .c-slider.-hide-tablet {
@@ -76,11 +76,26 @@
 
 .c-slider.-instagram {
 	overflow: hidden;
+
+	@media screen and (max-width: $break3) {
+		.slide,
+		.selected {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	@media screen and (min-width: $break1) {
+		.control-dots,
+		.control-arrow {
+			display: none;
+		}
+	}
 }
 
 .c-slider__insta-item {
 	position: relative;
-	margin: 2rem;
+	margin: 2rem auto;
 	height: 200px;
 	width: 200px;
 	cursor: pointer;
@@ -96,7 +111,6 @@
 	display: block;
 	max-width: 100%;
 	max-height: 100%;
-	
 }
 
 .c-slider__insta-caption {

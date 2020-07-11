@@ -113,6 +113,15 @@
   overflow: hidden;
 }
 
+main > .c-content:first-child .c-background-img.-banner {
+  padding-top: 5rem;
+
+  @media screen and (max-width: $break3) {
+		padding-top: 12rem;
+	}
+}
+
+
 .c-background-img.-banner .c-background-img__content {
   display: flex;
   justify-content: center;
@@ -125,12 +134,10 @@
   left: 0;
   height: 100%;
   width: 100%;
+  padding: 3rem;
   box-sizing: border-box;
-  background: linear-gradient(
-    302.26deg,
-    rgba(54, 56, 61, 0.76) 22.11%,
-    rgba(54, 56, 61, 0) 80%
-  );
+  background: linear-gradient(302.26deg, rgba(54, 56, 61, 0.90) 22.11%, rgba(53, 53, 56, 0.3) 80%);
+  text-shadow: 0 1px 17px rgba(0, 0, 0, 0.5);
   z-index: 2;
 
   .c-rich-text {
