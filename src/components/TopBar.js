@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faBars } from '@fortawesome/pro-light-svg-icons';
 import Img from "gatsby-image";
 
-
 const navLinkParent = React.createRef();
 
 function TopBar({ data, reevesLogo }) {

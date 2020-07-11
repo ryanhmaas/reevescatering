@@ -41,6 +41,7 @@ export const query = graphql`
 						linkIconPlacement
 						linkSourceExternal
 						linkName
+						linkStyle
 						linkSourceInternal {
 							... on ContentfulContactUsPage {
 								id
@@ -83,6 +84,7 @@ export const query = graphql`
 							linkSourceExternal
 							linkIconPlacement
 							linkIcon
+							linkStyle
 							linkSourceInternal {
 								... on ContentfulContactUsPage {
 									id
