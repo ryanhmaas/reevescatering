@@ -9,7 +9,7 @@ function SectionInstagram({ data }) {
 
   const instagramData = useStaticQuery(graphql`
     query InstaQuery {
-      allInstaNode(limit: 4, sort: { fields: timestamp, order: DESC }) {
+      allInstaNode(limit: 5, sort: { fields: timestamp, order: DESC }) {
         edges {
           node {
             caption
@@ -35,7 +35,6 @@ function SectionInstagram({ data }) {
     }
       <Carousel
         className="c-slider -instagram -hide-tablet"
-        infiniteLoop
         centerMode
         centerSlidePercentage={100 / 5}
       >
@@ -58,7 +57,6 @@ function SectionInstagram({ data }) {
 
       <Carousel
         className="c-slider -instagram -show-tablet -hide-mobile"
-        infiniteLoop
         centerMode
         centerSlidePercentage={100 / 3}
       >
@@ -81,7 +79,6 @@ function SectionInstagram({ data }) {
       
       <Carousel
         className="c-slider -instagram -show-mobile"
-        infiniteLoop
         centerMode
         centerSlidePercentage={100}
       >

@@ -8,7 +8,6 @@ function SectionSlider({ data }) {
 	//sectionType is the slider type - contentful will not rename it once pub'd :/
 	// displaySliderName is also possible
 	const { sliderItems, sliderName, sectionType } = data;
-
 	const sliderItem = (props) => {
 		if (sectionType === 'Award') {
 			return <ItemAward {...props} />;
@@ -20,7 +19,7 @@ function SectionSlider({ data }) {
 	let slideSize = 60;
 
 	return (
-		<div className="c-slider__wrapper" >
+		<div className="c-slider__wrapper">
 			<h3 className="c-slider__title" style={{ textAlign: 'center' }}>
 				{sliderName}
 			</h3>
