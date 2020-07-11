@@ -2,7 +2,7 @@ import React, { useEffect, createRef } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faBars } from '@fortawesome/pro-light-svg-icons';
-
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const navLinkParent = React.createRef();
 
