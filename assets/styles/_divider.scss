@@ -26,6 +26,16 @@
   }
 
   @media screen and (max-width: $break2) {
+    padding: 3rem 0;
     margin: 3rem 0;
+  }
+  
+}
+
+.section-spacer {
+  height: 12rem;
+
+  @media screen and (max-width: $break2) {
+    height: 8rem;
   }
 }

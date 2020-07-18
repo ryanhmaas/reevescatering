@@ -52,6 +52,11 @@
 		height: auto;
 		order: 2;
 	}
+
+	@media screen and (max-width: $break3) {
+		border: none;
+		padding: 2rem;
+	}
 }
 
 .c-img-text.-right .c-img-text__content {
@@ -60,4 +65,9 @@
 	border-left: 0;
 	border-right: 4px solid $reeves-green;
 	z-index: 2;
+
+	@media screen and (max-width: $break3) {
+		border: none;
+		padding: 2rem;
+	}
 }

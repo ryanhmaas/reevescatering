@@ -1,7 +1,7 @@
 .tiles-grid {
 	font-family: "Open Sans";
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(var(--grid-cols), 1fr);
 	grid-gap: 1.5rem;
 	padding: 1.5rem;
 
@@ -126,6 +126,10 @@
 
 	p {
 		text-align: left;
+	}
+
+	@media screen and (max-width: $break3) {
+		padding: 2rem 0;
 	}
 }
 
