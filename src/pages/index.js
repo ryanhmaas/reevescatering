@@ -208,7 +208,7 @@ const IndexPage = () => (
 			query={INDEX_PAGE_QUERY}
 			render={({ homePage }) => {
 				return (
-					<div className="columns is-multiline">
+					<div className="c-content__wrapper">
 						{homePage.pageSections.map((section) => {
 							let typeName = section['__typename'];
 							switch (typeName) {

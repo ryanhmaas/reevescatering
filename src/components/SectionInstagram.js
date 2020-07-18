@@ -62,7 +62,7 @@ function SectionInstagram({ data }) {
       >
         {instaEdges.map(edge => {
           let node = edge.node
-
+          let cap = node.caption.substring(0, 150) + '...';
           return (
             <figure className="c-slider__insta-item">
               <Img
@@ -70,7 +70,7 @@ function SectionInstagram({ data }) {
                 fixed={node.localFile?.childImageSharp?.fixed}
               />
               <figcaption className="c-slider__insta-caption">
-                {node.caption}
+                {cap}
               </figcaption>
             </figure>
           )
@@ -84,7 +84,7 @@ function SectionInstagram({ data }) {
       >
         {instaEdges.map(edge => {
           let node = edge.node
-
+          let cap = node.caption.substring(0, 150) + '...';
           return (
             <figure className="c-slider__insta-item">
               <Img
@@ -92,7 +92,7 @@ function SectionInstagram({ data }) {
                 fixed={node.localFile?.childImageSharp?.fixed}
               />
               <figcaption className="c-slider__insta-caption">
-                {node.caption}
+                {cap}
               </figcaption>
             </figure>
           )

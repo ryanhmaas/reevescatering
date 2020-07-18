@@ -12,8 +12,8 @@
 	border-left: 4px solid $reeves-green;
 }
 
-.carousel .slider-wrapper,
-.carousel.carousel-slider {
+.c-slider .carousel .slider-wrapper,
+.c-slider .carousel.carousel-slider {
 	overflow: visible !important;
 }
 
@@ -38,16 +38,57 @@
 }
 
 .c-slider .carousel.carousel-slider .control-arrow {
-	padding-left: 20px;
-	padding-right: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 4rem;
+	width: 4rem;
+    top: 50%;
+    bottom: auto;
+	transform: translateY(-50%);
+	opacity: 1;
+	border-radius: 2rem;
+	backdrop-filter: blur(5px);
+	background-color: rgba(0,0,0,0.05);
+
+	&:before {
+		color: rgba($body-color, 0.5);
+	}
+
+	@media screen and (max-width: $break3) {
+		top: calc(100% + 1.5rem);
+	}
+}
+
+.c-slider .carousel .control-prev.control-arrow {
+	left: 1rem;
+}
+
+.c-slider .carousel .control-next.control-arrow {
+	right: 1rem;
+}
+
+.c-slider .carousel.carousel-slider .control-arrow:hover {
+	backdrop-filter: blur(5px);
+	background-color: rgba(0,0,0,0.2);
 }
 
 .c-slider .carousel .control-next.control-arrow:before {
-	border-left: 8px solid $body-color;
+	border-left: 8px solid rgba($body-color, 0.5);
+	transition: border-color 300ms;
+}
+
+.c-slider .carousel .control-next.control-arrow:hover:before {
+	border-left: 8px solid rgba($body-color, 1);
 }
 
 .c-slider .carousel .control-prev.control-arrow:before {
-	border-right: 8px solid $body-color;
+	border-right: 8px solid rgba($body-color, 0.5);
+	transition: border-color 300ms;
+}
+
+.c-slider .carousel  .control-prev.control-arrow:hover:before {
+	border-right: 8px solid rgba($body-color, 1);
 }
 
 .c-slider.-hide-tablet {
@@ -88,7 +129,7 @@
 	@media screen and (min-width: $break1) {
 		.control-dots,
 		.control-arrow {
-			display: none;
+			display: none !important;
 		}
 	}
 }
@@ -123,6 +164,7 @@
 	padding: 1rem;
 	overflow: hidden;
 	background: rgba(#000, 0.5);
+	backdrop-filter: blur(5px);
 	color: #fff;
 	line-height: 1.5;
 	text-align: left;
@@ -146,4 +188,8 @@
 
 .c-content + .c-slider__wrapper {
 	margin-top: 6rem;
+}
+
+.c-slider .control-disabled {
+	display: none !important;
 }
