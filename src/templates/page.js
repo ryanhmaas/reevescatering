@@ -43,7 +43,7 @@ export const query = graphql`
 						linkName
 						linkStyle
 						linkSourceInternal {
-							... on ContentfulContactUsPage {
+							... on ContentfulPageContact {
 								id
 								slug
 							}
@@ -86,7 +86,7 @@ export const query = graphql`
 							linkIcon
 							linkStyle
 							linkSourceInternal {
-								... on ContentfulContactUsPage {
+								... on ContentfulPageContact {
 									id
 									pageName
 								}
@@ -131,7 +131,7 @@ export const query = graphql`
 									linkName
 									linkSourceExternal
 									linkSourceInternal {
-										... on ContentfulContactUsPage {
+										... on ContentfulPageContact {
 											id
 											slug
 										}
@@ -209,29 +209,29 @@ function SinglePage({ data }) {
 		<Layout>
 			<SEO title={formatSlug(data.contentfulPageSingle.slug)} />
 
-				{data.contentfulPageSingle.pageSections.map((section) => {
-					let typeName = section['__typename'];
-					switch (typeName) {
-						case CONTENTFUL_SECTION_TYPES.CONTENT:
-							return <SectionContent data={section} />;
-						case CONTENTFUL_SECTION_TYPES.CTA:
-							return <SectionCTA data={section} />;
-						case CONTENTFUL_SECTION_TYPES.DIVIDER:
-							return <SectionDivider data={section} />;
-						case CONTENTFUL_SECTION_TYPES.GRID:
-							return <SectionGrid data={section} />;
-						case CONTENTFUL_SECTION_TYPES.INSTAGRAM:
-							return <SectionInstagram />;
-						case CONTENTFUL_SECTION_TYPES.SLIDER:
-							return <SectionSlider data={section} />;
-						case CONTENTFUL_SECTION_TYPES.LIST:
-							return <SectionList data={section} />;
-						case CONTENTFUL_SECTION_TYPES.API_REVIEWS:
-							return <ApiReviews />;
-						default:
-							return <div />;
-					}
-				})}
+			{data.contentfulPageSingle.pageSections.map((section) => {
+				let typeName = section['__typename'];
+				switch (typeName) {
+					case CONTENTFUL_SECTION_TYPES.CONTENT:
+						return <SectionContent data={section} />;
+					case CONTENTFUL_SECTION_TYPES.CTA:
+						return <SectionCTA data={section} />;
+					case CONTENTFUL_SECTION_TYPES.DIVIDER:
+						return <SectionDivider data={section} />;
+					case CONTENTFUL_SECTION_TYPES.GRID:
+						return <SectionGrid data={section} />;
+					case CONTENTFUL_SECTION_TYPES.INSTAGRAM:
+						return <SectionInstagram />;
+					case CONTENTFUL_SECTION_TYPES.SLIDER:
+						return <SectionSlider data={section} />;
+					case CONTENTFUL_SECTION_TYPES.LIST:
+						return <SectionList data={section} />;
+					case CONTENTFUL_SECTION_TYPES.API_REVIEWS:
+						return <ApiReviews />;
+					default:
+						return <div />;
+				}
+			})}
 		</Layout>
 	);
 }
