@@ -33,7 +33,7 @@
   transform-style: preserve-3d;
 
   @media screen and (max-width: $break3) {
-    height: calc(100vh - 18rem);
+    height: 100vh;
   }
 }
 
@@ -114,10 +114,15 @@
 }
 
 main > .c-content:first-child .c-background-img.-banner {
-  padding-top: 5rem;
+  .c-background-img__content {
+    padding-top: 6rem;
+  }
+  @media screen and (max-width: $break4) {
+    min-height: 100vh;
 
-  @media screen and (max-width: $break3) {
-		padding-top: 12rem;
+    .c-background-img__content {
+      padding-top: 8rem;
+    }
 	}
 }
 
@@ -139,6 +144,10 @@ main > .c-content:first-child .c-background-img.-banner {
   background: linear-gradient(302.26deg, rgba(54, 56, 61, 0.90) 22.11%, rgba(53, 53, 56, 0.3) 80%);
   text-shadow: 0 1px 17px rgba(0, 0, 0, 0.5);
   z-index: 2;
+
+  @media screen and (max-width: $break3) {
+    padding: 1rem;
+	}
 
   .c-rich-text {
     max-width: $break1;
@@ -169,6 +178,11 @@ main > .c-content:first-child .c-background-img.-banner {
   padding: 1.5rem;
   box-sizing: border-box;
   color: #fff;
+
+  @media screen and (max-width: $break3) {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+	}
 }
 
 .c-background-img__banner-img {

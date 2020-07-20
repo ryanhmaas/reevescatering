@@ -19,28 +19,10 @@ const closeDropdown = (evt) => {
 	removeOpen();
 };
 
-const mobileMenuDrop = (evt) => {
-	// Drop Menu Toggle
-	let dropGroups = document.querySelectorAll('.nav__drop-group');
-	dropGroups.forEach(group => {
-		let subMenu = group.querySelector('.nav__drop-menu');
-		let menuToggle = group.querySelector('.nav__drop-toggle');
-		let menuToggleHeight = menuToggle.offsetHeight;
-		let subMenuHeight = subMenu.offsetHeight;
-
-		group.style.setProperty('--drop-closed-height', menuToggleHeight+'px');
-		group.style.setProperty('--drop-open-height', (menuToggleHeight+subMenuHeight)+'px');
-	});
-}
-
 
 exports.onClientEntry = () => {
 	window.onload = () => {
 		document.addEventListener('click', closeDropdown, false);
 	};
 };
-
-exports.onInitialClientRender = () => {
-	mobileMenuDrop();
-}
 

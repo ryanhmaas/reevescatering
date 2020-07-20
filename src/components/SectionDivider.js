@@ -4,7 +4,7 @@ const SectionDivider = props => {
   const dividerType = props.data.dividerType.toLowerCase().replace(/ /g, "")
 
   if (dividerType === "blankspace") {
-    return <br />
+    return (<div className="section-spacer"></div>)
   } else {
     return (
       <div

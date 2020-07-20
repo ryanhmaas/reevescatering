@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faBars } from '@fortawesome/pro-light-svg-icons';
@@ -6,6 +6,21 @@ import Img from "gatsby-image";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const navLinkParent = React.createRef();
+
+
+const mobileMenuDrop = (evt) => {
+	// Drop Menu Toggle
+	let dropGroups = document.querySelectorAll('.nav__drop-group');
+	dropGroups.forEach(group => {
+		let subMenu = group.querySelector('.nav__drop-menu');
+    let menuToggle = group.querySelector('.nav__drop-toggle');
+    let menuToggleHeight = menuToggle.offsetHeight;
+		let subMenuHeight = subMenu.offsetHeight;
+
+		group.style.setProperty('--drop-closed-height', menuToggleHeight+'px');
+		group.style.setProperty('--drop-open-height', (menuToggleHeight+subMenuHeight)+'px');
+	});
+}
 
 function TopBar({ data, reevesLogo }) {
 
@@ -21,9 +36,10 @@ function TopBar({ data, reevesLogo }) {
             />
 				</Link>
 
-        <button className="nav__mobile-menu" onClick={function(evt) {
+        <button className="nav__mobile-menu" style={{'--drop-closed-height': 42+'px'}} onClick={function(evt) {
           navLinkParent.current.classList.toggle('-open');
           evt.target.classList.toggle('-open');
+          mobileMenuDrop();
         }}>
           <FontAwesomeIcon className="icon__svg" icon={faBars} />
         </button>
@@ -39,6 +55,7 @@ function TopBar({ data, reevesLogo }) {
                       className="nav__drop-toggle"
                       onClick={function(evt) {
                         evt.target.parentElement.classList.toggle('-open');
+                        mobileMenuDrop();
                       }}
                     >
                       {group.groupName} &nbsp;<FontAwesomeIcon className="icon__svg" icon={faAngleDown} />

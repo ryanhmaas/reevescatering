@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
           ...GatsbyContentfulFluid
         }
       }
-      header: contentfulNavigationComponent(title: { eq: "Header" }) {
+      header: contentfulNavigationConfig(title: { eq: "Header" }) {
         id
         title
         navigationSections {
@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
                 ... on ContentfulPageSingle {
                   slug
                 }
-                ... on ContentfulContactUsPage {
+                ... on ContentfulPageContact {
                   slug
                 }
               }
@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
           }
         }
       }
-      footer: contentfulNavigationComponent(title: { eq: "Footer" }) {
+      footer: contentfulNavigationConfig(title: { eq: "Footer" }) {
         id
         title
         navigationSections {
@@ -81,7 +81,7 @@ const Layout = ({ children }) => {
                 ... on ContentfulPageSingle {
                   slug
                 }
-                ... on ContentfulContactUsPage {
+                ... on ContentfulPageContact {
                   slug
                 }
               }

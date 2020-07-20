@@ -5,6 +5,11 @@
 	margin-bottom: 3rem;
 	width: 100%;
 	max-width: calc(100% / 3);
+
+	@media screen and (max-width: $break3) {
+		max-width: 100%;
+	}
+
 	&__title {
 		text-align: center;
 
