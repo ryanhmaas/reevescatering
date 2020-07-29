@@ -47,7 +47,6 @@
 				right: 2rem;
 				bottom: 2rem;
 			}
-			
 		}
 	}
 
@@ -73,7 +72,7 @@
 		}
 
 		&__name {
-			font-family: "Euphoria Script";
+			font-family: "Prata";
 			font-size: 32px;
 			margin: 0;
 		}
@@ -89,7 +88,6 @@
 			transition-property: left, right, bottom, top;
 			transition-duration: 150ms;
 		}
-
 	}
 
 	@media screen and (max-width: $break3) {
@@ -123,7 +121,6 @@
 		margin-bottom: 4rem;
 	}
 
-
 	p {
 		text-align: left;
 	}
@@ -155,7 +152,7 @@
 
 	.tiles-grid__item:hover & {
 		transform: translateY(100%);
-	} 
+	}
 }
 
 .react-responsive-modal-closeButton {
