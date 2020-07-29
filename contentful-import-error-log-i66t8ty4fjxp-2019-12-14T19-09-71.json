@@ -1,0 +1,366 @@
+[
+  {
+    "ts": "2019-12-15T00:09:42.693Z",
+    "level": "error",
+    "error": {
+      "name": "UnknownField",
+      "entity": {
+        "original": {
+          "sys": {
+            "id": "11",
+            "publishedVersion": 1,
+            "contentType": {
+              "sys": {
+                "id": "menuItem"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Tomato Soup Shooters w/ Mini Grilled Cheese"
+            },
+            "description": {
+              "en-US": "Oh so tasy."
+            },
+            "glutenFree": {
+              "en-US": false
+            },
+            "vegan": {
+              "en-US": false
+            }
+          }
+        },
+        "transformed": {
+          "sys": {
+            "id": "11",
+            "publishedVersion": 1,
+            "contentType": {
+              "sys": {
+                "id": "menuItem"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Tomato Soup Shooters w/ Mini Grilled Cheese"
+            },
+            "description": {
+              "en-US": "Oh so tasy."
+            },
+            "glutenFree": {
+              "en-US": false
+            },
+            "vegan": {
+              "en-US": false
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "No field with id \"name\" found.",
+        "details": {
+          "errors": [
+            {
+              "name": "unknown",
+              "path": [
+                "fields",
+                "name"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/i66t8ty4fjxp/environments/master/entries/11",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.18.0; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v8.9.4; os macOS/18.7.0;",
+            "Authorization": "Bearer ...0J0_s",
+            "user-agent": "node.js/v8.9.4",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 2,
+            "Content-Length": 166
+          },
+          "method": "put",
+          "payloadData": "{\"fields\":{\"name\":{\"en-US\":\"Tomato Soup Shooters w/ Mini Grilled Cheese\"},\"description\":{\"en-US\":\"Oh so tasy.\"},\"glutenFree\":{\"en-US\":false},\"vegan\":{\"en-US\":false}}}"
+        },
+        "requestId": "691f3478cd121159a348f477d8fad67a"
+      }
+    }
+  },
+  {
+    "ts": "2019-12-15T00:09:42.696Z",
+    "level": "error",
+    "error": {
+      "name": "UnknownField",
+      "entity": {
+        "original": {
+          "sys": {
+            "id": "10",
+            "publishedVersion": 1,
+            "contentType": {
+              "sys": {
+                "id": "menuItem"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Pear, Ricotta, & Candied Walnut Crostini"
+            },
+            "description": {
+              "en-US": "Oh so tasy."
+            },
+            "glutenFree": {
+              "en-US": false
+            },
+            "vegan": {
+              "en-US": false
+            }
+          }
+        },
+        "transformed": {
+          "sys": {
+            "id": "10",
+            "publishedVersion": 1,
+            "contentType": {
+              "sys": {
+                "id": "menuItem"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Pear, Ricotta, & Candied Walnut Crostini"
+            },
+            "description": {
+              "en-US": "Oh so tasy."
+            },
+            "glutenFree": {
+              "en-US": false
+            },
+            "vegan": {
+              "en-US": false
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "No field with id \"name\" found.",
+        "details": {
+          "errors": [
+            {
+              "name": "unknown",
+              "path": [
+                "fields",
+                "name"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/i66t8ty4fjxp/environments/master/entries/10",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.18.0; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v8.9.4; os macOS/18.7.0;",
+            "Authorization": "Bearer ...0J0_s",
+            "user-agent": "node.js/v8.9.4",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 2,
+            "Content-Length": 163
+          },
+          "method": "put",
+          "payloadData": "{\"fields\":{\"name\":{\"en-US\":\"Pear, Ricotta, & Candied Walnut Crostini\"},\"description\":{\"en-US\":\"Oh so tasy.\"},\"glutenFree\":{\"en-US\":false},\"vegan\":{\"en-US\":false}}}"
+        },
+        "requestId": "b2f6fdbd04e2c372741b3f67fb3791bb"
+      }
+    }
+  },
+  {
+    "ts": "2019-12-15T00:09:42.696Z",
+    "level": "error",
+    "error": {
+      "name": "UnknownField",
+      "entity": {
+        "original": {
+          "sys": {
+            "id": "13",
+            "publishedVersion": 1,
+            "contentType": {
+              "sys": {
+                "id": "menuItem"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Broccoli Meatballs w/ Garlic-Tomato Sauce"
+            },
+            "description": {
+              "en-US": "Oh so tasy."
+            },
+            "glutenFree": {
+              "en-US": true
+            },
+            "vegan": {
+              "en-US": false
+            }
+          }
+        },
+        "transformed": {
+          "sys": {
+            "id": "13",
+            "publishedVersion": 1,
+            "contentType": {
+              "sys": {
+                "id": "menuItem"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Broccoli Meatballs w/ Garlic-Tomato Sauce"
+            },
+            "description": {
+              "en-US": "Oh so tasy."
+            },
+            "glutenFree": {
+              "en-US": true
+            },
+            "vegan": {
+              "en-US": false
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "No field with id \"name\" found.",
+        "details": {
+          "errors": [
+            {
+              "name": "unknown",
+              "path": [
+                "fields",
+                "name"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/i66t8ty4fjxp/environments/master/entries/13",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.18.0; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v8.9.4; os macOS/18.7.0;",
+            "Authorization": "Bearer ...0J0_s",
+            "user-agent": "node.js/v8.9.4",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 2,
+            "Content-Length": 163
+          },
+          "method": "put",
+          "payloadData": "{\"fields\":{\"name\":{\"en-US\":\"Broccoli Meatballs w/ Garlic-Tomato Sauce\"},\"description\":{\"en-US\":\"Oh so tasy.\"},\"glutenFree\":{\"en-US\":true},\"vegan\":{\"en-US\":false}}}"
+        },
+        "requestId": "d24261d6b1596f155dc3397dc8810373"
+      }
+    }
+  },
+  {
+    "ts": "2019-12-15T00:09:42.697Z",
+    "level": "error",
+    "error": {
+      "name": "UnknownField",
+      "entity": {
+        "original": {
+          "sys": {
+            "id": "12",
+            "publishedVersion": 1,
+            "contentType": {
+              "sys": {
+                "id": "menuItem"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Cucumber Rolls w/ Feta & Sun-Dried Tomatoes"
+            },
+            "description": {
+              "en-US": "Oh so tasy."
+            },
+            "glutenFree": {
+              "en-US": true
+            },
+            "vegan": {
+              "en-US": false
+            }
+          }
+        },
+        "transformed": {
+          "sys": {
+            "id": "12",
+            "publishedVersion": 1,
+            "contentType": {
+              "sys": {
+                "id": "menuItem"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Cucumber Rolls w/ Feta & Sun-Dried Tomatoes"
+            },
+            "description": {
+              "en-US": "Oh so tasy."
+            },
+            "glutenFree": {
+              "en-US": true
+            },
+            "vegan": {
+              "en-US": false
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "No field with id \"name\" found.",
+        "details": {
+          "errors": [
+            {
+              "name": "unknown",
+              "path": [
+                "fields",
+                "name"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/i66t8ty4fjxp/environments/master/entries/12",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.18.0; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v8.9.4; os macOS/18.7.0;",
+            "Authorization": "Bearer ...0J0_s",
+            "user-agent": "node.js/v8.9.4",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 2,
+            "Content-Length": 165
+          },
+          "method": "put",
+          "payloadData": "{\"fields\":{\"name\":{\"en-US\":\"Cucumber Rolls w/ Feta & Sun-Dried Tomatoes\"},\"description\":{\"en-US\":\"Oh so tasy.\"},\"glutenFree\":{\"en-US\":true},\"vegan\":{\"en-US\":false}}}"
+        },
+        "requestId": "3bac2accab73109a5c58779270553a14"
+      }
+    }
+  }
+]

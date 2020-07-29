@@ -1,67 +1,65 @@
 .leaflet {
-  position: relative;
+	position: relative;
 }
 
 .contact-section {
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  background: rgba(#fff, 0.8);
+	z-index: 10;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	background: rgba(#fff, 0.8);
 	backdrop-filter: $backdrop-blur;
-  border-left: 3px solid #7ac142;
-  padding: 2rem;
-  border-radius: 2px;
-  max-width: 45%;
+	border-left: 3px solid #7ac142;
+	padding: 2rem;
+	border-radius: 2px;
+	max-width: 45%;
 
-  h2 {
-    color: #60973a;
-    font-family: "Euphoria Script";
-    font-size: 32px;
-  }
+	h2 {
+		color: #60973a;
+		font-family: "Libre Baskerville";
+		font-size: 32px;
+	}
 
-  p {
-    font-family: "Open Sans";
-    color: #555555;
-    font-size: 14px;
-    line-height: 2;
-    margin-bottom: 3rem;
-  }
+	p {
+		font-family: "Open Sans";
+		color: #555555;
+		font-size: 14px;
+		line-height: 2;
+		margin-bottom: 3rem;
+	}
 
-  input {
-    font-family: "Open Sans";
-    color: #555555;
-  }
+	input {
+		font-family: "Open Sans";
+		color: #555555;
+	}
 
-  &__phone {
-    text-decoration: underline;
-    color: #7ac142;
-  }
+	&__phone {
+		text-decoration: underline;
+		color: #7ac142;
+	}
 
-  @media screen and (max-width: $break3) {
-    position: relative;
-    max-width: inherit;
-    transform: none;
-    order: 1;
-  }
+	@media screen and (max-width: $break3) {
+		position: relative;
+		max-width: inherit;
+		transform: none;
+		order: 1;
+	}
 
-  .contact-form__btn {
-    margin-top: 2rem;
-  }
-
+	.contact-form__btn {
+		margin-top: 2rem;
+	}
 }
 
-
 .leaflet__wrapper {
-  @media screen and (max-width: $break3) {
-    display: flex;
-    flex-direction: column;
-  }
+	@media screen and (max-width: $break3) {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .leaflet-container {
-  @media screen and (max-width: $break3) {
-    order: 2;
-  }
+	@media screen and (max-width: $break3) {
+		order: 2;
+	}
 }
