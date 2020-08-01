@@ -15,6 +15,20 @@ const Layout = ({ children }) => {
           title
         }
       }
+      socialLinks: allContentfulItemSocialMedia {
+        nodes {
+          url
+          type
+          name
+        }
+      }
+      contactInfo: allContentfulItemContactInfo {
+        nodes {
+          type
+          name
+          value
+        }
+      }
       hyperionLogo: file(relativePath: { eq: "hyperion-logo-white.svg" }) {
         publicURL
         childImageSharp {
@@ -43,8 +57,8 @@ const Layout = ({ children }) => {
             groupType
             navLinkRef {
               linkName
-              downloadFile{
-                file{
+              downloadFile {
+                file {
                   url
                 }
               }
@@ -72,8 +86,8 @@ const Layout = ({ children }) => {
             navLinkRef {
               linkName
               linkSourceExternal
-              downloadFile{
-                file{
+              downloadFile {
+                file {
                   url
                 }
               }
@@ -92,16 +106,23 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const nav = data.header?.navigationSections;
-  const footer = data.footer?.navigationSections;
+  const nav = data.header?.navigationSections
+  const footer = data.footer?.navigationSections
+  const socialLinks = data.socialLinks?.nodes || []
+  const contactInfo = data.contactInfo?.nodes || []
   // console.log(nav);
-  
+
   return (
     <React.Fragment>
       <>
         <TopBar data={nav} reevesLogo={data.reevesWhiteLogo} />
         <main>{children}</main>
-        <Footer data={footer} reevesLogo={data.reevesWhiteLogo} />
+        <Footer
+          data={footer}
+          reevesLogo={data.reevesWhiteLogo}
+          socialLinks={socialLinks}
+          contactInfoData={contactInfo}
+        />
         <HyperionFooter logo={data.hyperionLogo} />
       </>
     </React.Fragment>
