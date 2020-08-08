@@ -1,8 +1,17 @@
 .c-rich-text { 
 	h2, h3 {
 		@media screen and (max-width: $break3) {
-			text-align: center;
+			text-align: justify;
 			font-size: 3rem;
+		}
+	}
+
+	a {
+		color: $reeves-dark-green;
+
+		&:hover {
+			color: $reeves-green;
+			text-decoration: none;
 		}
 	}
 	
@@ -10,6 +19,13 @@
 
 .c-rich-text-only {
 	margin-bottom: 4rem;
+	h2, h3 {
+		text-align: center;
+	}
+
+	.c-rich-text__c-btn-wrapper {
+		text-align: center;
+	}
 }
 
 .c-rich-text__c-btn-wrapper {

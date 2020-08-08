@@ -40,7 +40,7 @@
 	display: block;
 	height: 100vh;
 	width: 100%;
-  -webkit-backface-visibility: hidden;
+  	-webkit-backface-visibility: hidden;
   
 
 	&:before {
@@ -110,7 +110,7 @@
 	height: 430px;
 	z-index: 0;
 	background-color: transparent;
-  overflow: hidden;
+  	overflow: hidden;
 }
 
 main > .c-content:first-child .c-background-img.-banner {
@@ -180,6 +180,12 @@ main > .c-content:first-child .c-background-img.-banner {
 	@media screen and (max-width: $break3) {
 		font-size: 2.5rem;
 		margin-bottom: 0;
+	}
+}
+
+.c-background-img.-banner .c-background-img__content {
+	h1, h2, h3 {
+		text-align: center;
 	}
 }
 
