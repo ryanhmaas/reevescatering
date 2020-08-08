@@ -22,7 +22,7 @@ function SectionContent({ data }) {
 
       {layout === "image on left" && (
         <section className="c-content" style={{zIndex: 1}}>
-          <figure className="c-content__c-img-text c-img-text u-container -lg">
+          <figure className="c-content__c-img-text c-img-text">
             <div className="c-img-text__img-wrapper">
               <Img className="c-img-text__img" fluid={imageData?.fluid} />
             </div>
@@ -35,7 +35,7 @@ function SectionContent({ data }) {
 
       {layout === "image on right" && (
         <section className="c-content" style={{zIndex: 1}}>
-          <figure className="c-content__c-img-text c-img-text -right u-container -lg">
+          <figure className="c-content__c-img-text c-img-text -right">
             <figcaption className="c-img-text__content">
               <ItemRichText {...richText} />
             </figcaption>

@@ -8,14 +8,16 @@ function ItemRichText(props) {
   const button = richText.richTextButtons
   const justify = richText.richTextJustification?.toLowerCase()
   let buttonClass = ""
+  let align = justify==='center' ? 'center' : ''
+
   return (
     <>
       <div
         className="c-rich-text"
-        style={{ textAlign: justify }}
+        style={{ textAlign: justify}}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
-      <div className="c-rich-text__c-btn-wrapper">
+      <div className="c-rich-text__c-btn-wrapper" style={{textAlign: align}}>
         {button
           ? button.map(btn => {
               if (btn.linkStyle) {
@@ -28,6 +30,7 @@ function ItemRichText(props) {
                   {btn.linkType.toLowerCase() === "internal page" && (
                     <Link
                       className={buttonClass}
+                      style={{}}
                       to={
                         btn.linkSourceInternal
                           ? btn.linkSourceInternal.slug
@@ -40,6 +43,7 @@ function ItemRichText(props) {
                   {btn.linkType.toLowerCase() === "external website" && (
                     <a
                       className={buttonClass}
+                      style={{}}
                       href={
                         btn.linkSourceExternal ? btn.linkSourceExternal : ""
                       }
