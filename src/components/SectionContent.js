@@ -71,7 +71,7 @@ function SectionContent({ data }) {
               className="c-content__c-background-img c-background-img -full"
               arianame="background image"
             ></figure>
-            <div className="c-background-img__content u-container">
+            <div className="c-background-img__content u-container -lg">
               <ItemRichText {...richText} />
             </div>
           </div>
