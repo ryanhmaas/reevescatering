@@ -5,10 +5,11 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 70px;
+	height: 60px;
 	background: rgba(0, 0, 0, 0.8);
 	backdrop-filter: blur(15px);
 	z-index: 20;
+	transition: height 200ms, background 200ms;
 
 	&, & * {
 		font-family: 'Open Sans Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -21,6 +22,12 @@
 	@media screen and (max-width: $break3) {
 		height: 60px;
 	}
+}
+
+body:not(.-scroll-down):not(.-scroll-up) .nav {
+	height: 100px;
+	background: rgba(0, 0, 0, 0);
+	backdrop-filter: blur(0);
 }
 
 .nav__mobile-menu {
@@ -51,7 +58,9 @@ ul {
 .nav__container {
 	position: relative;
 	display: flex;
+	align-items: center;
 	z-index: 2;
+	
 }
 
 .nav__container.u-container {
@@ -67,12 +76,18 @@ ul {
     height: 100%;
     width: 100%;
 	max-width: 100px;
-	padding: 0.5rem;
 	box-sizing: border-box;
+	fill: #fff;
+	transition: fill 200ms, max-width 200ms;
 	
-	img {
+	svg {
 		object-fit: contain !important;
 	}
+}
+
+body[class*='-scroll'] .nav__brand {
+	fill: $reeves-green;
+	max-width: 60px;
 }
 
 .nav__link-parent {
@@ -231,7 +246,7 @@ ul {
 	&:after {
 		content: '';
 		position: absolute;
-		bottom: 0;
+		bottom: 4px;
 		left: 0;
 		right: 100%;
 		height: 1px;
