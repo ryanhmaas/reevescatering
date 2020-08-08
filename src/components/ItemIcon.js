@@ -8,7 +8,8 @@ import {
 	faCalendarStar,
 	faPaperPlane,
 	faUtensilsAlt,
-	faWineGlassAlt
+	faWineGlassAlt,
+	faGiftCard
 } from '@fortawesome/pro-solid-svg-icons';
 
 function ItemIcon(props) {
@@ -23,6 +24,7 @@ function ItemIcon(props) {
 	const formatFontAwesomeIconName = (iconName) => {
 		let actualString = iconName.replace(/-/g, ' ');
 		let capitalized = capitalize(actualString);
+		console.log(capitalized);
 		return `fa${capitalized.replace(/\s/g, '')}`;
 	};
 
@@ -50,7 +52,10 @@ function ItemIcon(props) {
 			case 'faWineGlassAlt': {
 				return faWineGlassAlt;
 			}
-			default: 
+			case 'faGiftCard': {
+				return faGiftCard;
+			}
+			default:
 				return faRingsWedding;
 		}
 	};
