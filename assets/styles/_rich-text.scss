@@ -49,3 +49,11 @@
 .c-rich-text blockquote + * {
 	text-align: right;
 }
+
+.c-rich-text a {
+	color: $reeves-dark-green;
+
+	&:hover {
+		color: $reeves-green;
+	}
+}
