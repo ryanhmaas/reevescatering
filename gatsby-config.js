@@ -66,7 +66,7 @@ module.exports = {
 						variants: [ `300`, `400`, `700` ]
 					},
 					{
-						family: `Open Sans`,
+						family: `Montserrat`,
 						variants: [ `300`, `400`, `700` ]
 					},
 					{
