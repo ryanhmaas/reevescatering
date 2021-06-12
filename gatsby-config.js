@@ -58,25 +58,13 @@ module.exports = {
 			}
 		},
 		{
-			resolve: `gatsby-plugin-prefetch-google-fonts`,
+			resolve: `gatsby-plugin-google-fonts`,
 			options: {
 				fonts: [
-					{
-						family: `Cormorant Garamond`,
-						variants: [ `300`, `400`, `700` ]
-					},
-					{
-						family: `Open Sans`,
-						variants: [ `300`, `400`, `700` ]
-					},
-					{
-						family: `Open Sans Condensed`,
-						variants: [ `300`, `400`, `700` ]
-					},
-					{
-						family: `Tangerine`,
-						variants: [ `400`, `700` ]
-					}
+					`Cormorant Garamond\:300,400,700`,
+					`Open Sans\:300,400,700`,
+					`Open Sans Condensed\:300,400,700`,
+					`Tangerine\:300,400,700`,
 				]
 			}
 		},
@@ -85,7 +73,7 @@ module.exports = {
 			options: {
 				username: `reevescatering`,
 				access_token:
-					'EAAE5dILH2oQBALjToy0zrL0zuzByEcTpKLE1c9hshnbpfzZAG272dAahHbNFBBiqSPQkycnTom2uwnUUZCKZCkTMz6z1WwUnwk05o51fcNtZBi2ggpTdGlfpPk0vsk5odYH608AxLRzmlXlUYZCRBAHvC9OAjKPZAnIh9I1VIfrB17C8S18xGO',
+					'EAAIoPUkJ9KMBALHIqZCQcyapujt5L9oZAZBi8t5dUv8psR9sdjLILkXZBh4bbdBeYVCiIgevsQ0P5MoVAKlFzq3Afr9yQlc1ZBCN13xmSVdL9ctxG1ZB6caD5I7rfHZAL4ZAcZAxZA9yQm3SdXJPMN27Fz5QQQGhrVxZA2lSpBy4gv4IGPahU70E7hIY3LfjuqqFGyHQPvUp3UPPAZDZD',
 				instagram_id: '17841400241165626',
 				paginate: 5,
 				maxPosts: 5

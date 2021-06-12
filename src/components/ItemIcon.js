@@ -24,7 +24,6 @@ function ItemIcon(props) {
 	const formatFontAwesomeIconName = (iconName) => {
 		let actualString = iconName.replace(/-/g, ' ');
 		let capitalized = capitalize(actualString);
-		console.log(capitalized);
 		return `fa${capitalized.replace(/\s/g, '')}`;
 	};
 
