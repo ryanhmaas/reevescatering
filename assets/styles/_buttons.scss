@@ -1,0 +1,70 @@
+
+.c-btn {
+	display: inline-flex;
+	font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	flex-grow: 0;
+	flex-shrink: 1;
+	padding: 1rem 1.6rem;
+	color: #fff;
+	text-decoration: none;
+	border: 2px solid $reeves-green;
+	background-color: $reeves-green;
+	border-radius: $border-radius;
+	box-sizing: border-box;
+	transition-property: background, border, color, box-shadow;
+	transition-duration: 100ms;
+	line-height: 1;
+	white-space: nowrap;
+	cursor: pointer;
+	text-shadow: none;
+
+	&:hover,
+	&:focus {
+		background-color: darken($reeves-green, 6);
+		border-color: darken($reeves-green, 6);
+		outline: none;
+
+		[data-icon] {
+			transform: translateX(0.3rem);
+		}
+	}
+
+	&:active {
+		background-color: darken($reeves-green, 10);
+		border-color: darken($reeves-green, 10);
+	}
+}
+
+.c-btn [data-icon] {
+	margin-left: 0.4rem;
+	transition: transform 200ms;
+}
+
+.c-btn:not(.-outline) {
+	box-shadow: $green-box-shadow;
+}
+
+.c-btn.-outline {
+	box-shadow: none;
+	background-color: transparent;
+	border: 2px solid $reeves-green;
+	color: $reeves-green;
+
+	&:hover,
+	&:focus {
+		box-shadow: $green-box-shadow;
+		background-color: $reeves-green;
+		border-color: $reeves-green;
+		color: #fff;
+	}
+
+	&:active {
+		background-color: darken($reeves-green, 10);
+		border-color: darken($reeves-green, 10);
+	}
+}
+
+.c-btn + * {
+	margin-left: 1rem;
+}

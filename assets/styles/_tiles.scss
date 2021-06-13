@@ -1,0 +1,170 @@
+.tiles-grid {
+	font-family: "Open Sans";
+	display: grid;
+	grid-template-columns: repeat(var(--grid-cols), 1fr);
+	grid-gap: 1.5rem;
+	padding: 1.5rem;
+
+	@media (max-width: $break1) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: $break3) {
+		grid-template-columns: 1fr;
+	}
+
+	.tiles-grid__item {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.tiles-pic {
+		transition: transform 1000ms;
+	}
+
+	.tiles-pic,
+	.image-container,
+	.tiles-container {
+		height: 100%;
+	}
+
+	.image-container:hover {
+		cursor: pointer;
+
+		.tiles-pic {
+			transform: scale(1.05);
+			&:after {
+				opacity: 1;
+			}
+		}
+		.tiles-ds {
+			opacity: 1;
+
+			&:after {
+				top: 2rem;
+				left: 2rem;
+				right: 2rem;
+				bottom: 2rem;
+			}
+		}
+	}
+
+	.tiles-ds {
+		transition: opacity 300ms ease;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		color: #fff;
+		background: rgba(122, 193, 66, 0.6);
+		backdrop-filter: blur(8px);
+
+		> * {
+			margin: 0;
+			line-height: 1.5;
+		}
+
+		&__name {
+			font-family: "Cormorant Garamond";
+			font-size: 32px;
+			margin: 0;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border: 1px solid #fff;
+			transition-property: left, right, bottom, top;
+			transition-duration: 150ms;
+		}
+	}
+
+	@media screen and (max-width: $break3) {
+		&__item {
+			flex: 0 0 50%;
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width: $break4) {
+		&__item {
+			flex: 0 0 100%;
+			text-align: center;
+		}
+	}
+}
+
+.tiles-grid__item {
+	color: $body-color;
+}
+
+.tiles-modal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-around;
+	padding: 3rem;
+
+	img {
+		margin-bottom: 4rem;
+	}
+
+	p {
+		text-align: left;
+	}
+
+	@media screen and (max-width: $break3) {
+		padding: 2rem 0;
+	}
+}
+
+.react-responsive-modal-overlay {
+	backdrop-filter: blur(15px);
+}
+
+.tiles-details {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(20px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 1rem;
+	box-sizing: border-box;
+	z-index: 2;
+	transition: transform 150ms;
+
+	.tiles-grid__item:hover & {
+		transform: translateY(100%);
+	}
+}
+
+.react-responsive-modal-closeButton {
+	transition: opacity 150ms;
+
+	&:hover,
+	&:focus {
+		outline: none;
+		opacity: 0.6;
+	}
+
+	&:active {
+		opacity: 0.5;
+	}
+}
