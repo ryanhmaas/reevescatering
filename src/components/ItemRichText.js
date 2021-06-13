@@ -14,7 +14,6 @@ function ItemRichText(props) {
     <>
       <div
         className="c-rich-text"
-        style={{ textAlign: justify}}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
       <div className="c-rich-text__c-btn-wrapper" style={{textAlign: align}}>
