@@ -6,7 +6,6 @@
 const path = require(`path`)
 const slash = require(`slash`)
 
-// You can delete this file if you're not using it
 exports.onCreateWebpackConfig = ({ stage, rules, loaders, actions }) => {
   switch (stage) {
     case "build-html":

@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import SectionContent from '../components/SectionContent';
 
 import SectionGrid from '../components/SectionGrid';
-import SectionInstagram from '../components/SectionInstagram';
 import SectionSlider from '../components/SectionSlider';
 import { CONTENTFUL_SECTION_TYPES } from '../constants/enums';
 import SectionCTA from '../components/SectionCTA';
@@ -21,16 +20,6 @@ export const query = graphql`
 			pageSections {
 				... on ContentfulApiReviews {
 					reviewsTitle
-				}
-				... on ContentfulSectionList {
-					displayTitle
-					title
-					listItems {
-						vendorType
-						venueDescription
-						venueName
-						websiteLink
-					}
 				}
 				... on ContentfulSectionCallToAction {
 					id
@@ -220,8 +209,6 @@ function SinglePage({ data }) {
 						return <SectionDivider data={section} />;
 					case CONTENTFUL_SECTION_TYPES.GRID:
 						return <SectionGrid data={section} />;
-					case CONTENTFUL_SECTION_TYPES.INSTAGRAM:
-						return <SectionInstagram />;
 					case CONTENTFUL_SECTION_TYPES.SLIDER:
 						return <SectionSlider data={section} />;
 					case CONTENTFUL_SECTION_TYPES.LIST:

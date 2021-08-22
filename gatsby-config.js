@@ -68,16 +68,5 @@ module.exports = {
 				]
 			}
 		},
-		{
-			resolve: `gatsby-source-instagram`,
-			options: {
-				username: `reevescatering`,
-				access_token:
-					'EAAIoPUkJ9KMBAKpJ1IIyXH0E3pEbS4STK6UD9RZA0gMt8dJ7vJgNrZCHvGZBHNGWTCniUlYvvOIrIkOcKP7z0ZCZBDbChgzfGZA9Nakb5dtPmgAiCM4mi2nWBZAQMpqRf1ozicE9MF673oFFnZCLp7lCaQSoh1fDGdsf36HsrdOabZBZBs1R5mTaEmeTNmlQ1ZC7GmCqohLuTxvxAZDZD',
-				instagram_id: '17841400241165626',
-				paginate: 5,
-				maxPosts: 5
-			}
-		}
 	]
 };

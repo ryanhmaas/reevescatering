@@ -6,11 +6,11 @@ function SectionList(props) {
 	return (
 		<div className="c-list">
 			{displayTitle && <h3 className="c-list__title">{title}</h3>}
-			<div class="c-list__container">
+			<div className="c-list__container">
 				{listItems.map((item) => {
 					return (
-						<div class="c-list__item">
-							<div class="c-list__title">
+						<div key={item.venueName} className="c-list__item">
+							<div className="c-list__title">
 								{item.websiteLink && (
 									<a href={item.websiteLink} target="_blank" rel="noopener noreferrer">
 										{item.venueName}
