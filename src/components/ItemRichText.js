@@ -13,7 +13,7 @@ function ItemRichText(props) {
   return (
     <>
       <div
-        className="c-rich-text"
+        className="c-rich-text js-build-in"
         style={{ textAlign: justify}}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>

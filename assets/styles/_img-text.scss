@@ -43,10 +43,9 @@
 	right: 5%;
 	max-width: 720px;
 	padding: 4rem 8rem;
-	border-left: 4px solid $reeves-green;
-	background: rgba(#fff, 0.9);
-	backdrop-filter: $backdrop-blur;
+	background: rgba(#fff, 1);
 	box-sizing: border-box;
+	box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.03), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.0246739), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.0193738), 0px 4.5288px 3.62304px rgba(0, 0, 0, 0.0127833);
 
 	@media (max-width: $break1) {
 		right: 0;
@@ -71,7 +70,6 @@
 	left: 5%;
 	right: auto;
 	border-left: 0;
-	border-right: 4px solid $reeves-green;
 	z-index: 2;
 
 	@media screen and (max-width: $break3) {
