@@ -40,10 +40,10 @@ function TopBar({ data, reevesLogo }) {
         </button>
 				{/* Main nav wrapper */}
 				<ul className="nav__link-parent" ref={navLinkParent}>
-          {data.map((group) => {
+          {data.map((group, index) => {
             if (group.groupType.toLowerCase() === "dropdown"){
               return (
-                <>
+                <React.Fragment key={`nav__drop-group-${index}`}>
                   <li className="nav__drop-group">
                     {/* dropdowns have a menu name and a angle down icon */}
                     <button
@@ -69,7 +69,7 @@ function TopBar({ data, reevesLogo }) {
                       })}
                     </ul>
                   </li>
-                </>
+                </React.Fragment>
               )
             }
             else{
