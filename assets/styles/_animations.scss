@@ -99,8 +99,33 @@
 	opacity: 0;
 }
 
-.c-rich-text-only .build-in-animate,
+.c-rich-text-only .c-rich-text.build-in-animate,
 .build-in-animate.slide-in-bottom,
 .build-in-animate .slide-in-bottom {
 	animation: slide-in-bottom 0.7s cubic-bezier(0.075, 0.820, 0.165, 1.000) 0.2s both;
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+ @keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.c-rich-text,
+.fade-in {
+	opacity: 0;
+}
+
+.c-rich-text.build-in-animate,
+.build-in-animate.fade-in,
+.build-in-animate .fade-in {
+	animation: fade-in 0.7s cubic-bezier(0.075, 0.820, 0.165, 1.000) 0.2s both;
 }

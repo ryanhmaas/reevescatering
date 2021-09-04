@@ -45,7 +45,7 @@
 	padding: 4rem 8rem;
 	background: rgba(#fff, 1);
 	box-sizing: border-box;
-	box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.03), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.0246739), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.0193738), 0px 4.5288px 3.62304px rgba(0, 0, 0, 0.0127833);
+	box-shadow: $box-shadow;
 
 	@media (max-width: $break1) {
 		right: 0;

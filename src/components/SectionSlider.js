@@ -19,7 +19,7 @@ function SectionSlider({ data }) {
 	let slideSize = 60;
 
 	return (
-		<div className="c-slider__wrapper">
+		<div className="c-slider__wrapper js-build-in slide-in-bottom">
 			<h3 className="c-slider__title" style={{ textAlign: 'center' }}>
 				{sliderName}
 			</h3>
