@@ -198,21 +198,21 @@ function SinglePage({ data }) {
 		<Layout>
 			<SEO title={formatSlug(data.contentfulPageSingle.slug)} />
 
-			{data.contentfulPageSingle.pageSections.map((section) => {
+			{data.contentfulPageSingle.pageSections.map((section, index) => {
 				let typeName = section['__typename'];
 				switch (typeName) {
 					case CONTENTFUL_SECTION_TYPES.CONTENT:
-						return <SectionContent data={section} />;
+						return <SectionContent data={section} key={`section-content-${index}`}/>;
 					case CONTENTFUL_SECTION_TYPES.CTA:
-						return <SectionCTA data={section} />;
+						return <SectionCTA data={section} key={`section-cta-${index}`}/>;
 					case CONTENTFUL_SECTION_TYPES.DIVIDER:
-						return <SectionDivider data={section} />;
+						return <SectionDivider data={section} key={`section-divider-${index}`} />;
 					case CONTENTFUL_SECTION_TYPES.GRID:
-						return <SectionGrid data={section} />;
+						return <SectionGrid data={section} key={`section-grid-${index}`}/>;
 					case CONTENTFUL_SECTION_TYPES.SLIDER:
-						return <SectionSlider data={section} />;
+						return <SectionSlider data={section} key={`section-slider-${index}`}/>;
 					case CONTENTFUL_SECTION_TYPES.LIST:
-						return <SectionList data={section} />;
+						return <SectionList data={section} key={`section-list-${index}`}/>;
 					case CONTENTFUL_SECTION_TYPES.API_REVIEWS:
 						return <ApiReviews />;
 					default:
