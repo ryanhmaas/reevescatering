@@ -10,14 +10,14 @@ function SectionGrid({ data }) {
 	gridType === 'WhatWeCaterGrid' ? (gridCols = 5) : (gridCols = 3);
 
 	// todo - move switch checks to constants
-	const gridItem = (props) => {
+	const gridItem = (props, index) => {
 		if (gridType === 'VenueGrid') {
 			return <ItemVenue {...props} />;
 		} else if (gridType === 'EmployeeGrid') {
 			return <ItemEmployee {...props} />;
 		} else {
 			return (
-				<div className="grid__icon-wrapper">
+				<div className="grid__icon-wrapper" key={`grid-item-${index}`}>
 					<ItemIcon className="grid__icon" {...props} />
 					<ItemIcon className="grid__icon -shadow" {...props} />
 				</div>
@@ -35,7 +35,7 @@ function SectionGrid({ data }) {
 			{showGridItems && (
 				<div className={'grid tiles-grid'}>
 					{gridItems.map((item, index) => {
-						return gridItem(item);
+						return gridItem(item, index);
 					})}
 				</div>
 			)}
