@@ -9,7 +9,7 @@ function SectionContent({ data }) {
   let imageData = contentImage
 
   return (
-    <>
+    <React.Fragment key={`section-content-${layout}-${richText}`}>
       {layout === "rich text only" && (
         <section className="c-content js-build-in" style={{zIndex: 2}}>
           <article className="c-content__c-rich-text-only c-rich-text-only">
@@ -77,7 +77,7 @@ function SectionContent({ data }) {
           </div>
         </section>
       )}
-    </>
+    </React.Fragment>
   )
 }
 
