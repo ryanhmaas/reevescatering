@@ -5,6 +5,7 @@ function ItemVenue(props) {
 	const { venueDescription, venueName, venueImage, websiteLink } = props;
 	return (
 		<a className="tiles-grid__item"
+			data-sal="slide-up"
 			href={websiteLink}
 			target="_blank"
 			rel="noopener noreferrer"
@@ -13,10 +14,10 @@ function ItemVenue(props) {
 				{venueImage &&
 				venueImage.fluid != null && (
 					<div className="image-container">
-						<Img 
-							fluid={venueImage.fluid} 
-							className="tiles-pic" 
-							alt={venueName + '-pic'} 
+						<Img
+							fluid={venueImage.fluid}
+							className="tiles-pic"
+							alt={venueName + '-pic'}
 						/>
 						<div className="tiles-ds">
 							<div>

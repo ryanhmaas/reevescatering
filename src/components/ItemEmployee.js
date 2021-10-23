@@ -23,7 +23,7 @@ function ItemEmployee(props) {
   }
 
   return (
-    <div className="tiles-grid__item">
+    <div className="tiles-grid__item" data-sal="slide-up">
       <div className="tiles-container">
         {employeePicture && employeePicture.fluid != null && (
           <div role="presentation" className="image-container" onClick={() => onOpenModal()} onKeyDown={handleKeyDown}>
