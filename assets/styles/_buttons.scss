@@ -34,6 +34,14 @@
 		background-color: darken($reeves-green, 10);
 		border-color: darken($reeves-green, 10);
 	}
+
+	&.build-in-animate {
+		animation: slide-in-bottom 0.7s cubic-bezier(0.075, 0.820, 0.165, 1.000) 0.2s both;
+	}
+
+	.c-rich-text-only &.build-in-animate {
+		animation: slide-in-bottom 0.7s cubic-bezier(0.075, 0.820, 0.165, 1.000) 0.3s both;
+	}
 }
 
 .c-btn [data-icon] {
@@ -48,7 +56,7 @@
 .c-btn.-outline {
 	box-shadow: none;
 	background-color: transparent;
-	border: 2px solid $reeves-green;
+	border: 1px solid $reeves-green;
 	color: $reeves-green;
 
 	&:hover,

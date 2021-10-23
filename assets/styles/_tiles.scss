@@ -1,5 +1,5 @@
 .tiles-grid {
-	font-family: "Open Sans";
+	font-family: "Montserrat";
 	display: grid;
 	grid-template-columns: repeat(var(--grid-cols), 1fr);
 	grid-gap: 1.5rem;
@@ -58,6 +58,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		padding: 0 2rem;
 		text-align: center;
 		display: flex;
 		justify-content: center;

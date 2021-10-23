@@ -12,6 +12,7 @@ const removeOpen = () => {
 		});
 	}
 };
+
 const closeDropdown = (evt) => {
 	if (evt.target.closest('.nav__drop-group.-open')) {
 		return;
@@ -48,11 +49,34 @@ const onScrollDown = () => {
 	};
 }
 
-
 exports.onClientEntry = () => {
 	window.onload = () => {
 		document.addEventListener('click', closeDropdown, false);
 		onScrollDown();
 	};
+
 };
 
+
+// exports.onClientEntry = () => {
+// 	if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+
+// 		// Create an intersection observer with default options, that
+// 		// triggers a class on/off depending on an element’s visibility
+// 		// in the viewport
+// 		const animationObserver = new IntersectionObserver((entries, observer) => {
+// 			for (const entry of entries) {
+// 				entry.target.classList.toggle('build-in-animate', entry.isIntersecting)
+// 			}
+// 		});
+
+// 		// Use that IntersectionObserver to observe the visibility
+// 		// of some elements
+// 		for (const element of document.querySelectorAll('.js-build-in')) {
+// 			animationObserver.observe(element);
+// 		}
+// 		for (const element of document.querySelectorAll('.c-btn')) {
+// 			animationObserver.observe(element);
+// 		}
+// 	}
+// }

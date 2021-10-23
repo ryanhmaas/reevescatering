@@ -4,13 +4,13 @@
 	align-items: center;
 	padding: 1rem;
 	margin-top: 10rem;
+	background-color: #fff;
+	box-shadow: 0px -45px 80px rgba(0, 0, 0, 0.02), 0px -13.5662px 24.1177px rgba(0, 0, 0, 0.0146487), 0px -5.6347px 10.0172px rgba(0, 0, 0, 0.013669), 0px -2.03796px 3.62304px rgba(0, 0, 0, 0.0110181);
 
 	&.-border-top {
-		border-top: 5px solid #7ac142;
 	}
 
 	&.-border-bottom {
-		border-bottom: 5px solid #7ac142;
 	}
 
 	&.-border-none {
@@ -27,7 +27,7 @@
 		font-family: "Open Sans Condensed";
 		font-weight: 600;
 		font-size: 14px;
-		background-color: #7ac142;
+		background-color: $reeves-green;
 		color: #fff;
 		padding: .5rem;
 		border-radius: 7px;
@@ -37,7 +37,7 @@
 			cursor: pointer;
 			transition: all .3s ease-in-out;
 			transform: translateY(-1px);
-			background-color: lighten(#7ac142, 5);
+			background-color: lighten($reeves-green, 5);
 		}
 	}
 

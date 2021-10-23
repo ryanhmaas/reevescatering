@@ -2,11 +2,12 @@
   position: relative;
   padding: 6rem 0;
   z-index: 2;
+  color: $reeves-green;
 
   &:before {
     content: '';
     width: calc(50% - 60px);
-    background:#C4C4C4;
+    background:#dadde6;
     position: absolute;
     right: 0;
     height: 1px;
@@ -17,7 +18,7 @@
   &:after {
     content: '';
     width: calc(50% - 60px);
-    background:#C4C4C4;
+    background:#dadde6;
     position: absolute;
     left: 0;
     height: 1px;
