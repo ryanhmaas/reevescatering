@@ -40,7 +40,7 @@
 
 .c-img-text__content {
 	position: absolute;
-	right: 5%;
+	right: 0;
 	max-width: 720px;
 	padding: 4rem 8rem;
 	background: rgba(#fff, 1);
@@ -58,6 +58,7 @@
 		max-width: 100%;
 		height: auto;
 		order: 2;
+		right: 0;
 	}
 
 	@media screen and (max-width: $break3) {
@@ -67,7 +68,7 @@
 }
 
 .c-img-text.-right .c-img-text__content {
-	left: 5%;
+	left: 0;
 	right: auto;
 	border-left: 0;
 	z-index: 2;
@@ -75,5 +76,6 @@
 	@media screen and (max-width: $break3) {
 		border: none;
 		padding: 2rem;
+		left: 0;
 	}
 }

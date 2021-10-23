@@ -10,7 +10,7 @@ export const styles = {
 	},
 	fonts: {
 		euphoriaScript: 'Cormorant Garamond',
-		openSans: 'Open Sans',
+		openSans: 'Montserrat',
 		openSansCondensed: 'Open Sans Condensed'
 	}
 };

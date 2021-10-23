@@ -66,9 +66,14 @@
 
 	em {
 		font-family: "Tangerine", cursive;
-		font-size: 5rem;
+		font-size: 6rem;
 		margin-right: 0.5rem;
 		color: $reeves-green;
+
+		@media screen and (max-width: $break3) {
+			line-height: 1em;
+			margin-right: 0;
+		}
 	}
 }
 
@@ -99,7 +104,8 @@
 		left: 0;
 
 		.c-rich-text h1 {
-			font-size: 1.8rem;
+			font-size: 2rem;
+			line-height: 2em;
 			text-align: center;
 		}
 	}

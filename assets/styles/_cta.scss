@@ -27,7 +27,7 @@
 		font-family: "Open Sans Condensed";
 		font-weight: 600;
 		font-size: 14px;
-		background-color: #7ac142;
+		background-color: $reeves-green;
 		color: #fff;
 		padding: .5rem;
 		border-radius: 7px;
@@ -37,7 +37,7 @@
 			cursor: pointer;
 			transition: all .3s ease-in-out;
 			transform: translateY(-1px);
-			background-color: lighten(#7ac142, 5);
+			background-color: lighten($reeves-green, 5);
 		}
 	}
 
