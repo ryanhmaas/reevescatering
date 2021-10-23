@@ -8,7 +8,7 @@ const SectionDivider = props => {
   } else {
     return (
       <div
-        className="section-divider js-build-in fade-in"
+        className="section-divider  fade-in"
         style={{
           display: "flex",
           alignItems: "center",

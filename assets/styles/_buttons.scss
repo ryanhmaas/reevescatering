@@ -35,8 +35,6 @@
 		border-color: darken($reeves-green, 10);
 	}
 
-	transform: translateY(40px);
-	opacity: 0;
 	&.build-in-animate {
 		animation: slide-in-bottom 0.7s cubic-bezier(0.075, 0.820, 0.165, 1.000) 0.2s both;
 	}
