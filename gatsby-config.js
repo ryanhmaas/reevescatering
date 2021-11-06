@@ -6,6 +6,22 @@ module.exports = {
 		siteUrl: `https://reevescatering.netlify.com/`
 	},
 	plugins: [
+		{
+			resolve: `gatsby-plugin-scroll-reveal`,
+			options: {
+				threshold: 0.5, // Percentage of an element's area that needs to be visible to launch animation
+				once: true, // Defines if animation needs to be launched once
+				disable: false, // Flag for disabling animations
+
+				// Advanced Options
+				selector: '[data-sal]', // Selector of the elements to be animated
+				animateClassName: 'sal-animate', // Class name which triggers animation
+				disabledClassName: 'sal-disabled', // Class name which defines the disabled state
+				rootMargin: '0% 50%', // Corresponds to root's bounding box margin
+				enterEventName: 'sal:in', // Enter event name
+				exitEventName: 'sal:out', // Exit event name
+			}
+		},
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-react-helmet`,
 		{
@@ -68,16 +84,5 @@ module.exports = {
 				]
 			}
 		},
-		{
-			resolve: `gatsby-source-instagram`,
-			options: {
-				username: `reevescatering`,
-				access_token:
-					'EAAIoPUkJ9KMBALHIqZCQcyapujt5L9oZAZBi8t5dUv8psR9sdjLILkXZBh4bbdBeYVCiIgevsQ0P5MoVAKlFzq3Afr9yQlc1ZBCN13xmSVdL9ctxG1ZB6caD5I7rfHZAL4ZAcZAxZA9yQm3SdXJPMN27Fz5QQQGhrVxZA2lSpBy4gv4IGPahU70E7hIY3LfjuqqFGyHQPvUp3UPPAZDZD',
-				instagram_id: '17841400241165626',
-				paginate: 5,
-				maxPosts: 5
-			}
-		}
 	]
 };

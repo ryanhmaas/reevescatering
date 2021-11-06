@@ -38,7 +38,7 @@ input {
 			transform: translateY(0);
 		}
 	}
-	
+
 }
 
 textarea {
@@ -66,7 +66,6 @@ textarea {
 
 	> span {
 		display: inline-block;
-		opacity: 0;
 		transform: translateY(-1rem);
 		color: $reeves-dark-green;
 		transition: opacity 200ms, transform 200ms;

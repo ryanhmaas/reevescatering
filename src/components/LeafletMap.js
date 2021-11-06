@@ -1,12 +1,16 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import useWindowSize from '../hooks/use-window-size';
 
 const LeafletMap = (props) => {
+	const size = useWindowSize();
+	const [mapZoom, setMapZoom] = useState(14);
+	const [mapCenter, setMapCenter] = useState([34.8828485, -82.3327332]);
+
 	const mapRef = useRef('mapref');
-	const position = [ 34.8828485, -82.3527332 ];
-	const mapCenter = [ 34.882848, -82.3327332 ];
+	const position = [34.8828485, -82.3527332 ];
 
 	useEffect(() => {
 		delete L.Icon.Default.prototype._getIconUrl;
@@ -20,9 +24,19 @@ const LeafletMap = (props) => {
 		mapRef.current.leafletElement.invalidateSize();
 	}, []);
 
+	useEffect(() => {
+		if (size?.width < 768) {
+			setMapZoom(13);
+			setMapCenter([34.890848, -82.3527332]);
+		} else{
+			setMapZoom(14);
+			setMapCenter([34.8828485, -82.3327332 ]);
+		}
+	}, [size?.width]);
+
 	if (typeof window !== 'undefined') {
 		return (
-			<Map center={mapCenter} zoom={14} maxZoom={16} ref={mapRef} scrollWheelZoom={false}>
+			<Map center={mapCenter} zoom={mapZoom} maxZoom={16} ref={mapRef} scrollWheelZoom={false}>
 				<TileLayer
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 					attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

@@ -43,9 +43,9 @@
 	right: 0;
 	max-width: 720px;
 	padding: 4rem 8rem;
-	background: rgba(#fff, 0.9);
-	backdrop-filter: $backdrop-blur;
+	background: rgba(#fff, 1);
 	box-sizing: border-box;
+	box-shadow: $box-shadow;
 
 	@media (max-width: $break1) {
 		right: 0;

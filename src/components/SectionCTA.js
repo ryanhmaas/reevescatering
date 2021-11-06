@@ -22,7 +22,7 @@ function SectionCTA(props) {
 		<div className={`section-cta -border-${formattedBorderName}`}>
 			<div className="section-cta__title">{callToActionTitle}</div>
 			{linkSourceInternal && (
-				<Link className={buttonClass} to={linkSourceInternal ? linkSourceInternal.slug : ''}>
+				<Link className={buttonClass} to={linkSourceInternal ? '/' + linkSourceInternal.slug : ''}>
 					{formattedLinkIconPlacement === 'left' && (
 						<FontAwesomeIcon className="mr-1/2" icon={faPaperPlane} style={{ color: '#fff' }} />
 					)}

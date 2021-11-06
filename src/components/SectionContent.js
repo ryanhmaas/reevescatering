@@ -9,9 +9,9 @@ function SectionContent({ data }) {
   let imageData = contentImage
 
   return (
-    <>
+    <React.Fragment key={`section-content-${layout}-${richText}`}>
       {layout === "rich text only" && (
-        <section className="c-content" style={{zIndex: 2}}>
+        <section className="c-content " style={{zIndex: 2}}>
           <article className="c-content__c-rich-text-only c-rich-text-only">
             <div className="u-container">
               <ItemRichText {...richText} />
@@ -21,12 +21,12 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image on left" && (
-        <section className="c-content" style={{zIndex: 1}}>
+        <section className="c-content " style={{zIndex: 1}}>
           <figure className="c-content__c-img-text c-img-text">
-            <div className="c-img-text__img-wrapper">
+            <div className="c-img-text__img-wrapper" data-sal="scale-in-center">
               <Img className="c-img-text__img" fluid={imageData?.fluid} />
             </div>
-            <figcaption className="c-img-text__content">
+            <figcaption className="c-img-text__content" data-sal="slide-left" data-sal-delay="400">
               <ItemRichText {...richText} />
             </figcaption>
           </figure>
@@ -34,12 +34,12 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image on right" && (
-        <section className="c-content" style={{zIndex: 1}}>
+        <section className="c-content " style={{zIndex: 1}}>
           <figure className="c-content__c-img-text c-img-text -right">
-            <figcaption className="c-img-text__content">
+            <figcaption className="c-img-text__content" data-sal="slide-right" data-sal-delay="400">
               <ItemRichText {...richText} />
             </figcaption>
-            <div className="c-img-text__img-wrapper" >
+            <div className="c-img-text__img-wrapper" data-sal="scale-in-center">
               <Img className="c-img-text__img" fluid={imageData?.fluid} />
             </div>
           </figure>
@@ -47,7 +47,7 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image as background (banner)" && (
-          <section className="c-content">
+          <section className="c-content ">
             <div
               className="c-content__c-background-img c-background-img -banner"
               arianame="background image"
@@ -64,7 +64,7 @@ function SectionContent({ data }) {
       )}
 
       {layout === "image as background (full screen)" && (
-        <section className="c-content">
+        <section className="c-content ">
           <div className="c-background-img__wrapper -full">
             <figure
               style={{"--bg-image": "url(" + imageData.file.url + ")"}}
@@ -77,7 +77,7 @@ function SectionContent({ data }) {
           </div>
         </section>
       )}
-    </>
+    </React.Fragment>
   )
 }
 

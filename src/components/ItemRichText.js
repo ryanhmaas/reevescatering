@@ -13,19 +13,21 @@ function ItemRichText(props) {
   return (
     <>
       <div
-        className="c-rich-text"
+        className="c-rich-text "
+        style={{ textAlign: justify}}
         dangerouslySetInnerHTML={{ __html: html }}
+        data-sal="slide-up"
       ></div>
-      <div className="c-rich-text__c-btn-wrapper" style={{textAlign: align}}>
+      <div className="c-rich-text__c-btn-wrapper" data-sal="slide-up" data-sal-delay="200" style={{textAlign: align}}>
         {button
-          ? button.map(btn => {
+          ? button.map((btn, index) => {
               if (btn.linkStyle) {
                 buttonClass = "c-btn -" + btn.linkStyle
               } else {
                 buttonClass = "c-btn"
               }
               return (
-                <>
+                <React.Fragment key={`c-rich-text__c-btn-wrapper-${index}-${buttonClass}`}>
                   {btn.linkType.toLowerCase() === "internal page" && (
                     <Link
                       className={buttonClass}
@@ -53,7 +55,7 @@ function ItemRichText(props) {
                       {btn.linkName} <ItemIcon iconName={btn.linkIcon} />
                     </a>
                   )}
-                </>
+                </React.Fragment>
               )
             })
           : null}

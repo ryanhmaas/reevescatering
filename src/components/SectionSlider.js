@@ -19,14 +19,14 @@ function SectionSlider({ data }) {
 	let slideSize = 60;
 
 	return (
-		<div className="c-slider__wrapper">
+		<div className="c-slider__wrapper  slide-in-bottom">
 			<h3 className="c-slider__title" style={{ textAlign: 'center' }}>
 				{sliderName}
 			</h3>
 			{sliderItems.length > 0 && (
 				<Carousel className="c-slider -hide-mobile" infiniteLoop centerMode centerSlidePercentage={slideSize}>
-					{sliderItems.map((item) => {
-						return <div className="c-slider__content">{sliderItem(item)}</div>;
+					{sliderItems.map((item, index) => {
+						return <div className="c-slider__content" key={`slider__content-${index}-desktop`}>{sliderItem(item)}</div>;
 					})}
 				</Carousel>
 			)}
@@ -34,8 +34,8 @@ function SectionSlider({ data }) {
 			{/* Dupe for mobile */}
 			{sliderItems.length > 0 && (
 				<Carousel className="c-slider -show-mobile" infiniteLoop centerMode centerSlidePercentage={100}>
-					{sliderItems.map((item) => {
-						return <div className="c-slider__content">{sliderItem(item)}</div>;
+					{sliderItems.map((item, index) => {
+						return <div className="c-slider__content" key={`slider__content-${index}-mobile`}>{sliderItem(item)}</div>;
 					})}
 				</Carousel>
 			)}
