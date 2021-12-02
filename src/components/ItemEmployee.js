@@ -5,7 +5,7 @@ import { Modal } from "react-responsive-modal"
 
 function ItemEmployee(props) {
   const [modalOpen, setModalOpen] = useState(false)
-  const { employeeName, employeePicture, employeeRole, employeeBio } = props
+  const { employeeName, employeePicture, employeeBio } = props
   const html = employeeBio?.richText?.childMarkdownRemark?.html
 
   const onOpenModal = () => {
@@ -34,7 +34,6 @@ function ItemEmployee(props) {
             />
             <div className="tiles-ds">
               <p className="tiles-ds__name">{employeeName}</p>
-              <p>Role</p>
             </div>
           </div>
         )}
@@ -42,7 +41,6 @@ function ItemEmployee(props) {
           <div>
             <b>{employeeName}</b>
           </div>
-          <div>Role</div>
         </div>
       </div>
       <Modal open={modalOpen} onClose={() => onCloseModal()} center>
