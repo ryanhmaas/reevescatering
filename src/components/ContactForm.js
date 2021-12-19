@@ -85,7 +85,7 @@ function ContactForm() {
 						{errors.name && <span className="field-required">This field is required</span>}
 					</div>
 					<div className="u-form-group">
-						<input className="u-form-group__input" value={phone} name="phone" type="tel" onChange={onChange} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number" ref={register} />
+						<input className="u-form-group__input" value={phone} name="phone" type="tel" onChange={onChange} placeholder="Phone Number" ref={register} />
 						<label htmlFor="phone">Phone Number</label>
 					</div>
 				</div>
