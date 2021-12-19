@@ -1,7 +1,7 @@
-.c-rich-text { 
+.c-rich-text {
 	h2, h3 {
 		@media screen and (max-width: $break3) {
-			text-align: justify;
+			text-align: center;
 			font-size: 3rem;
 		}
 	}
@@ -14,7 +14,7 @@
 			text-decoration: none;
 		}
 	}
-	
+
 }
 
 .c-rich-text-only {
@@ -38,7 +38,7 @@
 	p {
 		font-style: italic;
 	}
-	
+
 	&::before {
 		content: '\275D';
 		position: absolute;

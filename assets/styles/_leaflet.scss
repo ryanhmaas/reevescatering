@@ -5,7 +5,7 @@
   position: relative;
   outline: none;
 
-  @media (max-width: 639px) {
+  @media (max-width: $break3) {
     height: 400px;
   }
 }

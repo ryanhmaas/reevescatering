@@ -30,6 +30,7 @@
 
 .c-content {
 	position: relative;
+	overflow: hidden;
 	z-index: 0;
 
 	@media screen and (max-width: $break3) {
