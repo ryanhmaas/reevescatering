@@ -41,7 +41,7 @@
 	height: 100vh;
 	width: 100%;
   	-webkit-backface-visibility: hidden;
-  
+
 
 	&:before {
 		content: '';
@@ -91,7 +91,7 @@
 	bottom: 20%;
 	left: 0;
 
-	@media screen and (max-width: $break3) {
+	@media screen and (max-width: $break2) {
 		align-items: center;
 		height: 100%;
 		margin: 0;
@@ -152,6 +152,7 @@ main > .c-content:first-child .c-background-img.-banner {
 
 	@media screen and (max-width: $break3) {
 		padding: 1rem;
+		background: rgba(0,0,0,0.7);
 	}
 
 	.c-rich-text {
@@ -175,6 +176,7 @@ main > .c-content:first-child .c-background-img.-banner {
 
 .c-background-img.-banner .c-background-img__content h2 {
 	font-size: 3rem;
+	line-height: 4rem;
 	font-family: "Cormorant Garamond", cursive;
 	font-weight: 300;
 	text-align: center;
