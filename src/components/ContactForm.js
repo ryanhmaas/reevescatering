@@ -86,13 +86,13 @@ function ContactForm() {
 					</div>
 					<div className="u-form-group">
 						<input className="u-form-group__input" value={phone} name="phone" type="tel" onChange={onChange} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number" ref={register} />
-						<label htmlFor="phone">Phone Number <span>(555-555-5555)</span></label>
+						<label htmlFor="phone">Phone Number</label>
 					</div>
 				</div>
 				<div className="u-contact-group">
 					<div className="u-form-group">
 						<input className="u-form-group__input" value={email} name="email" type="email" onChange={onChange}  ref={register({ required: true })} />
-						<label htmlFor="email">Email <span>(name@email.com)</span></label>
+						<label htmlFor="email">Email</label>
 						{errors.email && <span className="field-required">This field is required</span>}
 					</div>
 				</div>
@@ -109,7 +109,7 @@ function ContactForm() {
 					<label>
 						Don’t fill this out: <input name="bot-field" onChange={() => {}} />
 					</label>
-				</p>				
+				</p>
 				<button type="submit" disabled={formSubmitted} className="c-btn contact-form__btn">
 					{formSubmitted && (
 						<>
