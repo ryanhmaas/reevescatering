@@ -62,7 +62,6 @@ module.exports = {
 		},
 		'gatsby-plugin-sitemap',
 		'gatsby-plugin-robots-txt',
-		'gatsby-plugin-netlify-cache',
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {
